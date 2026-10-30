@@ -1,0 +1,349 @@
+[
+  {
+    "id": "floral",
+    "name": "Red Floral Tie-Side Bikini",
+    "type": "bikini",
+    "price": 5000,
+    "sizes": [
+      "L"
+    ],
+    "images": [
+      "assets/bikinis/floral-1.webp"
+    ],
+    "tag": "Two-piece"
+  },
+  {
+    "id": "hibiscus",
+    "name": "Blush Hibiscus Bikini",
+    "type": "bikini",
+    "price": 5000,
+    "sizes": [
+      "L"
+    ],
+    "images": [
+      "assets/bikinis/hibiscus-1.webp"
+    ],
+    "tag": "Two-piece"
+  },
+  {
+    "id": "royal-ring",
+    "name": "Royal Blue Ring Bikini",
+    "type": "bikini",
+    "price": null,
+    "sizes": [],
+    "images": [
+      "assets/bikinis/royal-ring-1.webp",
+      "assets/bikinis/royal-ring-2.webp"
+    ],
+    "tag": "Two-piece"
+  },
+  {
+    "id": "black-rib",
+    "name": "Black Underwire Bikini",
+    "type": "bikini",
+    "price": null,
+    "sizes": [],
+    "images": [
+      "assets/bikinis/black-rib-1.webp"
+    ],
+    "tag": "Two-piece"
+  },
+  {
+    "id": "wine",
+    "name": "Burgundy Underwire Bikini",
+    "type": "bikini",
+    "price": null,
+    "sizes": [],
+    "images": [
+      "assets/bikinis/wine-1.webp"
+    ],
+    "tag": "Two-piece"
+  },
+  {
+    "id": "monochrome",
+    "name": "Black & White Ring Bikini",
+    "type": "bikini",
+    "price": null,
+    "sizes": [],
+    "images": [
+      "assets/bikinis/monochrome-1.webp",
+      "assets/bikinis/monochrome-2.webp"
+    ],
+    "tag": "Two-piece"
+  },
+  {
+    "id": "olive-cross",
+    "name": "Olive Cross-Strap Bikini",
+    "type": "bikini",
+    "price": 5500,
+    "sizes": [
+      "XS"
+    ],
+    "images": [
+      "assets/bikinis/olive-cross-1.webp"
+    ],
+    "tag": "Two-piece"
+  },
+  {
+    "id": "pink-ring",
+    "name": "Blush Pink Ring Bikini",
+    "type": "bikini",
+    "price": null,
+    "sizes": [],
+    "images": [
+      "assets/bikinis/pink-ring-1.webp"
+    ],
+    "tag": "Two-piece"
+  },
+  {
+    "id": "red-bikini",
+    "name": "Classic Red Bikini",
+    "type": "bikini",
+    "price": null,
+    "sizes": [],
+    "images": [
+      "assets/bikinis/red-bikini-1.webp"
+    ],
+    "tag": "Two-piece"
+  },
+  {
+    "id": "lemon",
+    "name": "Lemon Underwire Bikini",
+    "type": "bikini",
+    "price": null,
+    "sizes": [],
+    "images": [
+      "assets/bikinis/lemon-1.webp"
+    ],
+    "tag": "Two-piece"
+  },
+  {
+    "id": "sunshine",
+    "name": "Sunshine Ring Bikini",
+    "type": "bikini",
+    "price": null,
+    "sizes": [],
+    "images": [
+      "assets/bikinis/sunshine-1.webp",
+      "assets/bikinis/sunshine-2.webp"
+    ],
+    "tag": "Two-piece"
+  },
+  {
+    "id": "blue-ruffle",
+    "name": "Royal Blue Ruffle One-Piece",
+    "type": "one",
+    "price": 5000,
+    "sizes": [
+      "L"
+    ],
+    "images": [
+      "assets/one-pieces/blue-ruffle-1.webp",
+      "assets/one-pieces/blue-ruffle-2.webp"
+    ],
+    "tag": "One-piece"
+  },
+  {
+    "id": "navy-ruffle",
+    "name": "Navy Ruffle One-Piece",
+    "type": "one",
+    "price": 5000,
+    "sizes": [
+      "XL"
+    ],
+    "images": [
+      "assets/one-pieces/navy-ruffle-1.webp",
+      "assets/one-pieces/navy-ruffle-2.webp"
+    ],
+    "tag": "One-piece"
+  },
+  {
+    "id": "blue-wrap",
+    "name": "Royal Blue Crossover One-Piece",
+    "type": "one",
+    "price": 5000,
+    "sizes": [
+      "M"
+    ],
+    "images": [
+      "assets/one-pieces/blue-wrap-1.webp",
+      "assets/one-pieces/blue-wrap-2.webp"
+    ],
+    "tag": "One-piece"
+  },
+  {
+    "id": "red-halter",
+    "name": "Red Crossover Halter One-Piece",
+    "type": "one",
+    "price": 5500,
+    "sizes": [
+      "4XL"
+    ],
+    "images": [
+      "assets/one-pieces/red-halter-1.webp",
+      "assets/one-pieces/red-halter-2.webp"
+    ],
+    "tag": "One-piece"
+  },
+  {
+    "id": "heart",
+    "name": "Red Heart Side-Tie One-Piece",
+    "type": "one",
+    "price": 5000,
+    "sizes": [
+      "M"
+    ],
+    "images": [
+      "assets/one-pieces/heart-1.webp",
+      "assets/one-pieces/heart-2.webp"
+    ],
+    "tag": "One-piece"
+  },
+  {
+    "id": "aqua",
+    "name": "Aqua & Black Ruffle One-Piece",
+    "type": "one",
+    "price": 5500,
+    "sizes": [
+      "2XL"
+    ],
+    "images": [
+      "assets/one-pieces/aqua-1.webp"
+    ],
+    "tag": "One-piece"
+  },
+  {
+    "id": "polka",
+    "name": "Polka-Dot Cutout One-Piece",
+    "type": "one",
+    "price": 5500,
+    "sizes": [],
+    "images": [
+      "assets/one-pieces/polka-1.webp",
+      "assets/one-pieces/polka-2.webp",
+      "assets/one-pieces/polka-3.webp",
+      "assets/one-pieces/polka-4.webp",
+      "assets/one-pieces/polka-5.webp"
+    ],
+    "tag": "One-piece"
+  },
+  {
+    "id": "brasil",
+    "name": "Brasil Cutout One-Piece",
+    "type": "one",
+    "price": null,
+    "sizes": [],
+    "images": [
+      "assets/one-pieces/brasil-1.webp",
+      "assets/one-pieces/brasil-2.webp"
+    ],
+    "tag": "One-piece"
+  },
+  {
+    "id": "leopard",
+    "name": "Floral Leopard Cutout One-Piece",
+    "type": "one",
+    "price": null,
+    "sizes": [],
+    "images": [
+      "assets/one-pieces/leopard-1.webp",
+      "assets/one-pieces/leopard-2.webp"
+    ],
+    "tag": "One-piece"
+  },
+  {
+    "id": "yellow-floral",
+    "name": "Yellow Floral Ring One-Piece",
+    "type": "one",
+    "price": 5000,
+    "sizes": [
+      "XS"
+    ],
+    "images": [
+      "assets/one-pieces/yellow-floral-1.webp"
+    ],
+    "tag": "One-piece"
+  },
+  {
+    "id": "tropical-top",
+    "name": "Tropical Leaf Swim Top",
+    "type": "top",
+    "price": 2000,
+    "sizes": [
+      "2XL"
+    ],
+    "images": [
+      "assets/swim-tops/tropical-top-1.webp",
+      "assets/swim-tops/tropical-top-2.webp"
+    ],
+    "tag": "Top only"
+  },
+  {
+    "id": "lime-top",
+    "name": "Lime Chevron Swim Top",
+    "type": "top",
+    "price": 2000,
+    "sizes": [
+      "2XL"
+    ],
+    "images": [
+      "assets/swim-tops/lime-top-1.webp",
+      "assets/swim-tops/lime-top-2.webp"
+    ],
+    "tag": "Top only"
+  },
+  {
+    "id": "pink-top",
+    "name": "Pink Geometric Swim Top",
+    "type": "top",
+    "price": 2000,
+    "sizes": [
+      "3XL"
+    ],
+    "images": [
+      "assets/swim-tops/pink-top-1.webp",
+      "assets/swim-tops/pink-top-2.webp"
+    ],
+    "tag": "Top only"
+  },
+  {
+    "id": "olive-top",
+    "name": "Olive Stripe Swim Top",
+    "type": "top",
+    "price": 2000,
+    "sizes": [
+      "2XL"
+    ],
+    "images": [
+      "assets/swim-tops/olive-top-1.webp",
+      "assets/swim-tops/olive-top-2.webp"
+    ],
+    "tag": "Top only"
+  },
+  {
+    "id": "black-halter",
+    "name": "Black Halter Tankini Set",
+    "type": "set",
+    "price": 5500,
+    "sizes": [
+      "S"
+    ],
+    "images": [
+      "assets/tankini-sets/black-halter-1.webp"
+    ],
+    "tag": "Tankini set"
+  },
+  {
+    "id": "orange-halter",
+    "name": "Orange Halter One-Piece",
+    "type": "one",
+    "price": 5000,
+    "sizes": [
+      "L"
+    ],
+    "images": [
+      "assets/one-pieces/orange-halter-1.webp"
+    ],
+    "tag": "One-piece"
+  }
+]
