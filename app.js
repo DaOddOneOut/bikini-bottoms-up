@@ -1,24 +1,511 @@
-const products=[{"id": "floral", "name": "Red Floral Tie-Side Bikini", "type": "bikini", "price": 5000, "sizes": ["L"], "images": ["assets/bikinis/floral-1.webp"], "tag": "Two-piece"}, {"id": "hibiscus", "name": "Blush Hibiscus Bikini", "type": "bikini", "price": 5000, "sizes": ["L"], "images": ["assets/bikinis/hibiscus-1.webp"], "tag": "Two-piece"}, {"id": "royal-ring", "name": "Royal Blue Ring Bikini", "type": "bikini", "price": null, "sizes": [], "images": ["assets/bikinis/royal-ring-1.webp", "assets/bikinis/royal-ring-2.webp"], "tag": "Two-piece"}, {"id": "black-rib", "name": "Black Underwire Bikini", "type": "bikini", "price": null, "sizes": [], "images": ["assets/bikinis/black-rib-1.webp"], "tag": "Two-piece"}, {"id": "wine", "name": "Burgundy Underwire Bikini", "type": "bikini", "price": null, "sizes": [], "images": ["assets/bikinis/wine-1.webp"], "tag": "Two-piece"}, {"id": "monochrome", "name": "Black & White Ring Bikini", "type": "bikini", "price": null, "sizes": [], "images": ["assets/bikinis/monochrome-1.webp", "assets/bikinis/monochrome-2.webp"], "tag": "Two-piece"}, {"id": "olive-cross", "name": "Olive Cross-Strap Bikini", "type": "bikini", "price": 5500, "sizes": ["XS"], "images": ["assets/bikinis/olive-cross-1.webp"], "tag": "Two-piece"}, {"id": "pink-ring", "name": "Blush Pink Ring Bikini", "type": "bikini", "price": null, "sizes": [], "images": ["assets/bikinis/pink-ring-1.webp"], "tag": "Two-piece"}, {"id": "red-bikini", "name": "Classic Red Bikini", "type": "bikini", "price": null, "sizes": [], "images": ["assets/bikinis/red-bikini-1.webp"], "tag": "Two-piece"}, {"id": "lemon", "name": "Lemon Underwire Bikini", "type": "bikini", "price": null, "sizes": [], "images": ["assets/bikinis/lemon-1.webp"], "tag": "Two-piece"}, {"id": "sunshine", "name": "Sunshine Ring Bikini", "type": "bikini", "price": null, "sizes": [], "images": ["assets/bikinis/sunshine-1.webp", "assets/bikinis/sunshine-2.webp"], "tag": "Two-piece"}, {"id": "blue-ruffle", "name": "Royal Blue Ruffle One-Piece", "type": "one", "price": 5000, "sizes": ["L"], "images": ["assets/one-pieces/blue-ruffle-1.webp", "assets/one-pieces/blue-ruffle-2.webp"], "tag": "One-piece"}, {"id": "navy-ruffle", "name": "Navy Ruffle One-Piece", "type": "one", "price": 5000, "sizes": ["XL"], "images": ["assets/one-pieces/navy-ruffle-1.webp", "assets/one-pieces/navy-ruffle-2.webp"], "tag": "One-piece"}, {"id": "blue-wrap", "name": "Royal Blue Crossover One-Piece", "type": "one", "price": 5000, "sizes": ["M"], "images": ["assets/one-pieces/blue-wrap-1.webp", "assets/one-pieces/blue-wrap-2.webp"], "tag": "One-piece"}, {"id": "red-halter", "name": "Red Crossover Halter One-Piece", "type": "one", "price": 5500, "sizes": ["4XL"], "images": ["assets/one-pieces/red-halter-1.webp", "assets/one-pieces/red-halter-2.webp"], "tag": "One-piece"}, {"id": "heart", "name": "Red Heart Side-Tie One-Piece", "type": "one", "price": 5000, "sizes": ["M"], "images": ["assets/one-pieces/heart-1.webp", "assets/one-pieces/heart-2.webp"], "tag": "One-piece"}, {"id": "aqua", "name": "Aqua & Black Ruffle One-Piece", "type": "one", "price": 5500, "sizes": ["2XL"], "images": ["assets/one-pieces/aqua-1.webp"], "tag": "One-piece"}, {"id": "polka", "name": "Polka-Dot Cutout One-Piece", "type": "one", "price": 5500, "sizes": [], "images": ["assets/one-pieces/polka-1.webp", "assets/one-pieces/polka-2.webp", "assets/one-pieces/polka-3.webp", "assets/one-pieces/polka-4.webp", "assets/one-pieces/polka-5.webp"], "tag": "One-piece"}, {"id": "brasil", "name": "Brasil Cutout One-Piece", "type": "one", "price": null, "sizes": [], "images": ["assets/one-pieces/brasil-1.webp", "assets/one-pieces/brasil-2.webp"], "tag": "One-piece"}, {"id": "leopard", "name": "Floral Leopard Cutout One-Piece", "type": "one", "price": null, "sizes": [], "images": ["assets/one-pieces/leopard-1.webp", "assets/one-pieces/leopard-2.webp"], "tag": "One-piece"}, {"id": "yellow-floral", "name": "Yellow Floral Ring One-Piece", "type": "one", "price": 5000, "sizes": ["XS"], "images": ["assets/one-pieces/yellow-floral-1.webp"], "tag": "One-piece"}, {"id": "tropical-top", "name": "Tropical Leaf Swim Top", "type": "top", "price": 2000, "sizes": ["2XL"], "images": ["assets/swim-tops/tropical-top-1.webp", "assets/swim-tops/tropical-top-2.webp"], "tag": "Top only"}, {"id": "lime-top", "name": "Lime Chevron Swim Top", "type": "top", "price": 2000, "sizes": ["2XL"], "images": ["assets/swim-tops/lime-top-1.webp", "assets/swim-tops/lime-top-2.webp"], "tag": "Top only"}, {"id": "pink-top", "name": "Pink Geometric Swim Top", "type": "top", "price": 2000, "sizes": ["3XL"], "images": ["assets/swim-tops/pink-top-1.webp", "assets/swim-tops/pink-top-2.webp"], "tag": "Top only"}, {"id": "olive-top", "name": "Olive Stripe Swim Top", "type": "top", "price": 2000, "sizes": ["2XL"], "images": ["assets/swim-tops/olive-top-1.webp", "assets/swim-tops/olive-top-2.webp"], "tag": "Top only"}, {"id": "black-halter", "name": "Black Halter Tankini Set", "type": "set", "price": 5500, "sizes": ["S"], "images": ["assets/tankini-sets/black-halter-1.webp"], "tag": "Tankini set"}, {"id": "orange-halter", "name": "Orange Halter One-Piece", "type": "one", "price": 5000, "sizes": ["L"], "images": ["assets/one-pieces/orange-halter-1.webp"], "tag": "One-piece"}];
-const money=n=>'GYD '+n.toLocaleString('en-US');let bag=[];try{const saved=JSON.parse(localStorage.getItem('bbu-catalog-bag-v2')||'[]');if(Array.isArray(saved))bag=saved.filter(i=>products.some(p=>p.id===i.id&&p.price!==null&&p.sizes.includes(i.size))&&Number.isInteger(i.qty)&&i.qty>0&&i.qty<100)}catch{}
-const cart=document.querySelector('#cart');
-let currentFilter='all';
-function renderProducts(filter='all'){
- currentFilter=filter;
- document.querySelector('#products').innerHTML=products.filter(p=>filter==='all'||p.type===filter).map(p=>`<article class="product"><button class="product-photo gallery-open" data-view="${p.id}" aria-label="View ${p.name} photos"><img src="${p.images[0]}" alt="${p.name}" loading="lazy"><span>${p.tag}</span><span class="photo-count">${p.images.length} photo${p.images.length>1?'s':''} ↗</span></button><h3>${p.name}</h3><div class="price">${p.price===null?'Price to be confirmed':money(p.price)}${p.type==='top'?' · Top only':''}</div><p class="size-note">${p.sizes.length?'Listed size: '+p.sizes.join(', '):'Size to be confirmed'}</p><div class="product-controls">${p.price!==null&&p.sizes.length?`<select id="size-${p.id}" aria-label="Size for ${p.name}">${p.sizes.map(s=>`<option>${s}</option>`).join('')}</select><button class="add" data-add="${p.id}">Add to bag +</button>`:`<button class="add" data-view="${p.id}">View details ↗</button>`}</div></article>`).join('');
- document.querySelector('#resultCount').textContent=products.filter(p=>filter==='all'||p.type===filter).length+' styles';
-}
-renderProducts();document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));renderProducts(b.dataset.filter)});
-document.querySelector('#products').onclick=e=>{const view=e.target.closest('[data-view]');if(view){openGallery(view.dataset.view);return}const b=e.target.closest('[data-add]');if(!b)return;const size=document.querySelector('#size-'+b.dataset.add);if(!size.value){size.focus();size.setCustomValidity('Choose a sample size first.');size.reportValidity();size.onchange=()=>size.setCustomValidity('');return}let item=bag.find(i=>i.id===b.dataset.add&&i.size===size.value);if(item)item.qty=Math.min(99,item.qty+1);else bag.push({id:b.dataset.add,size:size.value,qty:1});save();b.textContent='Added ✓';setTimeout(()=>b.textContent='Add to bag +',1200)};
-function save(){try{localStorage.setItem('bbu-catalog-bag-v2',JSON.stringify(bag))}catch{}document.querySelector('#count').textContent=bag.reduce((a,i)=>a+i.qty,0)}save();
-function renderCart(){document.querySelector('#cartItems').innerHTML=bag.length?bag.map((i,n)=>{const p=products.find(p=>p.id===i.id);return `<div class="cart-row"><img src="${p.images[0]}" alt=""><div><h3>${p.name}</h3><p>Size ${i.size} · ${money(p.price)}</p><div class="quantity"><button data-qty="${n}" data-delta="-1" aria-label="Remove one ${p.name}">−</button><span>${i.qty}</span><button data-qty="${n}" data-delta="1" aria-label="Add one ${p.name}">+</button></div></div><p>${money(p.price*i.qty)}</p></div>`}).join(''):'<p>Your bag is ready for a little sunshine.</p><p class="small">Choose your favorites from the collection to get started.</p>';
-document.querySelector('#cartBottom').innerHTML=bag.length?`<div class="total"><span>Subtotal</span><span>${money(bag.reduce((s,i)=>s+products.find(p=>p.id===i.id).price*i.qty,0))}</span></div><form class="checkout-form" id="checkout"><label>Your name<input name="customer" required maxlength="80" autocomplete="name"></label><label>Phone number<input name="phone" type="tel" required maxlength="30" autocomplete="tel"></label><label>How would you like to order?<select name="method"><option value="mmg">Online order · MMG preview</option><option value="message">Prepare a message</option></select></label><button class="button" type="submit">Preview my order <span>↗</span></button><p class="small">Client demo only. Sizes and prices are taken from supplied references; current stock needs confirmation. Delivery is not included. No personal details leave this browser, and no payment is collected.</p></form>`:'';
-const form=document.querySelector('#checkout');if(form)form.onsubmit=e=>{e.preventDefault();const data=new FormData(form);const lines=['BIKINI BOTTOMS UP — SAMPLE ORDER',...bag.map(i=>{const p=products.find(p=>p.id===i.id);return `${p.name} / ${i.size} × ${i.qty} — ${money(p.price*i.qty)}`}),`Subtotal: ${money(bag.reduce((s,i)=>s+products.find(p=>p.id===i.id).price*i.qty,0))}`,`Name: ${data.get('customer')}`,`Phone: ${data.get('phone')}`,'Delivery: to be confirmed','DEMO ONLY — no order has been sent.'];const bottom=document.querySelector('#cartBottom');bottom.innerHTML=`<div class="success"><h3>${data.get('method')==='mmg'?'Your MMG checkout preview':'Your message is ready'}</h3><p class="small">${data.get('method')==='mmg'?'The live store will need verified MMG merchant details and a confirmed payment process. This preview does not process or confirm payment.':'A WhatsApp contact will be connected once Sharayah confirms her business number. For now, you can copy this sample message.'}</p><textarea id="summary" readonly aria-label="Sample order summary"></textarea><button class="button" id="copy">Copy order summary</button><button class="add" id="back" style="margin-left:10px">Back to bag</button><p class="small" role="status" id="copyStatus">No order sent. No payment taken.</p></div>`;document.querySelector('#summary').value=lines.join('\n');document.querySelector('#back').onclick=renderCart;document.querySelector('#copy').onclick=async()=>{try{await navigator.clipboard.writeText(lines.join('\n'));document.querySelector('#copyStatus').textContent='Copied. This is still a sample order.'}catch{document.querySelector('#summary').select();document.querySelector('#copyStatus').textContent='Select and copy the summary above.'}}}}
-document.querySelector('#cartItems').onclick=e=>{const b=e.target.closest('[data-qty]');if(!b)return;const n=Number(b.dataset.qty);bag[n].qty=Math.min(99,bag[n].qty+Number(b.dataset.delta));if(bag[n].qty<=0)bag.splice(n,1);save();renderCart()};
-document.querySelector('#openBag').onclick=()=>{renderCart();cart.showModal()};document.querySelector('#closeBag').onclick=()=>cart.close();cart.addEventListener('click',e=>{if(e.target===cart){const r=cart.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)cart.close()}});
+/* Bikini Bottoms Up — shared storefront script for index.html and shop.html.
+   Product data: catalog.js · Store settings: config.js */
+(function () {
+  "use strict";
 
-const gallery=document.querySelector('#gallery');let galleryProduct=null,galleryIndex=0;
-function openGallery(id){galleryProduct=products.find(p=>p.id===id);galleryIndex=0;renderGallery();gallery.showModal()}
-function renderGallery(){const p=galleryProduct;document.querySelector('#galleryTitle').textContent=p.name;document.querySelector('#galleryImage').src=p.images[galleryIndex];document.querySelector('#galleryImage').alt=p.name+' — photo '+(galleryIndex+1);document.querySelector('#galleryDetails').textContent=(p.price===null?'Price to be confirmed':money(p.price))+' · '+(p.sizes.length?'Listed size: '+p.sizes.join(', '):'Size to be confirmed')+(p.type==='top'?' · Top only; bottoms shown for styling.':'');document.querySelector('#galleryPosition').textContent=(galleryIndex+1)+' / '+p.images.length;document.querySelector('#previousPhoto').disabled=p.images.length===1;document.querySelector('#nextPhoto').disabled=p.images.length===1;document.querySelector('#galleryThumbs').innerHTML=p.images.map((src,n)=>`<button data-photo="${n}" class="${n===galleryIndex?'selected':''}" aria-label="View photo ${n+1}"><img src="${src}" alt=""></button>`).join('')}
-document.querySelector('#galleryThumbs').onclick=e=>{const b=e.target.closest('[data-photo]');if(b){galleryIndex=Number(b.dataset.photo);renderGallery()}};
-function stepGallery(delta){galleryIndex=(galleryIndex+delta+galleryProduct.images.length)%galleryProduct.images.length;renderGallery()}
-document.querySelector('#previousPhoto').onclick=()=>stepGallery(-1);document.querySelector('#nextPhoto').onclick=()=>stepGallery(1);document.querySelector('#closeGallery').onclick=()=>gallery.close();gallery.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')stepGallery(-1);if(e.key==='ArrowRight')stepGallery(1)});
+  var CATALOG = window.BBU_CATALOG || { categories: {}, products: [] };
+  var CONFIG = window.BBU_CONFIG || {};
+  var PRODUCTS = CATALOG.products || [];
+  var PAGE = document.body.getAttribute("data-collection") || "swim";
+  var BAG_KEY = "bbu-bag-v3";
+  var OLD_BAG_KEYS = ["bbu-catalog-bag-v2"];
+  var MAX_QTY = 99;
+
+  /* ---------- helpers ---------- */
+  var $ = function (sel, root) { return (root || document).querySelector(sel); };
+  var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+  function esc(value) {
+    return String(value == null ? "" : value).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function money(n) { return "GYD " + Number(n).toLocaleString("en-US"); }
+  function byId(id) { for (var i = 0; i < PRODUCTS.length; i++) if (PRODUCTS[i].id === id) return PRODUCTS[i]; return null; }
+  function hasPrice(p) { return typeof p.price === "number" && isFinite(p.price) && p.price >= 0; }
+  function canBuy(p) { return hasPrice(p) && p.sizes && p.sizes.length > 0 && p.stock !== 0; }
+  function maxQty(p) { return typeof p.stock === "number" && p.stock > 0 ? Math.min(MAX_QTY, p.stock) : MAX_QTY; }
+  function priceText(p) { return hasPrice(p) ? money(p.price) : "Price to be confirmed"; }
+  function sizeText(p) {
+    if (!p.sizes || !p.sizes.length) return "Size to be confirmed";
+    return (p.sizes.length > 1 ? "Sizes: " : "Size: ") + p.sizes.join(", ");
+  }
+  function stockText(p) {
+    if (p.stock === 0) return "Sold out";
+    if (typeof p.stock === "number") return p.stock + " in stock";
+    return "";
+  }
+  function showBrand(p) { return p.brand && p.name.toLowerCase().indexOf(p.brand.toLowerCase()) !== 0; }
+  function deptText(p) { return p.department === "Men" ? "Men’s" : p.department === "Women" ? "Women’s" : ""; }
+  function plural(n, word) { return n + " " + word + (n === 1 ? "" : "s"); }
+  function categoriesFor(collection) { return (CATALOG.categories && CATALOG.categories[collection]) || []; }
+  function productsFor(collection) { return PRODUCTS.filter(function (p) { return p.collection === collection; }); }
+  function whatsappNumber() {
+    var n = String(CONFIG.whatsappNumber || "").replace(/\D/g, "");
+    return /^\d{7,15}$/.test(n) ? n : "";
+  }
+  function whatsappLink(text) {
+    var n = whatsappNumber();
+    return n ? "https://wa.me/" + n + (text ? "?text=" + encodeURIComponent(text) : "") : "";
+  }
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- live announcements for screen readers ---------- */
+  var live = document.createElement("div");
+  live.className = "visually-hidden";
+  live.setAttribute("role", "status");
+  live.setAttribute("aria-live", "polite");
+  document.body.appendChild(live);
+  function announce(msg) { live.textContent = ""; setTimeout(function () { live.textContent = msg; }, 30); }
+
+  /* ---------- shared bag (localStorage, works across both pages and tabs) ---------- */
+  var bag = [];
+  function cleanBag(items) {
+    if (!Array.isArray(items)) return [];
+    var out = [];
+    items.forEach(function (i) {
+      if (!i || typeof i.id !== "string" || typeof i.size !== "string") return;
+      var p = byId(i.id);
+      if (!p || !canBuy(p) || p.sizes.indexOf(i.size) === -1) return;
+      var qty = Math.floor(Number(i.qty));
+      if (!(qty > 0)) return;
+      var existing = out.filter(function (o) { return o.id === i.id && o.size === i.size; })[0];
+      if (existing) existing.qty = Math.min(maxQty(p), existing.qty + qty);
+      else out.push({ id: i.id, size: i.size, qty: Math.min(maxQty(p), qty) });
+    });
+    return out;
+  }
+  function loadBag() {
+    var raw = null;
+    try {
+      raw = localStorage.getItem(BAG_KEY);
+      if (raw === null) {
+        for (var k = 0; k < OLD_BAG_KEYS.length && raw === null; k++) raw = localStorage.getItem(OLD_BAG_KEYS[k]);
+      }
+    } catch (e) { /* storage unavailable (private mode etc.) — bag lives for this page only */ }
+    try { bag = cleanBag(JSON.parse(raw || "[]")); } catch (e) { bag = []; }
+  }
+  function bagCount() { return bag.reduce(function (s, i) { return s + i.qty; }, 0); }
+  function bagSubtotal() { return bag.reduce(function (s, i) { return s + byId(i.id).price * i.qty; }, 0); }
+  function updateBagCount() {
+    var n = bagCount();
+    $$("[data-bag-count]").forEach(function (el) { el.textContent = n; });
+    $$("[data-bag-count-text]").forEach(function (el) { el.textContent = ", " + plural(n, "item"); });
+  }
+  function saveBag() {
+    try { localStorage.setItem(BAG_KEY, JSON.stringify(bag)); } catch (e) { /* ignore */ }
+    updateBagCount();
+  }
+  function addToBag(id, size) {
+    var p = byId(id);
+    if (!p || !canBuy(p) || p.sizes.indexOf(size) === -1) return false;
+    var item = bag.filter(function (i) { return i.id === id && i.size === size; })[0];
+    if (item) {
+      if (item.qty >= maxQty(p)) { announce("You already have the maximum available of " + p.name + " in your bag."); return false; }
+      item.qty += 1;
+    } else bag.push({ id: id, size: size, qty: 1 });
+    saveBag();
+    announce("Added " + p.name + ", size " + size + ", to your bag. " + plural(bagCount(), "item") + " in bag.");
+    return true;
+  }
+
+  /* ---------- product grid + category filters ---------- */
+  var grid = $("[data-products]");
+  var filtersEl = $("[data-filters]");
+  var countEl = $("[data-result-count]");
+  var emptyEl = $("[data-empty]");
+  var currentFilter = "all";
+
+  function controlsHtml(p, context) {
+    if (!canBuy(p)) {
+      var reason = p.stock === 0 ? "Sold out" : "Details to be confirmed";
+      return context === "card"
+        ? '<button type="button" class="btn-secondary" data-gallery="' + esc(p.id) + '">View photos</button><span class="unavailable">' + reason + "</span>"
+        : '<p class="unavailable">' + reason + " — can’t be added to the bag yet.</p>";
+    }
+    var sid = "size-" + context + "-" + p.id;
+    var sizeField = p.sizes.length > 1
+      ? '<label class="size-field"><span class="visually-hidden">Size for ' + esc(p.name) + '</span><select id="' + esc(sid) + '" data-size-for="' + esc(p.id) + '"><option value="">Size</option>' +
+        p.sizes.map(function (s) { return '<option value="' + esc(s) + '">' + esc(s) + "</option>"; }).join("") + "</select></label>"
+      : '<input type="hidden" data-size-for="' + esc(p.id) + '" value="' + esc(p.sizes[0]) + '">';
+    return sizeField + '<button type="button" class="btn-add" data-add="' + esc(p.id) + '">Add to bag<span class="visually-hidden">: ' + esc(p.name) + (p.sizes.length === 1 ? ", size " + esc(p.sizes[0]) : "") + "</span></button>";
+  }
+
+  function cardHtml(p) {
+    var img = p.images[0];
+    var n = p.images.length;
+    var stock = stockText(p);
+    return '<article class="card" data-id="' + esc(p.id) + '">' +
+      '<button type="button" class="card-media" data-gallery="' + esc(p.id) + '" aria-label="View ' + esc(plural(n, "photo")) + " of " + esc(p.name) + '">' +
+        '<img src="' + esc(img.src) + '" alt="' + esc(img.alt) + '" loading="lazy" decoding="async" width="600" height="800">' +
+        '<span class="card-tag' + (p.category === "top" || p.tag === "Top only" ? " card-tag-alert" : "") + '">' + esc(p.tag) + "</span>" +
+        (n > 1 ? '<span class="card-count" aria-hidden="true">' + n + " photos</span>" : "") +
+      "</button>" +
+      '<div class="card-body">' +
+        (showBrand(p) ? '<p class="card-brand">' + esc(p.brand) + "</p>" : "") +
+        "<h3>" + esc(p.name) + "</h3>" +
+        '<p class="card-price' + (hasPrice(p) ? "" : " tbc") + '">' + esc(priceText(p)) + "</p>" +
+        '<p class="card-meta' + (p.sizes && p.sizes.length ? "" : " tbc") + '">' + esc(sizeText(p)) + (stock ? " · " + esc(stock) : "") + "</p>" +
+        (p.note ? '<p class="card-note">' + esc(p.note) + "</p>" : "") +
+        '<div class="card-controls">' + controlsHtml(p, "card") + "</div>" +
+      "</div></article>";
+  }
+
+  function renderFilters(items) {
+    if (!filtersEl) return;
+    var cats = categoriesFor(PAGE).filter(function (c) {
+      return items.some(function (p) { return p.category === c.id; });
+    });
+    if (!items.length) { filtersEl.hidden = true; filtersEl.innerHTML = ""; return; }
+    filtersEl.hidden = false;
+    var allLabel = PAGE === "shop" ? "All items" : "All swimwear";
+    var buttons = [{ id: "all", label: allLabel, n: items.length }].concat(cats.map(function (c) {
+      return { id: c.id, label: c.label, n: items.filter(function (p) { return p.category === c.id; }).length };
+    }));
+    if (!buttons.some(function (b) { return b.id === currentFilter; })) currentFilter = "all";
+    filtersEl.innerHTML = buttons.map(function (b) {
+      return '<button type="button" class="chip" data-filter="' + esc(b.id) + '" aria-pressed="' + (b.id === currentFilter) + '">' +
+        esc(b.label) + ' <span class="chip-count" aria-hidden="true">' + b.n + '</span><span class="visually-hidden"> (' + b.n + ")</span></button>";
+    }).join("");
+  }
+
+  function renderEmpty() {
+    if (!emptyEl) return;
+    var other = PAGE === "shop"
+      ? '<a class="button" href="index.html#shop">Shop Swimwear <span aria-hidden="true">→</span></a>'
+      : '<a class="button" href="shop.html">Clothing &amp; Accessories <span aria-hidden="true">→</span></a>';
+    var wa = whatsappLink("Hi Bikini Bottoms Up! I'd like to ask about your Clothing & Accessories collection.");
+    emptyEl.innerHTML =
+      '<p class="eyebrow">' + (PAGE === "shop" ? "Arriving soon" : "Nothing here yet") + "</p>" +
+      "<h3>" + (PAGE === "shop" ? "The Clothing &amp; Accessories collection is on its way." : "New swimwear is on its way.") + "</h3>" +
+      "<p>" + (PAGE === "shop"
+        ? "Tops, bottoms, dresses, footwear, bags and accessories will appear here as soon as they’re photographed and priced. In the meantime, the swimwear collection is ready to browse."
+        : "Check back soon.") + "</p>" +
+      '<div class="empty-actions">' + other + (wa ? '<a class="button button-ghost" href="' + esc(wa) + '" target="_blank" rel="noopener">Ask us on WhatsApp</a>' : "") + "</div>";
+  }
+
+  function renderProducts() {
+    if (!grid) return;
+    var items = productsFor(PAGE);
+    renderFilters(items);
+    if (!items.length) {
+      grid.innerHTML = "";
+      grid.hidden = true;
+      if (countEl) countEl.textContent = "";
+      renderEmpty();
+      emptyEl.hidden = false;
+      return;
+    }
+    grid.hidden = false;
+    if (emptyEl) emptyEl.hidden = true;
+    var shown = items.filter(function (p) { return currentFilter === "all" || p.category === currentFilter; });
+    grid.innerHTML = shown.map(cardHtml).join("");
+    if (countEl) countEl.textContent = "Showing " + plural(shown.length, PAGE === "shop" ? "item" : "style");
+  }
+
+  if (filtersEl) filtersEl.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-filter]");
+    if (!b) return;
+    currentFilter = b.getAttribute("data-filter");
+    renderProducts();
+    var again = $('[data-filter="' + currentFilter + '"]', filtersEl);
+    if (again) again.focus();
+  });
+
+  function handleAdd(button, root) {
+    var id = button.getAttribute("data-add");
+    var field = $('[data-size-for="' + id + '"]', root);
+    var size = field ? field.value : "";
+    if (!size) {
+      if (field && field.tagName === "SELECT") {
+        field.setCustomValidity("Please choose a size.");
+        field.reportValidity();
+        field.addEventListener("change", function clear() { field.setCustomValidity(""); field.removeEventListener("change", clear); });
+      }
+      return;
+    }
+    if (addToBag(id, size)) {
+      var label = button.firstChild;
+      button.classList.add("added");
+      label.nodeValue = "Added ✓";
+      setTimeout(function () { button.classList.remove("added"); label.nodeValue = "Add to bag"; }, 1400);
+    }
+  }
+
+  if (grid) grid.addEventListener("click", function (e) {
+    var g = e.target.closest("[data-gallery]");
+    if (g) { openGallery(g.getAttribute("data-gallery"), g); return; }
+    var a = e.target.closest("[data-add]");
+    if (a) handleAdd(a, a.closest(".card"));
+  });
+
+  /* ---------- dialogs ---------- */
+  function makeDialog(id, labelId, inner) {
+    var d = document.createElement("dialog");
+    d.id = id;
+    d.className = "sheet " + id;
+    d.setAttribute("aria-labelledby", labelId);
+    d.innerHTML = inner;
+    document.body.appendChild(d);
+    // close when the backdrop (outside the panel) is clicked
+    d.addEventListener("click", function (e) {
+      if (e.target !== d) return;
+      var r = d.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) d.close();
+    });
+    return d;
+  }
+  function openDialog(d) {
+    if (typeof d.showModal === "function") { if (!d.open) d.showModal(); }
+    else d.setAttribute("open", "");
+    document.documentElement.classList.add("dialog-open");
+  }
+  function onDialogClose() { if (!$("dialog[open]")) document.documentElement.classList.remove("dialog-open"); }
+
+  /* ---------- gallery (touch swipe, arrow keys, thumbnails) ---------- */
+  var gallery = makeDialog("gallery", "galleryTitle",
+    '<div class="sheet-head"><div><p class="eyebrow" id="galleryTag"></p><h2 id="galleryTitle"></h2></div>' +
+    '<button type="button" class="close" data-close aria-label="Close photos">×</button></div>' +
+    '<div class="sheet-body">' +
+      '<div class="gallery-stage" id="galleryStage">' +
+        '<img id="galleryImage" alt="">' +
+        '<button type="button" class="gallery-arrow prev" id="galleryPrev" aria-label="Previous photo">‹</button>' +
+        '<button type="button" class="gallery-arrow next" id="galleryNext" aria-label="Next photo">›</button>' +
+      "</div>" +
+      '<p class="gallery-position" id="galleryPosition" aria-live="polite"></p>' +
+      '<div class="gallery-thumbs" id="galleryThumbs" role="group" aria-label="Choose a photo"></div>' +
+      '<div class="gallery-details" id="galleryDetails"></div>' +
+    "</div>");
+  var gProduct = null, gIndex = 0;
+
+  function renderGallery(focusThumb) {
+    var p = gProduct, n = p.images.length, img = p.images[gIndex];
+    $("#galleryTitle").textContent = p.name;
+    $("#galleryTag").textContent = p.tag || "";
+    var el = $("#galleryImage");
+    el.src = img.src;
+    el.alt = img.alt;
+    $("#galleryPosition").textContent = n > 1 ? "Photo " + (gIndex + 1) + " of " + n : "1 photo";
+    $("#galleryPrev").hidden = $("#galleryNext").hidden = n < 2;
+    var thumbs = $("#galleryThumbs");
+    thumbs.hidden = n < 2;
+    thumbs.innerHTML = p.images.map(function (im, i) {
+      return '<button type="button" data-photo="' + i + '"' + (i === gIndex ? ' aria-current="true"' : "") + ' aria-label="Photo ' + (i + 1) + " of " + n + ": " + esc(im.alt) + '"><img src="' + esc(im.src) + '" alt="" loading="lazy"></button>';
+    }).join("");
+    if (focusThumb) { var t = $('[data-photo="' + gIndex + '"]', thumbs); if (t) t.focus(); }
+    var stock = stockText(p);
+    $("#galleryDetails").innerHTML =
+      '<p class="gallery-price' + (hasPrice(p) ? "" : " tbc") + '">' + esc(priceText(p)) + "</p>" +
+      '<p class="card-meta' + (p.sizes && p.sizes.length ? "" : " tbc") + '">' + esc(sizeText(p)) + (stock ? " · " + esc(stock) : "") + "</p>" +
+      ((p.brand || deptText(p)) ? '<p class="card-meta">' + [p.brand ? "Brand: " + esc(p.brand) : "", deptText(p)].filter(Boolean).join(" · ") + "</p>" : "") +
+      (p.description ? '<p class="gallery-desc">' + esc(p.description) + "</p>" : "") +
+      (p.includes && p.includes.length ? '<p class="card-meta"><strong>Includes:</strong> ' + esc(p.includes.join(", ")) + "</p>" : "") +
+      (p.note ? '<p class="card-note">' + esc(p.note) + "</p>" : "") +
+      '<div class="card-controls">' + controlsHtml(p, "gallery") + "</div>" +
+      (p.illustrated
+        ? '<p class="small illus-note">These images are styled illustrations made from the original photo of this item. Small details may differ from the real piece. Props and styling pieces are not included. Current stock to be confirmed.</p>'
+        : '<p class="small">Product reference photos. Props shown for styling are not included. Current stock to be confirmed.</p>');
+    // preload neighbours for smooth swiping
+    [gIndex + 1, gIndex - 1].forEach(function (i) { var x = p.images[(i + n) % n]; if (x) (new Image()).src = x.src; });
+  }
+  function openGallery(id) {
+    gProduct = byId(id);
+    if (!gProduct) return;
+    gIndex = 0;
+    renderGallery(false);
+    openDialog(gallery);
+    $("[data-close]", gallery).focus();
+  }
+  function stepGallery(delta) {
+    if (!gProduct || gProduct.images.length < 2) return;
+    gIndex = (gIndex + delta + gProduct.images.length) % gProduct.images.length;
+    renderGallery(false);
+  }
+  $("#galleryPrev").addEventListener("click", function () { stepGallery(-1); });
+  $("#galleryNext").addEventListener("click", function () { stepGallery(1); });
+  $("#galleryThumbs").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-photo]");
+    if (b) { gIndex = Number(b.getAttribute("data-photo")); renderGallery(true); }
+  });
+  gallery.addEventListener("keydown", function (e) {
+    if (e.target.tagName === "SELECT") return;
+    if (e.key === "ArrowLeft") { e.preventDefault(); stepGallery(-1); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); stepGallery(1); }
+    else if (e.key === "Home" && gProduct) { e.preventDefault(); gIndex = 0; renderGallery(false); }
+    else if (e.key === "End" && gProduct) { e.preventDefault(); gIndex = gProduct.images.length - 1; renderGallery(false); }
+  });
+  (function swipe() {
+    var stage = $("#galleryStage"), startX = null, startY = 0;
+    stage.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse") { startX = e.clientX; startY = e.clientY; } });
+    stage.addEventListener("pointerup", function (e) {
+      if (startX === null) return;
+      var dx = e.clientX - startX, dy = e.clientY - startY;
+      startX = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) stepGallery(dx < 0 ? 1 : -1);
+    });
+    stage.addEventListener("pointercancel", function () { startX = null; });
+  })();
+  gallery.addEventListener("click", function (e) {
+    if (e.target.closest("[data-close]")) { gallery.close(); return; }
+    var a = e.target.closest("[data-add]");
+    if (a) handleAdd(a, $("#galleryDetails"));
+  });
+  gallery.addEventListener("close", onDialogClose);
+
+  /* ---------- bag + demo checkout ---------- */
+  var cart = makeDialog("cart", "cartTitle",
+    '<div class="sheet-head"><div><p class="eyebrow">Good choices, great vibes</p><h2 id="cartTitle">Your beach bag</h2></div>' +
+    '<button type="button" class="close" data-close aria-label="Close bag">×</button></div>' +
+    '<div class="sheet-body"><div id="cartItems"></div><div id="cartBottom"></div></div>');
+
+  function orderLines() {
+    return bag.map(function (i) {
+      var p = byId(i.id);
+      return p.name + " / Size " + i.size + " × " + i.qty + " — " + money(p.price * i.qty);
+    });
+  }
+
+  function renderCart() {
+    var items = $("#cartItems"), bottom = $("#cartBottom");
+    if (!bag.length) {
+      items.innerHTML = '<div class="cart-empty"><p>Your bag is ready for a little sunshine.</p><p class="small">Choose your favourites to get started.</p>' +
+        '<div class="empty-actions"><a class="button" href="index.html#shop">Shop Swimwear</a><a class="button button-ghost" href="shop.html">Clothing &amp; Accessories</a></div></div>';
+      bottom.innerHTML = "";
+      return;
+    }
+    items.innerHTML = '<ul class="cart-list">' + bag.map(function (i, n) {
+      var p = byId(i.id);
+      return '<li class="cart-row">' +
+        '<img src="' + esc(p.images[0].src) + '" alt="" width="72" height="96">' +
+        '<div class="cart-info"><h3>' + esc(p.name) + "</h3>" +
+          '<p class="small">Size ' + esc(i.size) + " · " + esc(money(p.price)) + " each" + (p.note ? "<br>" + esc(p.note) : "") + "</p>" +
+          '<div class="quantity" role="group" aria-label="Quantity for ' + esc(p.name) + '">' +
+            '<button type="button" data-qty="' + n + '" data-delta="-1" aria-label="Decrease quantity of ' + esc(p.name) + '">−</button>' +
+            '<span aria-live="polite">' + i.qty + "</span>" +
+            '<button type="button" data-qty="' + n + '" data-delta="1" aria-label="Increase quantity of ' + esc(p.name) + '"' + (i.qty >= maxQty(p) ? " disabled" : "") + ">+</button>" +
+          "</div>" +
+          '<button type="button" class="link-button" data-remove="' + n + '">Remove<span class="visually-hidden"> ' + esc(p.name) + "</span></button>" +
+        "</div>" +
+        '<p class="cart-line">' + esc(money(p.price * i.qty)) + "</p></li>";
+    }).join("") + "</ul>";
+
+    bottom.innerHTML =
+      '<div class="total"><span>Subtotal <span class="small">(' + plural(bagCount(), "item") + ")</span></span><strong>" + esc(money(bagSubtotal())) + "</strong></div>" +
+      '<p class="small">Delivery or pickup fees not included — to be confirmed.</p>' +
+      '<div class="demo-banner" role="note"><strong>Demo checkout.</strong> Online payment with MMG isn’t connected yet. Nothing is sent and no payment is taken.</div>' +
+      '<form class="checkout-form" id="checkout" novalidate>' +
+        '<label for="co-name">Your name</label><input id="co-name" name="customer" required maxlength="80" autocomplete="name">' +
+        '<label for="co-phone">Phone number</label><input id="co-phone" name="phone" type="tel" required maxlength="30" autocomplete="tel" inputmode="tel">' +
+        '<p class="form-error" id="co-error" role="alert" hidden></p>' +
+        '<button class="button" type="submit">Preview my order <span aria-hidden="true">→</span></button>' +
+      "</form>";
+
+    $("#checkout").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var f = e.target, name = f.customer.value.trim(), phone = f.phone.value.trim(), err = $("#co-error");
+      if (!name || !phone) {
+        err.hidden = false;
+        err.textContent = "Please add your name and phone number.";
+        (name ? f.phone : f.customer).focus();
+        return;
+      }
+      showSummary(name, phone);
+    });
+  }
+
+  function showSummary(name, phone) {
+    var lines = ["BIKINI BOTTOMS UP — ORDER PREVIEW"].concat(orderLines(), [
+      "Subtotal: " + money(bagSubtotal()),
+      "Name: " + name,
+      "Phone: " + phone,
+      "Delivery / pickup: to be confirmed",
+      "PREVIEW ONLY — not paid."
+    ]);
+    var text = lines.join("\n");
+    var wa = whatsappLink(text);
+    $("#cartBottom").innerHTML =
+      '<div class="summary"><h3 tabindex="-1" id="summaryTitle">Your order preview</h3>' +
+      '<p class="small">This is a preview only. MMG online payment will be added once the store’s merchant account and a secure payment confirmation are set up. Your order has <strong>not</strong> been sent or paid.</p>' +
+      '<label for="summaryText" class="visually-hidden">Order summary</label><textarea id="summaryText" readonly rows="8"></textarea>' +
+      '<div class="summary-actions"><button type="button" class="button" id="copySummary">Copy summary</button>' +
+      (wa ? '<a class="button button-ghost" href="' + esc(wa) + '" target="_blank" rel="noopener">Send this order on WhatsApp</a>' : "") +
+      '<button type="button" class="btn-secondary" id="backToBag">Back to bag</button></div>' +
+      '<p class="small" id="copyStatus" role="status"></p></div>';
+    $("#summaryText").value = text;
+    $("#summaryTitle").focus();
+    $("#backToBag").addEventListener("click", renderCart);
+    $("#copySummary").addEventListener("click", function () {
+      var done = function () { $("#copyStatus").textContent = "Copied. Remember, this order has not been sent or paid."; };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
+      else fallback();
+      function fallback() { var t = $("#summaryText"); t.focus(); t.select(); $("#copyStatus").textContent = "Select the text above and copy it."; }
+    });
+  }
+
+  $("#cartItems").addEventListener("click", function (e) {
+    var q = e.target.closest("[data-qty]"), r = e.target.closest("[data-remove]");
+    if (!q && !r) return;
+    var n = Number((q || r).getAttribute(q ? "data-qty" : "data-remove"));
+    var item = bag[n];
+    if (!item) return;
+    var p = byId(item.id);
+    if (r) { bag.splice(n, 1); announce(p.name + " removed from your bag."); }
+    else {
+      item.qty = Math.min(maxQty(p), item.qty + Number(q.getAttribute("data-delta")));
+      if (item.qty <= 0) { bag.splice(n, 1); announce(p.name + " removed from your bag."); }
+    }
+    saveBag();
+    renderCart();
+    // keep keyboard focus in a sensible place after re-render
+    var same = q && $('[data-qty="' + n + '"][data-delta="' + q.getAttribute("data-delta") + '"]', cart);
+    (same && !same.disabled ? same : $("[data-close]", cart)).focus();
+  });
+  cart.addEventListener("click", function (e) { if (e.target.closest("[data-close]")) cart.close(); });
+  cart.addEventListener("close", onDialogClose);
+  $$("[data-open-bag]").forEach(function (b) {
+    b.addEventListener("click", function () { renderCart(); openDialog(cart); $("[data-close]", cart).focus(); });
+  });
+
+  // another tab or page changed the bag
+  window.addEventListener("storage", function (e) {
+    if (e.key !== BAG_KEY) return;
+    loadBag();
+    updateBagCount();
+    if (cart.open && !$("#summaryText")) renderCart();
+  });
+
+  /* ---------- mobile menu ---------- */
+  var toggle = $(".menu-toggle"), nav = $("#site-nav");
+  if (toggle && nav) {
+    var setMenu = function (open) {
+      toggle.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("menu-open", open);
+    };
+    toggle.addEventListener("click", function () { setMenu(toggle.getAttribute("aria-expanded") !== "true"); });
+    nav.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") { setMenu(false); toggle.focus(); }
+    });
+  }
+
+  /* ---------- WhatsApp links (only when a verified number is set in config.js) ---------- */
+  var waGeneral = whatsappLink("Hi Bikini Bottoms Up! I have a question.");
+  $$("[data-whatsapp]").forEach(function (a) {
+    if (!waGeneral) return;
+    a.href = waGeneral; a.target = "_blank"; a.rel = "noopener"; a.hidden = false;
+  });
+  $$("[data-whatsapp-wrap]").forEach(function (el) { el.hidden = !waGeneral; });
+
+  /* ---------- "Beyond the Beach" promo status on the swimwear page ---------- */
+  var status = $("[data-shop-status]");
+  if (status) {
+    var shopCount = productsFor("shop").length;
+    status.textContent = shopCount ? plural(shopCount, "piece") + " in store" : "Arriving soon";
+    status.hidden = false;
+  }
+
+  if (reduceMotion) document.documentElement.classList.add("reduce-motion");
+
+  loadBag();
+  saveBag(); // migrates any older bag to the shared key
+  renderProducts();
+})();

@@ -1,12 +1,150 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#087e84"><meta name="description" content="Bikini Bottoms Up — beachwear, good energy, and personal service."><title>Bikini Bottoms Up | Find your sunshine</title><link rel="stylesheet" href="style.css"></head>
-<body><div class="announcement">A little sunshine. A lot of confidence. <span>Beachwear in Guyana · Prices in GYD</span></div>
-<header><a class="wordmark" href="#" aria-label="Bikini Bottoms Up home">bikini bottoms <em>up.</em><small>GOOD VIBES. GREAT SWIM.</small></a><nav aria-label="Main navigation"><a href="#shop">The collection</a><a href="#story">Meet Sharayah</a><a href="#how">How to order</a></nav><button class="bag" id="openBag">Bag <span id="count">0</span></button></header>
-<main><section class="hero"><div class="hero-copy"><p class="eyebrow">SUNSHINE LOOKS GOOD ON YOU</p><h1>Your curves.<br>Your confidence.<br><em>Your summer.</em></h1><p>Beach days, poolside moments, and a little main-character energy. Find a look that feels like you.</p><a class="button" href="#shop">Find your beach fit <span>↗</span></a><div class="hero-note"><span class="sun">☀</span> When life gives you curves, flaunt them.</div></div><div class="hero-art"><img src="assets/banner.webp" alt="Playful aqua and yellow Bikini Bottoms Up banner"><span class="art-note">A splash of personality.<br>A whole lot of you.</span></div></section>
-<div class="ribbon" aria-hidden="true">SUN ON YOUR SKIN <span>✳</span> CONFIDENCE FROM WITHIN <span>✳</span> BIKINI BOTTOMS UP <span>✳</span> YOUR NEXT BEACH DAY <span>✳</span></div>
-<section class="collection" id="shop"><div class="section-top"><div><p class="eyebrow">THE BEACH-DAY LINEUP</p><h2>Meet your next favorite.</h2></div><p>A few looks to get you in a sunshine state of mind.</p></div><div class="filters" aria-label="Filter collection"><button class="active" data-filter="all">All beachwear</button><button data-filter="bikini">Bikinis</button><button data-filter="one">One-pieces</button><button data-filter="top">Swim tops</button><button data-filter="set">Tankini sets</button></div><p id="resultCount" class="size-note" aria-live="polite"></p><div class="products" id="products"></div><p class="catalog-note">Select a product image to see all photos. Swim tops are sold without bottoms. Missing prices and sizes are marked for confirmation; accessories pictured are styling props.</p></section>
-<section class="story" id="story"><div class="portrait"><img src="assets/sharayah.jpg" alt="Sharayah, the face behind Bikini Bottoms Up" loading="lazy"><span>Meet the face behind the sunshine.</span></div><div class="story-copy"><p class="eyebrow">A LITTLE ABOUT US</p><h2>Beachwear with<br>a personal touch.</h2><p>Hi, I’m Sharayah. Welcome to Bikini Bottoms Up — a little corner of sunshine for women who want to feel good in their swimwear.</p><p>Great customer service and reliability are at the heart of my business. From choosing your look to placing your order, I want you to feel taken care of.</p><a class="text-link" href="#shop">Find something you love ↗</a><span class="story-flower" aria-hidden="true">✳</span></div></section>
-<section class="how" id="how"><p class="eyebrow">LESS FUSS. MORE SUN.</p><h2>Your next beach day starts here.</h2><div class="steps"><article><span>01 /</span><h3>Pick your look</h3><p>Browse the collection, choose a size, and add your favorites to your bag.</p></article><article><span>02 /</span><h3>Choose how to order</h3><p>Preview an online order with MMG, or prepare a message for Sharayah.</p></article><article><span>03 /</span><h3>Get beach ready</h3><p>Final payment and delivery details will be added before the store launches.</p></article></div><p class="draft-note">CLIENT PREVIEW · Checkout is a demo. No orders or payments are sent.</p></section></main>
-<footer><a class="wordmark" href="#">bikini bottoms <em>up.</em></a><p>A little sunshine for every body.</p><a href="#shop">Back to the collection ↑</a></footer>
-<dialog id="cart"><div class="dialog-head"><div><p class="eyebrow">GOOD CHOICES, GREAT VIBES</p><h2>Your beach bag</h2></div><button class="close" id="closeBag" aria-label="Close bag">×</button></div><div id="cartItems"></div><div id="cartBottom"></div></dialog>
-<dialog id="gallery"><div class="dialog-head"><h2 id="galleryTitle"></h2><button class="close" id="closeGallery" aria-label="Close product photos">×</button></div><img id="galleryImage" alt=""><div class="gallery-nav"><button class="add" id="previousPhoto" aria-label="Previous photo">←</button><span id="galleryPosition" aria-live="polite"></span><button class="add" id="nextPhoto" aria-label="Next photo">→</button></div><div id="galleryThumbs"></div><p id="galleryDetails"></p><p class="small">Product reference photos. Confirm current stock before ordering.</p></dialog><script src="app.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#087e84">
+  <meta name="description" content="Bikini Bottoms Up — women's swimwear and beachwear in Guyana, with reliable service and a personal touch. Prices in GYD.">
+  <title>Bikini Bottoms Up | Swimwear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-collection="swim">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="announcement">
+    <p>A little sunshine. A lot of confidence. <span>Swimwear &amp; beachwear in Guyana · Prices in GYD</span></p>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="index.html" aria-label="Bikini Bottoms Up home">bikini bottoms <em>up.</em><small>Good vibes. Great swim.</small></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"></span><span class="menu-text">Menu</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="#shop" aria-current="page">Swimwear</a>
+        <a href="shop.html">Clothing &amp; Accessories</a>
+        <a href="#story">About us</a>
+        <a href="#how">How to order</a>
+      </nav>
+      <button class="bag-button" type="button" data-open-bag>
+        <span class="bag-label">Bag</span>
+        <span class="bag-count" data-bag-count>0</span>
+        <span class="visually-hidden" data-bag-count-text>, 0 items</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Sunshine looks good on you</p>
+        <h1 id="hero-title">Your curves.<br>Your confidence.<br><em>Your summer.</em></h1>
+        <p class="lede">Swimwear for beach days, poolside moments and a little main-character energy — chosen with care and backed by friendly, reliable service.</p>
+        <div class="hero-actions">
+          <a class="button" href="#shop">Shop swimwear <span aria-hidden="true">→</span></a>
+          <a class="button button-ghost" href="shop.html">Clothing &amp; Accessories</a>
+        </div>
+        <ul class="hero-points" aria-label="Why shop with us">
+          <li>Personal, reliable service</li>
+          <li>Prices in Guyanese dollars</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <img src="assets/banner.webp" width="1672" height="941" alt="Bikini Bottoms Up logo in bubbly yellow lettering on an aqua underwater background with flowers and bubbles">
+        <p class="art-note">A splash of personality.<br>A whole lot of you.</p>
+      </div>
+    </section>
+
+    <div class="ribbon" aria-hidden="true">
+      <span>Sun on your skin</span><i>✳</i><span>Confidence from within</span><i>✳</i><span>Bikini Bottoms Up</span><i>✳</i><span>Your next beach day</span>
+    </div>
+
+    <section class="collection" id="shop" aria-labelledby="shop-title">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow">The beach-day lineup</p>
+          <h2 id="shop-title">Swimwear</h2>
+        </div>
+        <p>Bikinis, one-pieces, swim tops and tankini sets. Tap a photo to see every angle.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter swimwear by category" data-filters></div>
+      <p class="result-count" aria-live="polite" data-result-count></p>
+      <div class="product-grid" data-products></div>
+      <div class="empty-state" data-empty hidden></div>
+
+      <p class="catalog-note">Swim tops are sold <strong>without</strong> bottoms. Prices or sizes marked “to be confirmed” can’t be added to the bag yet. Accessories in photos are styling props and are not for sale with the swimwear.</p>
+    </section>
+
+    <section class="promo" aria-labelledby="promo-title">
+      <div class="promo-inner">
+        <div class="promo-copy">
+          <p class="eyebrow">Beyond the Beach <span class="status-chip" data-shop-status hidden></span></p>
+          <h2 id="promo-title">From the sand<br><em>to the street.</em></h2>
+          <p>Our Clothing &amp; Accessories shop is where the wider Bikini Bottoms Up collection lives — pieces to wear long after you’ve dried off.</p>
+          <a class="button button-sun" href="shop.html">Explore Clothing &amp; Accessories <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="promo-art" aria-hidden="true">
+          <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
+          <span class="promo-word">Beyond<br>the Beach</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="story" aria-labelledby="story-title">
+      <div class="brand-mark" aria-hidden="true">
+        <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
+        <p class="brand-mark-word">bikini<br>bottoms<br><em>up.</em></p>
+        <p class="brand-mark-tag">Good vibes. Great swim.</p>
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow">About the brand</p>
+        <h2 id="story-title">Beachwear with a<br><em>personal touch.</em></h2>
+        <p>Bikini Bottoms Up is a little corner of sunshine in Guyana for women who want to feel good in their swimwear — with pieces for the beach, the pool and everywhere after.</p>
+        <ul class="values">
+          <li><strong>Reliable service.</strong> Count on us from your first message to your finished order.</li>
+          <li><strong>Real customer care.</strong> From choosing your look to placing your order, you’re taken care of.</li>
+          <li><strong>For every body.</strong> Swimwear first, plus clothing and the occasional piece for him.</li>
+        </ul>
+        <p class="contact-line" data-whatsapp-wrap hidden>Questions about fit or sizing? <a class="text-link" data-whatsapp href="#">Message us on WhatsApp</a></p>
+        <a class="text-link" href="#shop">Find something you love →</a>
+      </div>
+    </section>
+
+    <section class="how" id="how" aria-labelledby="how-title">
+      <p class="eyebrow">Less fuss. More sun.</p>
+      <h2 id="how-title">How to order</h2>
+      <ol class="steps">
+        <li><span class="step-num" aria-hidden="true">01</span><h3>Pick your look</h3><p>Browse the collection, check the size, and add your favourites to your bag. Your bag is shared between Swimwear and Clothing &amp; Accessories.</p></li>
+        <li><span class="step-num" aria-hidden="true">02</span><h3>Review your bag</h3><p>Change quantities and see your subtotal in GYD at any time.</p></li>
+        <li><span class="step-num" aria-hidden="true">03</span><h3>Place your order</h3><p>Online ordering with MMG is being set up. Until it’s live, checkout shows a preview of your order only.</p></li>
+      </ol>
+      <p class="draft-note">Client preview · Checkout is a demo. No orders or payments are sent.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="wordmark" href="index.html">bikini bottoms <em>up.</em></a>
+        <p>A little sunshine for every body.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#shop">Swimwear</a>
+        <a href="shop.html">Clothing &amp; Accessories</a>
+        <a href="#story">About us</a>
+        <a href="#how">How to order</a>
+        <a data-whatsapp href="#" hidden>WhatsApp</a>
+      </nav>
+      <p class="footer-small">Prices in Guyanese dollars (GYD). Client preview — checkout is a demo; no orders or payments are processed.</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="catalog.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
