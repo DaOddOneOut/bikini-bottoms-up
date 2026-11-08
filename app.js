@@ -22,10 +22,14 @@
   function money(n) { return "GYD " + Number(n).toLocaleString("en-US"); }
   function byId(id) { for (var i = 0; i < PRODUCTS.length; i++) if (PRODUCTS[i].id === id) return PRODUCTS[i]; return null; }
   function hasPrice(p) { return typeof p.price === "number" && isFinite(p.price) && p.price >= 0; }
-  function canBuy(p) { return hasPrice(p) && p.sizes && p.sizes.length > 0 && p.stock !== 0; }
+  // sizeless: true marks items that need no size choice (bags, wallets). Their bag entries use size "".
+  function needsSize(p) { return !p.sizeless; }
+  function sizeOk(p, s) { return needsSize(p) ? !!p.sizes && p.sizes.indexOf(s) !== -1 : s === ""; }
+  function canBuy(p) { return hasPrice(p) && (!needsSize(p) || (p.sizes && p.sizes.length > 0)) && p.stock !== 0; }
   function maxQty(p) { return typeof p.stock === "number" && p.stock > 0 ? Math.min(MAX_QTY, p.stock) : MAX_QTY; }
   function priceText(p) { return hasPrice(p) ? money(p.price) : "Price to be confirmed"; }
   function sizeText(p) {
+    if (!needsSize(p)) return p.pieces > 1 ? "Set of " + p.pieces + " pieces" : "One piece";
     if (!p.sizes || !p.sizes.length) return "Size to be confirmed";
     return (p.sizes.length > 1 ? "Sizes: " : "Size: ") + p.sizes.join(", ");
   }
@@ -65,7 +69,7 @@
     items.forEach(function (i) {
       if (!i || typeof i.id !== "string" || typeof i.size !== "string") return;
       var p = byId(i.id);
-      if (!p || !canBuy(p) || p.sizes.indexOf(i.size) === -1) return;
+      if (!p || !canBuy(p) || !sizeOk(p, i.size)) return;
       var qty = Math.floor(Number(i.qty));
       if (!(qty > 0)) return;
       var existing = out.filter(function (o) { return o.id === i.id && o.size === i.size; })[0];
@@ -97,14 +101,14 @@
   }
   function addToBag(id, size) {
     var p = byId(id);
-    if (!p || !canBuy(p) || p.sizes.indexOf(size) === -1) return false;
+    if (!p || !canBuy(p) || !sizeOk(p, size)) return false;
     var item = bag.filter(function (i) { return i.id === id && i.size === size; })[0];
     if (item) {
       if (item.qty >= maxQty(p)) { announce("You already have the maximum available of " + p.name + " in your bag."); return false; }
       item.qty += 1;
     } else bag.push({ id: id, size: size, qty: 1 });
     saveBag();
-    announce("Added " + p.name + ", size " + size + ", to your bag. " + plural(bagCount(), "item") + " in bag.");
+    announce("Added " + p.name + (size ? ", size " + size : "") + ", to your bag. " + plural(bagCount(), "item") + " in bag.");
     return true;
   }
 
@@ -123,6 +127,7 @@
         : '<p class="unavailable">' + reason + " — can’t be added to the bag yet.</p>";
     }
     var sid = "size-" + context + "-" + p.id;
+    if (!needsSize(p)) return '<input type="hidden" data-size-for="' + esc(p.id) + '" value=""><button type="button" class="btn-add" data-add="' + esc(p.id) + '">Add to bag<span class="visually-hidden">: ' + esc(p.name) + "</span></button>";
     var sizeField = p.sizes.length > 1
       ? '<label class="size-field"><span class="visually-hidden">Size for ' + esc(p.name) + '</span><select id="' + esc(sid) + '" data-size-for="' + esc(p.id) + '"><option value="">Size</option>' +
         p.sizes.map(function (s) { return '<option value="' + esc(s) + '">' + esc(s) + "</option>"; }).join("") + "</select></label>"
@@ -144,7 +149,7 @@
         (showBrand(p) ? '<p class="card-brand">' + esc(p.brand) + "</p>" : "") +
         "<h3>" + esc(p.name) + "</h3>" +
         '<p class="card-price' + (hasPrice(p) ? "" : " tbc") + '">' + esc(priceText(p)) + "</p>" +
-        '<p class="card-meta' + (p.sizes && p.sizes.length ? "" : " tbc") + '">' + esc(sizeText(p)) + (stock ? " · " + esc(stock) : "") + "</p>" +
+        '<p class="card-meta' + (!needsSize(p) || (p.sizes && p.sizes.length) ? "" : " tbc") + '">' + esc(sizeText(p)) + (stock ? " · " + esc(stock) : "") + "</p>" +
         (p.note ? '<p class="card-note">' + esc(p.note) + "</p>" : "") +
         '<div class="card-controls">' + controlsHtml(p, "card") + "</div>" +
       "</div></article>";
@@ -215,7 +220,8 @@
     var id = button.getAttribute("data-add");
     var field = $('[data-size-for="' + id + '"]', root);
     var size = field ? field.value : "";
-    if (!size) {
+    var prod = byId(id);
+    if (!size && prod && needsSize(prod)) {
       if (field && field.tagName === "SELECT") {
         field.setCustomValidity("Please choose a size.");
         field.reportValidity();
@@ -295,7 +301,7 @@
     var stock = stockText(p);
     $("#galleryDetails").innerHTML =
       '<p class="gallery-price' + (hasPrice(p) ? "" : " tbc") + '">' + esc(priceText(p)) + "</p>" +
-      '<p class="card-meta' + (p.sizes && p.sizes.length ? "" : " tbc") + '">' + esc(sizeText(p)) + (stock ? " · " + esc(stock) : "") + "</p>" +
+      '<p class="card-meta' + (!needsSize(p) || (p.sizes && p.sizes.length) ? "" : " tbc") + '">' + esc(sizeText(p)) + (stock ? " · " + esc(stock) : "") + "</p>" +
       ((p.brand || deptText(p)) ? '<p class="card-meta">' + [p.brand ? "Brand: " + esc(p.brand) : "", deptText(p)].filter(Boolean).join(" · ") + "</p>" : "") +
       (p.description ? '<p class="gallery-desc">' + esc(p.description) + "</p>" : "") +
       (p.includes && p.includes.length ? '<p class="card-meta"><strong>Includes:</strong> ' + esc(p.includes.join(", ")) + "</p>" : "") +
@@ -360,7 +366,7 @@
   function orderLines() {
     return bag.map(function (i) {
       var p = byId(i.id);
-      return p.name + " / Size " + i.size + " × " + i.qty + " — " + money(p.price * i.qty);
+      return p.name + (i.size ? " / Size " + i.size : "") + " × " + i.qty + " — " + money(p.price * i.qty);
     });
   }
 
@@ -377,7 +383,7 @@
       return '<li class="cart-row">' +
         '<img src="' + esc(p.images[0].src) + '" alt="" width="72" height="96">' +
         '<div class="cart-info"><h3>' + esc(p.name) + "</h3>" +
-          '<p class="small">Size ' + esc(i.size) + " · " + esc(money(p.price)) + " each" + (p.note ? "<br>" + esc(p.note) : "") + "</p>" +
+          '<p class="small">' + (i.size ? "Size " + esc(i.size) + " · " : "") + esc(money(p.price)) + " each" + (p.note ? "<br>" + esc(p.note) : "") + "</p>" +
           '<div class="quantity" role="group" aria-label="Quantity for ' + esc(p.name) + '">' +
             '<button type="button" data-qty="' + n + '" data-delta="-1" aria-label="Decrease quantity of ' + esc(p.name) + '">−</button>' +
             '<span aria-live="polite">' + i.qty + "</span>" +
