@@ -34,6 +34,8 @@
     if (typeof p.stock === "number") return p.stock + " in stock";
     return "";
   }
+  function showBrand(p) { return p.brand && p.name.toLowerCase().indexOf(p.brand.toLowerCase()) !== 0; }
+  function deptText(p) { return p.department === "Men" ? "Men’s" : p.department === "Women" ? "Women’s" : ""; }
   function plural(n, word) { return n + " " + word + (n === 1 ? "" : "s"); }
   function categoriesFor(collection) { return (CATALOG.categories && CATALOG.categories[collection]) || []; }
   function productsFor(collection) { return PRODUCTS.filter(function (p) { return p.collection === collection; }); }
@@ -139,6 +141,7 @@
         (n > 1 ? '<span class="card-count" aria-hidden="true">' + n + " photos</span>" : "") +
       "</button>" +
       '<div class="card-body">' +
+        (showBrand(p) ? '<p class="card-brand">' + esc(p.brand) + "</p>" : "") +
         "<h3>" + esc(p.name) + "</h3>" +
         '<p class="card-price' + (hasPrice(p) ? "" : " tbc") + '">' + esc(priceText(p)) + "</p>" +
         '<p class="card-meta' + (p.sizes && p.sizes.length ? "" : " tbc") + '">' + esc(sizeText(p)) + (stock ? " · " + esc(stock) : "") + "</p>" +
@@ -170,14 +173,14 @@
     var other = PAGE === "shop"
       ? '<a class="button" href="index.html#shop">Shop Swimwear <span aria-hidden="true">→</span></a>'
       : '<a class="button" href="shop.html">Clothing &amp; Accessories <span aria-hidden="true">→</span></a>';
-    var wa = whatsappLink("Hi Sharayah! I'd like to ask about your Clothing & Accessories collection.");
+    var wa = whatsappLink("Hi Bikini Bottoms Up! I'd like to ask about your Clothing & Accessories collection.");
     emptyEl.innerHTML =
       '<p class="eyebrow">' + (PAGE === "shop" ? "Arriving soon" : "Nothing here yet") + "</p>" +
       "<h3>" + (PAGE === "shop" ? "The Clothing &amp; Accessories collection is on its way." : "New swimwear is on its way.") + "</h3>" +
       "<p>" + (PAGE === "shop"
         ? "Tops, bottoms, dresses, footwear, bags and accessories will appear here as soon as they’re photographed and priced. In the meantime, the swimwear collection is ready to browse."
         : "Check back soon.") + "</p>" +
-      '<div class="empty-actions">' + other + (wa ? '<a class="button button-ghost" href="' + esc(wa) + '" target="_blank" rel="noopener">Ask Sharayah on WhatsApp</a>' : "") + "</div>";
+      '<div class="empty-actions">' + other + (wa ? '<a class="button button-ghost" href="' + esc(wa) + '" target="_blank" rel="noopener">Ask us on WhatsApp</a>' : "") + "</div>";
   }
 
   function renderProducts() {
@@ -293,10 +296,14 @@
     $("#galleryDetails").innerHTML =
       '<p class="gallery-price' + (hasPrice(p) ? "" : " tbc") + '">' + esc(priceText(p)) + "</p>" +
       '<p class="card-meta' + (p.sizes && p.sizes.length ? "" : " tbc") + '">' + esc(sizeText(p)) + (stock ? " · " + esc(stock) : "") + "</p>" +
-      (p.description ? "<p>" + esc(p.description) + "</p>" : "") +
+      ((p.brand || deptText(p)) ? '<p class="card-meta">' + [p.brand ? "Brand: " + esc(p.brand) : "", deptText(p)].filter(Boolean).join(" · ") + "</p>" : "") +
+      (p.description ? '<p class="gallery-desc">' + esc(p.description) + "</p>" : "") +
+      (p.includes && p.includes.length ? '<p class="card-meta"><strong>Includes:</strong> ' + esc(p.includes.join(", ")) + "</p>" : "") +
       (p.note ? '<p class="card-note">' + esc(p.note) + "</p>" : "") +
       '<div class="card-controls">' + controlsHtml(p, "gallery") + "</div>" +
-      '<p class="small">Product reference photos. Props shown for styling are not included. Current stock to be confirmed.</p>';
+      (p.illustrated
+        ? '<p class="small illus-note">These images are styled illustrations made from the original photo of this item. Small details may differ from the real piece. Props and styling pieces are not included. Current stock to be confirmed.</p>'
+        : '<p class="small">Product reference photos. Props shown for styling are not included. Current stock to be confirmed.</p>');
     // preload neighbours for smooth swiping
     [gIndex + 1, gIndex - 1].forEach(function (i) { var x = p.images[(i + n) % n]; if (x) (new Image()).src = x.src; });
   }
@@ -417,10 +424,10 @@
     var wa = whatsappLink(text);
     $("#cartBottom").innerHTML =
       '<div class="summary"><h3 tabindex="-1" id="summaryTitle">Your order preview</h3>' +
-      '<p class="small">This is a preview only. MMG online payment will be added once Sharayah’s merchant account and a secure payment confirmation are set up. Your order has <strong>not</strong> been sent or paid.</p>' +
+      '<p class="small">This is a preview only. MMG online payment will be added once the store’s merchant account and a secure payment confirmation are set up. Your order has <strong>not</strong> been sent or paid.</p>' +
       '<label for="summaryText" class="visually-hidden">Order summary</label><textarea id="summaryText" readonly rows="8"></textarea>' +
       '<div class="summary-actions"><button type="button" class="button" id="copySummary">Copy summary</button>' +
-      (wa ? '<a class="button button-ghost" href="' + esc(wa) + '" target="_blank" rel="noopener">Send to Sharayah on WhatsApp</a>' : "") +
+      (wa ? '<a class="button button-ghost" href="' + esc(wa) + '" target="_blank" rel="noopener">Send this order on WhatsApp</a>' : "") +
       '<button type="button" class="btn-secondary" id="backToBag">Back to bag</button></div>' +
       '<p class="small" id="copyStatus" role="status"></p></div>';
     $("#summaryText").value = text;
@@ -481,7 +488,7 @@
   }
 
   /* ---------- WhatsApp links (only when a verified number is set in config.js) ---------- */
-  var waGeneral = whatsappLink("Hi Sharayah! I have a question about Bikini Bottoms Up.");
+  var waGeneral = whatsappLink("Hi Bikini Bottoms Up! I have a question.");
   $$("[data-whatsapp]").forEach(function (a) {
     if (!waGeneral) return;
     a.href = waGeneral; a.target = "_blank"; a.rel = "noopener"; a.hidden = false;

@@ -2,7 +2,7 @@
   Bikini Bottoms Up — store settings. Safe to publish: never put passwords,
   API keys, or MMG merchant secrets in this file (it is visible to everyone).
 
-  whatsappNumber  Sharayah's verified business WhatsApp number, digits only,
+  whatsappNumber  The verified business WhatsApp number, digits only,
                   with country code and no "+", spaces or dashes.
                   Guyana example format: "592XXXXXXX". Leave "" until confirmed —
                   the "Message on WhatsApp" buttons stay hidden while it is empty.

@@ -120,6 +120,9 @@ h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); line-height
 .card-count { position: absolute; right: 10px; bottom: 10px; background: rgba(18, 61, 61, .82); color: var(--white); border-radius: 999px; padding: 4px 10px; font-size: 12px; }
 .card-body { display: flex; flex-direction: column; gap: 4px; padding: 16px 16px 18px; flex: 1; }
 .card-body h3 { font: 600 17px/1.3 var(--body); margin-bottom: 2px; }
+.card-brand { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal-deep); margin: 0; }
+.gallery-desc { font-size: 15px; margin: 4px 0; }
+.illus-note { border-left: 3px solid var(--sun); padding-left: 10px; }
 .card-price { font-weight: 700; margin: 0; }
 .card-meta { font-size: 14px; color: var(--muted); margin: 0; }
 .card-note { font-size: 13px; font-weight: 700; color: var(--alert); margin: 4px 0 0; }
@@ -163,9 +166,17 @@ h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); line-height
 
 /* ---------- story ---------- */
 .story { max-width: 1100px; margin: 0 auto; padding: clamp(56px, 8vw, 110px) var(--pad); display: grid; grid-template-columns: .85fr 1fr; gap: clamp(28px, 6vw, 80px); align-items: center; }
-.portrait { margin: 0; position: relative; }
-.portrait img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50% 50% var(--radius) var(--radius); box-shadow: var(--shadow); }
-.portrait figcaption { position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%); background: var(--yellow); padding: 8px 16px; border-radius: 999px; font: italic 400 15px/1.3 var(--display); white-space: nowrap; }
+.brand-mark { position: relative; aspect-ratio: 1; display: grid; place-content: center; text-align: center; background: var(--aqua); border-radius: 50% 50% var(--radius) var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.brand-mark .bubble { border-color: rgba(255, 255, 255, .8); }
+.brand-mark .b1 { top: 10%; right: 14%; }
+.brand-mark .b2 { bottom: 14%; left: 12%; top: auto; }
+.brand-mark .b3 { top: 26%; left: 20%; }
+.brand-mark-word { position: relative; margin: 0; font: 700 clamp(40px, 6vw, 64px)/.95 var(--body); letter-spacing: -.05em; color: var(--ink); }
+.brand-mark-word em { font-family: var(--display); font-weight: 600; color: var(--teal-deep); }
+.brand-mark-tag { position: relative; margin: 16px auto 0; background: var(--yellow); padding: 6px 14px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.values { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 12px; }
+.values li { background: var(--white); border-radius: var(--radius); padding: 14px 16px; color: var(--muted); border-left: 4px solid var(--teal); }
+.values strong { color: var(--ink); }
 .story h2 { margin-bottom: 20px; }
 .story-copy p { color: var(--muted); font-size: 17px; }
 
@@ -202,7 +213,7 @@ h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); line-height
 .close:hover { border-color: var(--teal); }
 
 .gallery { width: min(980px, calc(100vw - 24px)); }
-.gallery .sheet-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); grid-template-areas: "stage details" "pos details" "thumbs details"; gap: 10px 26px; align-items: start; }
+.gallery .sheet-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); grid-template-areas: "stage details" "pos details" "thumbs details"; grid-template-rows: max-content max-content max-content; align-content: start; gap: 10px 26px; align-items: start; }
 .gallery-stage { grid-area: stage; position: relative; background: var(--white); border-radius: var(--radius); overflow: hidden; touch-action: pan-y; user-select: none; }
 .gallery-stage img { width: 100%; height: min(62vh, 640px); height: min(62dvh, 640px); object-fit: contain; }
 .gallery-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .92); box-shadow: 0 4px 14px rgba(0, 0, 0, .15); font-size: 28px; line-height: 1; color: var(--ink); }
@@ -248,7 +259,7 @@ h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); line-height
   .promo-inner { grid-template-columns: 1fr; }
   .promo-art { min-height: 140px; }
   .steps { grid-template-columns: 1fr; max-width: 640px; }
-  .gallery .sheet-body { grid-template-columns: 1fr; grid-template-areas: "stage" "pos" "thumbs" "details"; }
+  .gallery .sheet-body { grid-template-columns: 1fr; grid-template-areas: "stage" "pos" "thumbs" "details"; grid-template-rows: repeat(4, max-content); }
   .gallery-stage img { height: min(52vh, 560px); height: min(52dvh, 560px); }
 }
 
@@ -267,7 +278,7 @@ h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); line-height
   .site-nav a { padding: 12px 14px; font-size: 16px; }
   .section-top { flex-direction: column; align-items: start; }
   .story { grid-template-columns: 1fr; }
-  .portrait { max-width: 380px; margin: 0 auto 20px; }
+  .brand-mark { max-width: 380px; width: 100%; margin: 0 auto 8px; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-nav { justify-content: flex-start; margin-left: -12px; }
 }
@@ -305,7 +316,6 @@ h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); line-height
   .cart-row { grid-template-columns: 60px 1fr; }
   .cart-row img { width: 60px; height: 80px; }
   .cart-line { grid-column: 2; }
-  .portrait figcaption { font-size: 13px; }
 }
 
 @media (max-width: 360px) {
