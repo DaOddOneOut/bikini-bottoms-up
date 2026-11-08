@@ -654,6 +654,58 @@ window.BBU_CATALOG = {
       description: "Sleeveless loose A-line above-knee mini dress, gathered high halter-style stand neckline, dense small colorful blue orange yellow green floral botanical print on dark background, subtle semi-sheer outer overlay with lining.", illustrated: true,
       images: [
         { src: "assets/shop/wa0146-flatlay.webp", alt: "Flat-lay illustration of the multicolor floral halter mini dress" },
-        { src: "assets/shop/wa0146-model.webp", alt: "Illustration of the multicolor floral halter mini dress on a model" }] }
+        { src: "assets/shop/wa0146-model.webp", alt: "Illustration of the multicolor floral halter mini dress on a model" }] },
+
+    /* ---------- Shoes & Footwear (added Nov 2026; no prices or sizes supplied yet) ---------- */
+    { id: "fw-heart-flip-flops", collection: "shop", category: "shoes", name: "Black heart-print flip-flops", tag: "Flip-flops", price: null, sizes: [], stock: null, brand: null, department: null,
+      description: "Black flip-flops with glossy black thong straps and a footbed printed with coral, teal and mustard hearts.", illustrated: true,
+      images: [
+        { src: "assets/shop/fw-heart-flip-flops-pair.webp", alt: "Pair of black heart-print flip-flops" },
+        { src: "assets/shop/fw-heart-flip-flops-on-foot.webp", alt: "Black heart-print flip-flops shown on feet" }] },
+    { id: "fw-tan-cross-strap-sandals", collection: "shop", category: "shoes", name: "Tan cross-strap sandals", tag: "Sandals", price: null, sizes: [], stock: null, brand: null, department: null,
+      description: "Tan open-toe sandals with a wide front band, crossed elastic straps, slingback heel strap, cork-look midsole and white ridged outsole.", illustrated: true,
+      images: [
+        { src: "assets/shop/fw-tan-cross-strap-sandals-pair.webp", alt: "Pair of tan cross-strap sandals" },
+        { src: "assets/shop/fw-tan-cross-strap-sandals-on-foot.webp", alt: "Tan cross-strap sandals shown on feet" }] },
+    { id: "fw-black-platform-slides", collection: "shop", category: "shoes", name: "Black platform slides", tag: "Slides", price: null, sizes: [], stock: null, brand: null, department: null,
+      description: "Black slides with one wide matte upper band and a chunky curved platform sole.", illustrated: true,
+      images: [
+        { src: "assets/shop/fw-black-platform-slides-pair.webp", alt: "Pair of black platform slides" },
+        { src: "assets/shop/fw-black-platform-slides-on-foot.webp", alt: "Black platform slides shown on feet" }] },
+    { id: "fw-pink-stripe-paisley-flip-flops", collection: "shop", category: "shoes", name: "Pink stripe & paisley flip-flops", tag: "Flip-flops", price: null, sizes: [], stock: null, brand: null, department: null,
+      description: "Black flip-flops with glossy black thong straps; footbed printed with hot-pink stripes and yellow, orange and green paisley florals.", illustrated: true,
+      images: [
+        { src: "assets/shop/fw-pink-stripe-paisley-flip-flops-pair.webp", alt: "Pair of pink stripe and paisley flip-flops" },
+        { src: "assets/shop/fw-pink-stripe-paisley-flip-flops-on-foot.webp", alt: "Pink stripe and paisley flip-flops shown on feet" }] },
+    { id: "fw-rhinestone-slingback-sandals", collection: "shop", category: "shoes", name: "Black rhinestone slingback sandals", tag: "Sandals", price: null, sizes: [], stock: null, brand: null, department: null,
+      description: "Flat black sandals with a wide rhinestone-studded front band, rhinestone-trimmed footbed edge and slim glossy black slingback strap.", illustrated: true,
+      images: [
+        { src: "assets/shop/fw-rhinestone-slingback-sandals-pair.webp", alt: "Pair of black rhinestone slingback sandals" },
+        { src: "assets/shop/fw-rhinestone-slingback-sandals-on-foot.webp", alt: "Black rhinestone slingback sandals shown on feet" }] },
+    { id: "fw-blue-speckle-flip-flops", collection: "shop", category: "shoes", name: "Blue speckle fade flip-flops", tag: "Flip-flops", price: null, sizes: [], stock: null, brand: null, department: null,
+      description: "Flip-flops with black thong straps; footbed fades from blue and white speckles at the heel to solid black at the toe.", illustrated: true,
+      images: [
+        { src: "assets/shop/fw-blue-speckle-flip-flops-pair.webp", alt: "Pair of blue speckle fade flip-flops" },
+        { src: "assets/shop/fw-blue-speckle-flip-flops-on-foot.webp", alt: "Blue speckle fade flip-flops shown on feet" }] },
+    { id: "fw-light-blue-platform-slides", collection: "shop", category: "shoes", name: "Light blue platform slides", tag: "Slides", price: null, sizes: [], stock: null, brand: null, department: null,
+      description: "Light blue one-piece slides with a wide rounded upper and a thick cushioned platform sole.", illustrated: true,
+      images: [
+        { src: "assets/shop/fw-light-blue-platform-slides-pair.webp", alt: "Pair of light blue platform slides" },
+        { src: "assets/shop/fw-light-blue-platform-slides-on-foot.webp", alt: "Light blue platform slides shown on feet" }] },
+    { id: "fw-pink-platform-slides", collection: "shop", category: "shoes", name: "Pink platform slides", tag: "Slides", price: null, sizes: [], stock: null, brand: null, department: null,
+      description: "Bubblegum pink one-piece slides with a wide upper, contoured footbed and chunky curved platform sole.", illustrated: true,
+      images: [
+        { src: "assets/shop/fw-pink-platform-slides-pair.webp", alt: "Pair of pink platform slides" },
+        { src: "assets/shop/fw-pink-platform-slides-on-foot.webp", alt: "Pink platform slides shown on feet" }] },
+    { id: "fw-retro-print-flip-flops", collection: "shop", category: "shoes", name: "Retro print flip-flops", tag: "Flip-flops", price: null, sizes: [], stock: null, brand: null, department: null,
+      description: "Black flip-flops with glossy black thong straps; footbed printed with a retro pink, lime and butter-yellow pattern of stripes, waves and teardrops.", illustrated: true,
+      images: [
+        { src: "assets/shop/fw-retro-print-flip-flops-pair.webp", alt: "Pair of retro print flip-flops" },
+        { src: "assets/shop/fw-retro-print-flip-flops-on-foot.webp", alt: "Retro print flip-flops shown on feet" }] },
+    { id: "fw-denim-cut-out-slides", collection: "shop", category: "shoes", name: "Denim cut-out slides", tag: "Slides", price: null, sizes: [], stock: null, brand: null, department: null,
+      description: "Flat slides with a dark denim cut-out upper band with frayed edges, on a tan footbed with white contrast stitching.", illustrated: true,
+      images: [
+        { src: "assets/shop/fw-denim-cut-out-slides-pair.webp", alt: "Pair of denim cut-out slides" },
+        { src: "assets/shop/fw-denim-cut-out-slides-on-foot.webp", alt: "Denim cut-out slides shown on feet" }] }
   ]
 };

@@ -7,7 +7,7 @@ A mobile-friendly boutique storefront for Bikini Bottoms Up. The owner prefers t
 | Page | What it shows |
 | --- | --- |
 | `index.html` | **Swimwear** — bikinis, one-pieces, swim tops, tankini sets. Also has the "Beyond the Beach" promo, About the brand and How to order. |
-| `shop.html` | **Clothing & Accessories** ("Beyond the Beach") — 101 pieces: Tops (11), Bottoms (20), Dresses & Sets (58), Sleepwear & Underwear (12). Shoes & Footwear, Bags and Accessories appear automatically once products are added; an empty shop shows a labelled "arriving soon" message. |
+| `shop.html` | **Clothing & Accessories** ("Beyond the Beach") — 111 pieces: Tops (11), Bottoms (20), Dresses & Sets (58), Sleepwear & Underwear (12), Shoes & Footwear (10). Bags and Accessories appear automatically once products are added; an empty shop shows a labelled "arriving soon" message. |
 
 Both pages share the header, footer, product gallery and **one shopping bag** (saved in the browser, so it follows customers between pages and tabs).
 
@@ -69,7 +69,7 @@ Then set `checkoutMode` and wire the checkout button to the backend.
 - Verified business WhatsApp number.
 - Delivery and pickup areas and fees, plus return/exchange terms.
 - MMG merchant account details (see above).
-- Clothing & Accessories: go through `CLOTHING_REVIEW.csv` — currency (none of the listings state it), stock and condition, the 6 items with no price and 8 with no size, unusual sizes kept exactly as written (0XL, LX), brand spellings, and whether each AI illustration matches the real item.
+- Clothing & Accessories: go through `CLOTHING_REVIEW.csv` — currency (none of the listings state it), stock and condition, the 6 clothing items with no price and 8 with no size, all 10 footwear items (no price, size or brand supplied yet; the size numbers printed inside some photographed slides are not treated as the available sizes), unusual sizes kept exactly as written (0XL, LX), brand spellings, and whether each AI illustration matches the real item.
 
 ## Notes
 
