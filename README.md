@@ -1,39 +1,68 @@
-# Bikini Bottoms Up — client first draft
+# Bikini Bottoms Up — storefront (client preview)
 
-A simple, mobile-friendly beachwear storefront. Plain HTML, CSS, and JavaScript. No install, build, API keys, or paid services required.
+A mobile-friendly boutique storefront for Bikini Bottoms Up, owned by Sharayah. Plain HTML, CSS and JavaScript — no build step, framework, API keys or paid services. Hosted on GitHub Pages at `/bikini-bottoms-up/`.
 
-## Show it on GitHub Pages
+## Pages
 
-1. Create a GitHub repository, such as `bikini-bottoms-up`.
-2. Upload the contents of this folder (index.html, style.css, app.js, assets, and .nojekyll) to the repository root. Upload the assets folder too.
-3. In the repository, open Settings → Pages.
-4. Under Build and deployment, choose Deploy from a branch.
-5. Select `main`, folder `/ (root)`, and Save.
-6. When GitHub finishes publishing, use the URL shown in Pages to share the draft with the client.
+| Page | What it shows |
+| --- | --- |
+| `index.html` | **Swimwear** — bikinis, one-pieces, swim tops, tankini sets. Also has the "Beyond the Beach" promo, Meet Sharayah and How to order. |
+| `shop.html` | **Clothing & Accessories** ("Beyond the Beach") — Tops, Bottoms, Dresses & Sets, Shoes & Footwear, Bags, Accessories. Only categories with products are shown; until products are added it shows a clearly labelled "arriving soon" message. |
 
-The site uses relative asset paths, so it works on a GitHub Pages project URL. Public GitHub Pages sites are visible to anyone with the link.
+Both pages share the header, footer, product gallery and **one shopping bag** (saved in the browser, so it follows customers between pages and tabs).
 
-## Open locally
+## Files
 
-Open index.html in a browser. For a local web server, run `python3 -m http.server 8000` in this folder, then visit http://localhost:8000.
+| File | Purpose |
+| --- | --- |
+| `catalog.js` | **The only product list.** Edit products here. Instructions are at the top of the file. |
+| `config.js` | Store settings: WhatsApp number (empty until verified) and checkout mode (`demo`). Public — never put secrets here. |
+| `app.js` | Shared logic: product grid, filters, gallery, bag, demo checkout, mobile menu. |
+| `style.css` | Shared styles. |
+| `assets/` | Photos, banner, portrait and favicon. Put clothing photos in `assets/shop/<category>/`. |
 
-## Updated collection
+`catalog.json` and the copy of the products embedded in `app.js` have been replaced by `catalog.js`, so there is nothing to keep in sync.
 
-26 styles, organized into Bikinis (11), One-pieces (10), Swim tops (4), and Tankini sets (1). Includes 43 new photos, with matching flat lays and model views grouped in galleries. The duplicate polka-dot photos are grouped into one product listing.
+## Adding a product
 
-Old screenshot product crops have been removed. The original brand banner and owner portrait remain.
+1. Upload photos (WebP or JPG, about 1000 × 1333 px, portrait 3:4) to `assets/…`. Use lowercase filenames with dashes, and match the case exactly in `catalog.js`.
+2. Copy an existing product in `catalog.js` and fill in `id`, `collection` (`swim` or `shop`), `category`, `name`, `tag`, `price`, `sizes` and `images` (each image needs a short `alt` description).
+3. Leave any unknown value as `null` (or `[]` for sizes). The site shows "to be confirmed" and blocks that item from the bag.
+4. Photo order: clothing — product-only shot first, then model views. Footwear — the pair first, then on-foot and detail views. Bags and accessories — a clear product photo first, then details. Props in a photo are not products unless they are listed separately.
+5. For tops sold without bottoms, add `note: "Top only — bottoms shown for styling are not included."`
+6. `stock` is optional: a number limits how many can be added to the bag, and `0` shows "Sold out".
 
-Sizes and prices are taken only from the supplied references when a match is clear. Missing details show “to be confirmed,” and those products cannot be added to the sample checkout. 2XL and XXL are treated as the same size. Swim tops explicitly exclude bottoms. Accessories are photo props.
+## Run locally
 
-PRODUCT_CATALOG.csv provides an editable overview. catalog.json provides a structured copy of the product data; the storefront reads the matching embedded array at the top of app.js, so it also opens locally without a server. Update both when changing products.
+Open `index.html` directly, or run `python3 -m http.server 8000` in this folder and visit http://localhost:8000.
 
-## Before launch
+## Checkout and payments
 
-Confirm stock, missing sizes and prices, business WhatsApp number, delivery/pickup fees and areas, return/exchange terms, and MMG merchant details. Product names are descriptive draft names for review. Review supplied catalog imagery against actual stock before selling.
+The checkout is a **demo**. It previews an order summary the customer can copy, and no order or payment is sent. If a WhatsApp number is set in `config.js`, the summary can also be sent to Sharayah as a WhatsApp message (still not a payment).
 
-The MMG step and message summary are demos. No payments, orders, or messages are sent. Real automated payment confirmation requires a supported payment service and secure backend; this static draft does not provide one.
+### Connecting real MMG payments (not done yet)
 
-All product photos are in assets, grouped by category. Upload that entire folder alongside index.html, style.css, app.js, and .nojekyll to the GitHub repository root.
+MMG offers an e-commerce Checkout API for registered merchants. The customer is redirected to MMG's hosted payment page, and MMG then sends a payment notification (callback) to the store. Before building this:
 
-## Device support
-Responsive phone, tablet, and desktop layouts. Use current Chrome, Edge, Firefox, or Safari on desktop. Recommended: Chrome on Android phones/tablets; Safari on iPhone/iPad. Open the published GitHub Pages link in the browser app, not a file preview inside a messaging app. This is a website, not a native mobile app. Physical-device and all-browser testing has not been performed.
+- **Merchant account and API credentials** from MMG Merchant Services. Request MMG's official developer documentation and a test (sandbox) environment.
+- **A small secure backend** (for example a serverless function) that keeps the MMG credentials secret, creates the checkout request with the correct server-side prices, and receives MMG's callback. GitHub Pages can't do this on its own.
+- **Order storage** (for example a sheet, database or email to Sharayah) recording each order and its payment status.
+- **Paid only on MMG's confirmation.** An order counts as paid only when MMG's verified callback or status check confirms it — never because a customer clicked a button or sent a screenshot.
+
+Then set `checkoutMode` and wire the checkout button to the backend.
+
+## Before launch — information needed from Sharayah
+
+- Prices and sizes marked "to be confirmed" (10 swim styles have no price and 11 have no size; 16 of 27 can be added to the bag today).
+- Current stock for each item.
+- Verified business WhatsApp number.
+- Delivery and pickup areas and fees, plus return/exchange terms.
+- MMG merchant account details (see above).
+- Clothing & Accessories products: photos, names, prices, sizes and stock.
+
+## Notes
+
+- Removed `polka-5.webp`, an exact duplicate of `polka-2.webp`.
+- The swimwear collection has 27 styles: Bikinis 11, One-pieces 11, Swim tops 4, Tankini sets 1.
+- Fonts load from Google Fonts. If they can't load, the site falls back to system fonts.
+- Tested in headless Chrome at 360, 390, 768, 1024 and 1440 px wide. Not yet tested on physical phones or in Safari.
