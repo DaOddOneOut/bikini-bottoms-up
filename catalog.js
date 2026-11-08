@@ -20,6 +20,8 @@
     department  optional "Women" / "Men"; null if not stated
     includes    optional list of pieces included (for sets)
     illustrated true when photos are AI-generated illustrations of the real item
+    sizeless    true for items with no size choice (bags, wallets); they can be ordered once priced
+    pieces      number of pieces included (for sets)
     note        optional important note shown with the product (e.g. what is NOT included)
     images      first image is the main card photo. Each: { src, alt }
                 Clothing: product-only shot first, then model views.
@@ -658,54 +660,101 @@ window.BBU_CATALOG = {
 
     /* ---------- Shoes & Footwear (added Nov 2026; no prices or sizes supplied yet) ---------- */
     { id: "fw-heart-flip-flops", collection: "shop", category: "shoes", name: "Black heart-print flip-flops", tag: "Flip-flops", price: null, sizes: [], stock: null, brand: null, department: null,
-      description: "Black flip-flops with glossy black thong straps and a footbed printed with coral, teal and mustard hearts.", illustrated: true,
+      description: "Black flip-flops with glossy black thong straps and a footbed printed with coral, teal and mustard hearts.", illustrated: false,
       images: [
         { src: "assets/shop/fw-heart-flip-flops-pair.webp", alt: "Pair of black heart-print flip-flops" },
         { src: "assets/shop/fw-heart-flip-flops-on-foot.webp", alt: "Black heart-print flip-flops shown on feet" }] },
     { id: "fw-tan-cross-strap-sandals", collection: "shop", category: "shoes", name: "Tan cross-strap sandals", tag: "Sandals", price: null, sizes: [], stock: null, brand: null, department: null,
-      description: "Tan open-toe sandals with a wide front band, crossed elastic straps, slingback heel strap, cork-look midsole and white ridged outsole.", illustrated: true,
+      description: "Tan open-toe sandals with a wide front band, crossed elastic straps, slingback heel strap, cork-look midsole and white ridged outsole.", illustrated: false,
       images: [
         { src: "assets/shop/fw-tan-cross-strap-sandals-pair.webp", alt: "Pair of tan cross-strap sandals" },
         { src: "assets/shop/fw-tan-cross-strap-sandals-on-foot.webp", alt: "Tan cross-strap sandals shown on feet" }] },
     { id: "fw-black-platform-slides", collection: "shop", category: "shoes", name: "Black platform slides", tag: "Slides", price: null, sizes: [], stock: null, brand: null, department: null,
-      description: "Black slides with one wide matte upper band and a chunky curved platform sole.", illustrated: true,
+      description: "Black slides with one wide matte upper band and a chunky curved platform sole.", illustrated: false,
       images: [
         { src: "assets/shop/fw-black-platform-slides-pair.webp", alt: "Pair of black platform slides" },
         { src: "assets/shop/fw-black-platform-slides-on-foot.webp", alt: "Black platform slides shown on feet" }] },
     { id: "fw-pink-stripe-paisley-flip-flops", collection: "shop", category: "shoes", name: "Pink stripe & paisley flip-flops", tag: "Flip-flops", price: null, sizes: [], stock: null, brand: null, department: null,
-      description: "Black flip-flops with glossy black thong straps; footbed printed with hot-pink stripes and yellow, orange and green paisley florals.", illustrated: true,
+      description: "Black flip-flops with glossy black thong straps; footbed printed with hot-pink stripes and yellow, orange and green paisley florals.", illustrated: false,
       images: [
         { src: "assets/shop/fw-pink-stripe-paisley-flip-flops-pair.webp", alt: "Pair of pink stripe and paisley flip-flops" },
         { src: "assets/shop/fw-pink-stripe-paisley-flip-flops-on-foot.webp", alt: "Pink stripe and paisley flip-flops shown on feet" }] },
     { id: "fw-rhinestone-slingback-sandals", collection: "shop", category: "shoes", name: "Black rhinestone slingback sandals", tag: "Sandals", price: null, sizes: [], stock: null, brand: null, department: null,
-      description: "Flat black sandals with a wide rhinestone-studded front band, rhinestone-trimmed footbed edge and slim glossy black slingback strap.", illustrated: true,
+      description: "Flat black sandals with a wide rhinestone-studded front band, rhinestone-trimmed footbed edge and slim glossy black slingback strap.", illustrated: false,
       images: [
         { src: "assets/shop/fw-rhinestone-slingback-sandals-pair.webp", alt: "Pair of black rhinestone slingback sandals" },
         { src: "assets/shop/fw-rhinestone-slingback-sandals-on-foot.webp", alt: "Black rhinestone slingback sandals shown on feet" }] },
     { id: "fw-blue-speckle-flip-flops", collection: "shop", category: "shoes", name: "Blue speckle fade flip-flops", tag: "Flip-flops", price: null, sizes: [], stock: null, brand: null, department: null,
-      description: "Flip-flops with black thong straps; footbed fades from blue and white speckles at the heel to solid black at the toe.", illustrated: true,
+      description: "Flip-flops with black thong straps; footbed fades from blue and white speckles at the heel to solid black at the toe.", illustrated: false,
       images: [
         { src: "assets/shop/fw-blue-speckle-flip-flops-pair.webp", alt: "Pair of blue speckle fade flip-flops" },
         { src: "assets/shop/fw-blue-speckle-flip-flops-on-foot.webp", alt: "Blue speckle fade flip-flops shown on feet" }] },
     { id: "fw-light-blue-platform-slides", collection: "shop", category: "shoes", name: "Light blue platform slides", tag: "Slides", price: null, sizes: [], stock: null, brand: null, department: null,
-      description: "Light blue one-piece slides with a wide rounded upper and a thick cushioned platform sole.", illustrated: true,
+      description: "Light blue one-piece slides with a wide rounded upper and a thick cushioned platform sole.", illustrated: false,
       images: [
         { src: "assets/shop/fw-light-blue-platform-slides-pair.webp", alt: "Pair of light blue platform slides" },
         { src: "assets/shop/fw-light-blue-platform-slides-on-foot.webp", alt: "Light blue platform slides shown on feet" }] },
     { id: "fw-pink-platform-slides", collection: "shop", category: "shoes", name: "Pink platform slides", tag: "Slides", price: null, sizes: [], stock: null, brand: null, department: null,
-      description: "Bubblegum pink one-piece slides with a wide upper, contoured footbed and chunky curved platform sole.", illustrated: true,
+      description: "Bubblegum pink one-piece slides with a wide upper, contoured footbed and chunky curved platform sole.", illustrated: false,
       images: [
         { src: "assets/shop/fw-pink-platform-slides-pair.webp", alt: "Pair of pink platform slides" },
         { src: "assets/shop/fw-pink-platform-slides-on-foot.webp", alt: "Pink platform slides shown on feet" }] },
     { id: "fw-retro-print-flip-flops", collection: "shop", category: "shoes", name: "Retro print flip-flops", tag: "Flip-flops", price: null, sizes: [], stock: null, brand: null, department: null,
-      description: "Black flip-flops with glossy black thong straps; footbed printed with a retro pink, lime and butter-yellow pattern of stripes, waves and teardrops.", illustrated: true,
+      description: "Black flip-flops with glossy black thong straps; footbed printed with a retro pink, lime and butter-yellow pattern of stripes, waves and teardrops.", illustrated: false,
       images: [
         { src: "assets/shop/fw-retro-print-flip-flops-pair.webp", alt: "Pair of retro print flip-flops" },
         { src: "assets/shop/fw-retro-print-flip-flops-on-foot.webp", alt: "Retro print flip-flops shown on feet" }] },
     { id: "fw-denim-cut-out-slides", collection: "shop", category: "shoes", name: "Denim cut-out slides", tag: "Slides", price: null, sizes: [], stock: null, brand: null, department: null,
-      description: "Flat slides with a dark denim cut-out upper band with frayed edges, on a tan footbed with white contrast stitching.", illustrated: true,
+      description: "Flat slides with a dark denim cut-out upper band with frayed edges, on a tan footbed with white contrast stitching.", illustrated: false,
       images: [
         { src: "assets/shop/fw-denim-cut-out-slides-pair.webp", alt: "Pair of denim cut-out slides" },
-        { src: "assets/shop/fw-denim-cut-out-slides-on-foot.webp", alt: "Denim cut-out slides shown on feet" }] }
+        { src: "assets/shop/fw-denim-cut-out-slides-on-foot.webp", alt: "Denim cut-out slides shown on feet" }] },
+
+    /* ---------- Bags (batch 12, Nov 2026). AI illustrations from listing photos; sizeless: no size choice needed ---------- */
+    { id: "BAG-29537", collection: "shop", category: "bags", name: "Forest Green Top-Handle Satchel", tag: "Bag", price: 2500, sizes: [], sizeless: true, pieces: 1, stock: null, brand: null, department: "Women",
+      description: "Curved flap, silver oval clasp, two vertical front zipper accents, top handle and detachable long strap.", illustrated: true,
+      images: [
+        { src: "assets/shop/bag-29537-product.webp", alt: "Illustration of the forest green top-handle satchel" },
+        { src: "assets/shop/bag-29537-carried.webp", alt: "Illustration of the forest green top-handle satchel carried by a model" }] },
+    { id: "BAG-29535", collection: "shop", category: "bags", name: "b.o.c. Contrast-Stitch Wallet", tag: "Wallet", price: 2000, sizes: [], sizeless: true, pieces: 1, stock: null, brand: "b.o.c.", department: "Women",
+      description: "Long flap wallet with ivory contrast stitching, antique brass brand plaque and buckle detail. No carrying strap.", illustrated: true,
+      images: [
+        { src: "assets/shop/bag-29535-product.webp", alt: "Illustration of the b.o.c. Contrast-Stitch Wallet" },
+        { src: "assets/shop/bag-29535-carried.webp", alt: "Illustration of the b.o.c. Contrast-Stitch Wallet carried by a model" }] },
+    { id: "BAG-29529", collection: "shop", category: "bags", name: "Cognac Top-Handle Satchel", tag: "Bag", price: 2500, sizes: [], sizeless: true, pieces: 1, stock: null, brand: null, department: "Women",
+      description: "Curved flap, silver oval clasp, two vertical front zipper accents, top handle and detachable long strap.", illustrated: true,
+      images: [
+        { src: "assets/shop/bag-29529-product.webp", alt: "Illustration of the cognac top-handle satchel" },
+        { src: "assets/shop/bag-29529-carried.webp", alt: "Illustration of the cognac top-handle satchel carried by a model" }] },
+    { id: "BAG-29707", collection: "shop", category: "bags", name: "Montana West Two-Piece Tote Set \u2014 Taupe", tag: "Bag set", price: 9000, sizes: [], sizeless: true, pieces: 2, stock: null, brand: "Montana West", department: "Women",
+      description: "Large and smaller matching totes, long buckle-attached handles, gold brand lettering and ring charm.", note: "Includes all 2 pieces shown in the product photo. Model and clothing are for styling only.", illustrated: true,
+      images: [
+        { src: "assets/shop/bag-29707-product.webp", alt: "Illustration of the Montana West Two-Piece Tote Set \u2014 Taupe" },
+        { src: "assets/shop/bag-29707-carried.webp", alt: "Illustration of the Montana West Two-Piece Tote Set \u2014 Taupe carried by a model" }] },
+    { id: "BAG-29701", collection: "shop", category: "bags", name: "Montana West Four-Piece Bag Set", tag: "Bag set", price: 12000, sizes: [], sizeless: true, pieces: 4, stock: null, brand: "Montana West", department: "Women",
+      description: "Large tote, zip shoulder bag with wide logo strap, rectangular zip wallet and kisslock chain clutch.", note: "Includes all 4 pieces shown in the product photo. Model and clothing are for styling only.", illustrated: true,
+      images: [
+        { src: "assets/shop/bag-29701-product.webp", alt: "Illustration of the Montana West Four-Piece Bag Set" },
+        { src: "assets/shop/bag-29701-carried.webp", alt: "Illustration of the Montana West Four-Piece Bag Set carried by a model" }] },
+    { id: "BAG-29699", collection: "shop", category: "bags", name: "Montana West Two-Piece Tote Set \u2014 Brick red", tag: "Bag set", price: 9000, sizes: [], sizeless: true, pieces: 2, stock: null, brand: "Montana West", department: "Women",
+      description: "Large and smaller matching totes, long buckle-attached handles, gold brand lettering and ring charm.", note: "Includes all 2 pieces shown in the product photo. Model and clothing are for styling only.", illustrated: true,
+      images: [
+        { src: "assets/shop/bag-29699-product.webp", alt: "Illustration of the Montana West Two-Piece Tote Set \u2014 Brick red" },
+        { src: "assets/shop/bag-29699-carried.webp", alt: "Illustration of the Montana West Two-Piece Tote Set \u2014 Brick red carried by a model" }] },
+    { id: "BAG-29689", collection: "shop", category: "bags", name: "Montana West Two-Piece Tote Set \u2014 Dark gray", tag: "Bag set", price: 9000, sizes: [], sizeless: true, pieces: 2, stock: null, brand: "Montana West", department: "Women",
+      description: "Large and smaller matching totes, long buckle-attached handles, gold brand lettering and ring charm.", note: "Includes all 2 pieces shown in the product photo. Model and clothing are for styling only.", illustrated: true,
+      images: [
+        { src: "assets/shop/bag-29689-product.webp", alt: "Illustration of the Montana West Two-Piece Tote Set \u2014 Dark gray" },
+        { src: "assets/shop/bag-29689-carried.webp", alt: "Illustration of the Montana West Two-Piece Tote Set \u2014 Dark gray carried by a model" }] },
+    { id: "BAG-29684", collection: "shop", category: "bags", name: "Montana West Two-Piece Tote Set \u2014 Plum brown", tag: "Bag set", price: 9000, sizes: [], sizeless: true, pieces: 2, stock: null, brand: "Montana West", department: "Women",
+      description: "Large and smaller matching totes, long buckle-attached handles, gold brand lettering and ring charm.", note: "Includes all 2 pieces shown in the product photo. Model and clothing are for styling only.", illustrated: true,
+      images: [
+        { src: "assets/shop/bag-29684-product.webp", alt: "Illustration of the Montana West Two-Piece Tote Set \u2014 Plum brown" },
+        { src: "assets/shop/bag-29684-carried.webp", alt: "Illustration of the Montana West Two-Piece Tote Set \u2014 Plum brown carried by a model" }] },
+    { id: "BAG-29702", collection: "shop", category: "bags", name: "Round Clock-Face Crossbody Bag", tag: "Bag", price: 3000, sizes: [], sizeless: true, pieces: 1, stock: null, brand: null, department: "Women",
+      description: "Circular bag with arched top handle, long detachable strap, gold zipper and ornate cream Roman-numeral clock-face front. Decorative clock motif; functionality unverified.", illustrated: true,
+      images: [
+        { src: "assets/shop/bag-29702-product.webp", alt: "Illustration of the round clock-face crossbody bag" },
+        { src: "assets/shop/bag-29702-carried.webp", alt: "Illustration of the round clock-face crossbody bag carried by a model" }] }
   ]
 };

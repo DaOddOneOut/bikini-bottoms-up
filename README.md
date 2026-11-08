@@ -7,7 +7,7 @@ A mobile-friendly boutique storefront for Bikini Bottoms Up. The owner prefers t
 | Page | What it shows |
 | --- | --- |
 | `index.html` | **Swimwear** — bikinis, one-pieces, swim tops, tankini sets. Also has the "Beyond the Beach" promo, About the brand and How to order. |
-| `shop.html` | **Clothing & Accessories** ("Beyond the Beach") — 111 pieces: Tops (11), Bottoms (20), Dresses & Sets (58), Sleepwear & Underwear (12), Shoes & Footwear (10). Bags and Accessories appear automatically once products are added; an empty shop shows a labelled "arriving soon" message. |
+| `shop.html` | **Clothing & Accessories** ("Beyond the Beach") — 120 pieces: Tops (11), Bottoms (20), Dresses & Sets (58), Sleepwear & Underwear (12), Shoes & Footwear (10), Bags (9). Accessories appears automatically once products are added; an empty shop shows a labelled "arriving soon" message. |
 
 Both pages share the header, footer, product gallery and **one shopping bag** (saved in the browser, so it follows customers between pages and tabs).
 
@@ -38,7 +38,7 @@ Open `index.html` directly, or run `python3 -m http.server 8000` in this folder 
 
 ## Clothing & Accessories photos
 
-The clothing images in `assets/shop/` are **AI-generated illustrations** (a flat-lay plus a model or mannequin view) made from each item's original WhatsApp listing photo. The site says so in the product details and the page note. They were spot-checked against the originals; fixes are listed in `CLOTHING_REVIEW.csv`:
+The clothing and bag images in `assets/shop/` are **AI-generated illustrations**; the footwear photos (`fw-*`) are real photos (a flat-lay plus a model or mannequin view) made from each item's original WhatsApp listing photo. The site says so in the product details and the page note. They were spot-checked against the originals; fixes are listed in `CLOTHING_REVIEW.csv`:
 
 - **WA0091** — price set to 5,000 as written on the listing photo (the import file said 4,500).
 - **WA0097** — flat-lay removed because it put the black back panel and bow on the front; the model view is used instead.
@@ -69,7 +69,7 @@ Then set `checkoutMode` and wire the checkout button to the backend.
 - Verified business WhatsApp number.
 - Delivery and pickup areas and fees, plus return/exchange terms.
 - MMG merchant account details (see above).
-- Clothing & Accessories: go through `CLOTHING_REVIEW.csv` — currency (none of the listings state it), stock and condition, the 6 clothing items with no price and 8 with no size, all 10 footwear items (no price, size or brand supplied yet; the size numbers printed inside some photographed slides are not treated as the available sizes), unusual sizes kept exactly as written (0XL, LX), brand spellings, and whether each AI illustration matches the real item.
+- Clothing & Accessories: go through `CLOTHING_REVIEW.csv` — currency (none of the listings state it), stock and condition, the 6 clothing items with no price and 8 with no size, all 10 footwear items (real photos; no price, size or brand supplied yet — the size numbers printed inside some slides are not treated as the available sizes), the 9 bags (currency, stock, condition, dimensions and material; BAG-29701 merges two listing photos of what looks like the same black four-piece set), unusual sizes kept exactly as written (0XL, LX), brand spellings, and whether each AI illustration matches the real item.
 
 ## Notes
 
