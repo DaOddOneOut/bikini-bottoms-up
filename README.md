@@ -40,6 +40,8 @@ Open `index.html` directly, or run `python3 -m http.server 8000` in this folder 
 
 The clothing and bag images in `assets/shop/` are **AI-generated illustrations**; the footwear photos (`fw-*`) are real photos (a flat-lay plus a model or mannequin view) made from each item's original WhatsApp listing photo. The site says so in the product details and the page note. They were spot-checked against the originals; fixes are listed in `CLOTHING_REVIEW.csv`:
 
+Swimwear galleries (`index.html`) show the real product photos first. 24 of the 27 styles also end with one **AI-generated front view** (`*-render.webp`, marked `ai: true` in `catalog.js`), shown with an "AI visualization" badge. The renders for olive-cross, lemon and polka were left out because they drop real details (front criss-cross straps, front tie bow, crossed straps over the cutout). No back views were generated; none should be invented.
+
 - **WA0091** — price set to 5,000 as written on the listing photo (the import file said 4,500).
 - **WA0097** — flat-lay removed because it put the black back panel and bow on the front; the model view is used instead.
 - **WA0035** — mannequin view shown first, per the import notes (the flat-lay hem doesn't match).

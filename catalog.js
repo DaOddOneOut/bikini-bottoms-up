@@ -52,57 +52,72 @@ window.BBU_CATALOG = {
   products: [
     /* ---------- Swimwear · Bikinis ---------- */
     { id: "floral", collection: "swim", category: "bikini", name: "Red Floral Tie-Side Bikini", tag: "Two-piece", price: 5000, sizes: ["L"], stock: null, description: null,
-      images: [{ src: "assets/bikinis/floral-1.webp", alt: "Flat lay of a red floral triangle bikini with red and white striped tie straps" }] },
+      images: [{ src: "assets/bikinis/floral-1.webp", alt: "Flat lay of a red floral triangle bikini with red and white striped tie straps" },
+        { src: "assets/bikinis/floral-render.webp", alt: "Front view of the Red Floral Tie-Side Bikini on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "hibiscus", collection: "swim", category: "bikini", name: "Blush Hibiscus Bikini", tag: "Two-piece", price: 5000, sizes: ["L"], stock: null, description: null,
-      images: [{ src: "assets/bikinis/hibiscus-1.webp", alt: "Flat lay of a blush triangle bikini with an orange hibiscus print and tie strings" }] },
+      images: [{ src: "assets/bikinis/hibiscus-1.webp", alt: "Flat lay of a blush triangle bikini with an orange hibiscus print and tie strings" },
+        { src: "assets/bikinis/hibiscus-render.webp", alt: "Front view of the Blush Hibiscus Bikini on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "royal-ring", collection: "swim", category: "bikini", name: "Royal Blue Ring Bikini", tag: "Two-piece", price: null, sizes: [], stock: null, description: null,
       images: [
         { src: "assets/bikinis/royal-ring-1.webp", alt: "Flat lay of a royal blue bikini with gold ring details" },
-        { src: "assets/bikinis/royal-ring-2.webp", alt: "Model wearing the royal blue ring bikini with a printed sarong" }] },
+        { src: "assets/bikinis/royal-ring-2.webp", alt: "Model wearing the royal blue ring bikini with a printed sarong" },
+        { src: "assets/bikinis/royal-ring-render.webp", alt: "Front view of the Royal Blue Ring Bikini on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "black-rib", collection: "swim", category: "bikini", name: "Black Underwire Bikini", tag: "Two-piece", price: null, sizes: [], stock: null, description: null,
-      images: [{ src: "assets/bikinis/black-rib-1.webp", alt: "Black one-shoulder underwire bikini on a white background" }] },
+      images: [{ src: "assets/bikinis/black-rib-1.webp", alt: "Black one-shoulder underwire bikini on a white background" },
+        { src: "assets/bikinis/black-rib-render.webp", alt: "Front view of the Black Underwire Bikini on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "wine", collection: "swim", category: "bikini", name: "Burgundy Underwire Bikini", tag: "Two-piece", price: null, sizes: [], stock: null, description: null,
-      images: [{ src: "assets/bikinis/wine-1.webp", alt: "Flat lay of a burgundy one-shoulder underwire bikini" }] },
+      images: [{ src: "assets/bikinis/wine-1.webp", alt: "Flat lay of a burgundy one-shoulder underwire bikini" },
+        { src: "assets/bikinis/wine-render.webp", alt: "Front view of the Burgundy Underwire Bikini on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "monochrome", collection: "swim", category: "bikini", name: "Black & White Ring Bikini", tag: "Two-piece", price: null, sizes: [], stock: null, description: null,
       images: [
         { src: "assets/bikinis/monochrome-1.webp", alt: "Flat lay of a black bikini with white trim and a gold centre ring" },
-        { src: "assets/bikinis/monochrome-2.webp", alt: "Model wearing the black and white bikini on a beach at sunset" }] },
+        { src: "assets/bikinis/monochrome-2.webp", alt: "Model wearing the black and white bikini on a beach at sunset" },
+        { src: "assets/bikinis/monochrome-render.webp", alt: "Front view of the Black & White Ring Bikini on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "olive-cross", collection: "swim", category: "bikini", name: "Olive Cross-Strap Bikini", tag: "Two-piece", price: 5500, sizes: ["XS"], stock: null, description: null,
       images: [{ src: "assets/bikinis/olive-cross-1.webp", alt: "Flat lay of an olive green bikini with criss-cross straps on the top and bottoms" }] },
     { id: "pink-ring", collection: "swim", category: "bikini", name: "Blush Pink Ring Bikini", tag: "Two-piece", price: null, sizes: [], stock: null, description: null,
-      images: [{ src: "assets/bikinis/pink-ring-1.webp", alt: "Flat lay of a blush pink bikini with gold ring details" }] },
+      images: [{ src: "assets/bikinis/pink-ring-1.webp", alt: "Flat lay of a blush pink bikini with gold ring details" },
+        { src: "assets/bikinis/pink-ring-render.webp", alt: "Front view of the Blush Pink Ring Bikini on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "red-bikini", collection: "swim", category: "bikini", name: "Classic Red Bikini", tag: "Two-piece", price: null, sizes: [], stock: null, description: null,
-      images: [{ src: "assets/bikinis/red-bikini-1.webp", alt: "Flat lay of a bright red underwire bikini" }] },
+      images: [{ src: "assets/bikinis/red-bikini-1.webp", alt: "Flat lay of a bright red underwire bikini" },
+        { src: "assets/bikinis/red-bikini-render.webp", alt: "Front view of the Classic Red Bikini on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "lemon", collection: "swim", category: "bikini", name: "Lemon Underwire Bikini", tag: "Two-piece", price: null, sizes: [], stock: null, description: null,
       images: [{ src: "assets/bikinis/lemon-1.webp", alt: "Flat lay of a lemon yellow underwire bikini" }] },
     { id: "sunshine", collection: "swim", category: "bikini", name: "Sunshine Ring Bikini", tag: "Two-piece", price: null, sizes: [], stock: null, description: null,
       images: [
         { src: "assets/bikinis/sunshine-1.webp", alt: "Flat lay of a sunshine yellow bikini with gold ring details" },
-        { src: "assets/bikinis/sunshine-2.webp", alt: "Model wearing the sunshine yellow bikini with a printed sarong" }] },
+        { src: "assets/bikinis/sunshine-2.webp", alt: "Model wearing the sunshine yellow bikini with a printed sarong" },
+        { src: "assets/bikinis/sunshine-render.webp", alt: "Front view of the Sunshine Ring Bikini on a black display mannequin (AI-generated visualization)", ai: true }] },
 
     /* ---------- Swimwear · One-pieces ---------- */
     { id: "blue-ruffle", collection: "swim", category: "one", name: "Royal Blue Ruffle One-Piece", tag: "One-piece", price: 5000, sizes: ["L"], stock: null, description: null,
       images: [
         { src: "assets/one-pieces/blue-ruffle-1.webp", alt: "Flat lay of a royal blue one-piece with ruffled straps and a V-neck" },
-        { src: "assets/one-pieces/blue-ruffle-2.webp", alt: "Model wearing the royal blue ruffle one-piece" }] },
+        { src: "assets/one-pieces/blue-ruffle-2.webp", alt: "Model wearing the royal blue ruffle one-piece" },
+        { src: "assets/one-pieces/blue-ruffle-render.webp", alt: "Front view of the Royal Blue Ruffle One-Piece on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "navy-ruffle", collection: "swim", category: "one", name: "Navy Ruffle One-Piece", tag: "One-piece", price: 5000, sizes: ["XL"], stock: null, description: null,
       images: [
         { src: "assets/one-pieces/navy-ruffle-1.webp", alt: "Flat lay of a navy ruched one-piece with ruffled straps" },
-        { src: "assets/one-pieces/navy-ruffle-2.webp", alt: "Model wearing the navy ruffle one-piece" }] },
+        { src: "assets/one-pieces/navy-ruffle-2.webp", alt: "Model wearing the navy ruffle one-piece" },
+        { src: "assets/one-pieces/navy-ruffle-render.webp", alt: "Front view of the Navy Ruffle One-Piece on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "blue-wrap", collection: "swim", category: "one", name: "Royal Blue Crossover One-Piece", tag: "One-piece", price: 5000, sizes: ["M"], stock: null, description: null,
       images: [
         { src: "assets/one-pieces/blue-wrap-1.webp", alt: "Flat lay of a royal blue ruched one-piece with a crossover neckline" },
-        { src: "assets/one-pieces/blue-wrap-2.webp", alt: "Model wearing the royal blue crossover one-piece" }] },
+        { src: "assets/one-pieces/blue-wrap-2.webp", alt: "Model wearing the royal blue crossover one-piece" },
+        { src: "assets/one-pieces/blue-wrap-render.webp", alt: "Front view of the Royal Blue Crossover One-Piece on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "red-halter", collection: "swim", category: "one", name: "Red Crossover Halter One-Piece", tag: "One-piece", price: 5500, sizes: ["4XL"], stock: null, description: null,
       images: [
         { src: "assets/one-pieces/red-halter-1.webp", alt: "Flat lay of a red one-piece with a crossover halter neckline" },
-        { src: "assets/one-pieces/red-halter-2.webp", alt: "Model wearing the red crossover halter one-piece" }] },
+        { src: "assets/one-pieces/red-halter-2.webp", alt: "Model wearing the red crossover halter one-piece" },
+        { src: "assets/one-pieces/red-halter-render.webp", alt: "Front view of the Red Crossover Halter One-Piece on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "heart", collection: "swim", category: "one", name: "Red Heart Side-Tie One-Piece", tag: "One-piece", price: 5000, sizes: ["M"], stock: null, description: null,
       images: [
         { src: "assets/one-pieces/heart-1.webp", alt: "Flat lay of a red one-piece with a stars-and-stripes heart print and lace-up sides" },
-        { src: "assets/one-pieces/heart-2.webp", alt: "Model wearing the red heart side-tie one-piece" }] },
+        { src: "assets/one-pieces/heart-2.webp", alt: "Model wearing the red heart side-tie one-piece" },
+        { src: "assets/one-pieces/heart-render.webp", alt: "Front view of the Red Heart Side-Tie One-Piece on a model (AI-generated visualization)", ai: true }] },
     { id: "aqua", collection: "swim", category: "one", name: "Aqua & Black Ruffle One-Piece", tag: "One-piece", price: 5500, sizes: ["2XL"], stock: null, description: null,
-      images: [{ src: "assets/one-pieces/aqua-1.webp", alt: "Flat lay of a black one-piece with an aqua ruffled top and front cutout" }] },
+      images: [{ src: "assets/one-pieces/aqua-1.webp", alt: "Flat lay of a black one-piece with an aqua ruffled top and front cutout" },
+        { src: "assets/one-pieces/aqua-render.webp", alt: "Front view of the Aqua & Black Ruffle One-Piece on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "polka", collection: "swim", category: "one", name: "Polka-Dot Cutout One-Piece", tag: "One-piece", price: 5500, sizes: [], stock: null, description: null,
       images: [
         { src: "assets/one-pieces/polka-1.webp", alt: "Flat lay of a black and white polka-dot one-piece with a front cutout and criss-cross straps" },
@@ -112,41 +127,50 @@ window.BBU_CATALOG = {
     { id: "brasil", collection: "swim", category: "one", name: "Brasil Cutout One-Piece", tag: "One-piece", price: null, sizes: [], stock: null, description: null,
       images: [
         { src: "assets/one-pieces/brasil-1.webp", alt: "Flat lay of a green one-piece with yellow BRASIL lettering and a centre cutout" },
-        { src: "assets/one-pieces/brasil-2.webp", alt: "Model wearing the green Brasil cutout one-piece" }] },
+        { src: "assets/one-pieces/brasil-2.webp", alt: "Model wearing the green Brasil cutout one-piece" },
+        { src: "assets/one-pieces/brasil-render.webp", alt: "Front view of the Brasil Cutout One-Piece on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "leopard", collection: "swim", category: "one", name: "Floral Leopard Cutout One-Piece", tag: "One-piece", price: null, sizes: [], stock: null, description: null,
       images: [
         { src: "assets/one-pieces/leopard-1.webp", alt: "Flat lay of a leopard and blue floral print one-piece with a centre cutout" },
-        { src: "assets/one-pieces/leopard-2.webp", alt: "Model wearing the floral leopard cutout one-piece" }] },
+        { src: "assets/one-pieces/leopard-2.webp", alt: "Model wearing the floral leopard cutout one-piece" },
+        { src: "assets/one-pieces/leopard-render.webp", alt: "Front view of the Floral Leopard Cutout One-Piece on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "yellow-floral", collection: "swim", category: "one", name: "Yellow Floral Ring One-Piece", tag: "One-piece", price: 5000, sizes: ["XS"], stock: null, description: null,
-      images: [{ src: "assets/one-pieces/yellow-floral-1.webp", alt: "Flat lay of a yellow floral one-piece with a ring cutout at the waist" }] },
+      images: [{ src: "assets/one-pieces/yellow-floral-1.webp", alt: "Flat lay of a yellow floral one-piece with a ring cutout at the waist" },
+        { src: "assets/one-pieces/yellow-floral-render.webp", alt: "Front view of the Yellow Floral Ring One-Piece on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "orange-halter", collection: "swim", category: "one", name: "Orange Halter One-Piece", tag: "One-piece", price: 5000, sizes: ["L"], stock: null, description: null,
-      images: [{ src: "assets/one-pieces/orange-halter-1.webp", alt: "Flat lay of an orange ruched halter one-piece with a keyhole neckline" }] },
+      images: [{ src: "assets/one-pieces/orange-halter-1.webp", alt: "Flat lay of an orange ruched halter one-piece with a keyhole neckline" },
+        { src: "assets/one-pieces/orange-halter-render.webp", alt: "Front view of the Orange Halter One-Piece on a black display mannequin (AI-generated visualization)", ai: true }] },
 
     /* ---------- Swimwear · Swim tops (bottoms NOT included) ---------- */
     { id: "tropical-top", collection: "swim", category: "top", name: "Tropical Leaf Swim Top", tag: "Top only", price: 2000, sizes: ["2XL"], stock: null, description: null,
       note: "Top only — bottoms shown for styling are not included.",
       images: [
         { src: "assets/swim-tops/tropical-top-1.webp", alt: "Flat lay of a navy swim top with a green tropical leaf print" },
-        { src: "assets/swim-tops/tropical-top-2.webp", alt: "Model wearing the tropical leaf swim top with navy shorts, which are not included" }] },
+        { src: "assets/swim-tops/tropical-top-2.webp", alt: "Model wearing the tropical leaf swim top with navy shorts, which are not included" },
+        { src: "assets/swim-tops/tropical-top-render.webp", alt: "Front view of the Tropical Leaf Swim Top on a model, worn with plain black shorts that are not included (AI-generated visualization)", ai: true }] },
     { id: "lime-top", collection: "swim", category: "top", name: "Lime Chevron Swim Top", tag: "Top only", price: 2000, sizes: ["2XL"], stock: null, description: null,
       note: "Top only — bottoms shown for styling are not included.",
       images: [
         { src: "assets/swim-tops/lime-top-1.webp", alt: "Flat lay of a black swim top with lime and blue chevron straps" },
-        { src: "assets/swim-tops/lime-top-2.webp", alt: "Model wearing the lime chevron swim top with black shorts, which are not included" }] },
+        { src: "assets/swim-tops/lime-top-2.webp", alt: "Model wearing the lime chevron swim top with black shorts, which are not included" },
+        { src: "assets/swim-tops/lime-top-render.webp", alt: "Front view of the Lime Chevron Swim Top on a black display mannequin, worn with plain black shorts that are not included (AI-generated visualization)", ai: true }] },
     { id: "pink-top", collection: "swim", category: "top", name: "Pink Geometric Swim Top", tag: "Top only", price: 2000, sizes: ["3XL"], stock: null, description: null,
       note: "Top only — bottoms shown for styling are not included.",
       images: [
         { src: "assets/swim-tops/pink-top-1.webp", alt: "Flat lay of a black swim top with pink geometric print straps" },
-        { src: "assets/swim-tops/pink-top-2.webp", alt: "Model wearing the pink geometric swim top with black shorts, which are not included" }] },
+        { src: "assets/swim-tops/pink-top-2.webp", alt: "Model wearing the pink geometric swim top with black shorts, which are not included" },
+        { src: "assets/swim-tops/pink-top-render.webp", alt: "Front view of the Pink Geometric Swim Top on a model, worn with plain black shorts that are not included (AI-generated visualization)", ai: true }] },
     { id: "olive-top", collection: "swim", category: "top", name: "Olive Stripe Swim Top", tag: "Top only", price: 2000, sizes: ["2XL"], stock: null, description: null,
       note: "Top only — bottoms shown for styling are not included.",
       images: [
         { src: "assets/swim-tops/olive-top-1.webp", alt: "Flat lay of an olive swim top with a striped lining and side drawstring" },
-        { src: "assets/swim-tops/olive-top-2.webp", alt: "Model wearing the olive stripe swim top with black shorts, which are not included" }] },
+        { src: "assets/swim-tops/olive-top-2.webp", alt: "Model wearing the olive stripe swim top with black shorts, which are not included" },
+        { src: "assets/swim-tops/olive-top-render.webp", alt: "Front view of the Olive Stripe Swim Top on a black display mannequin, worn with plain black shorts that are not included (AI-generated visualization)", ai: true }] },
 
     /* ---------- Swimwear · Tankini sets ---------- */
     { id: "black-halter", collection: "swim", category: "set", name: "Black Halter Tankini Set", tag: "Tankini set", price: 5500, sizes: ["S"], stock: null, description: null,
-      images: [{ src: "assets/tankini-sets/black-halter-1.webp", alt: "Flat lay of a black high-neck halter tankini top with matching ruched bottoms" }] }
+      images: [{ src: "assets/tankini-sets/black-halter-1.webp", alt: "Flat lay of a black high-neck halter tankini top with matching ruched bottoms" },
+        { src: "assets/tankini-sets/black-halter-render.webp", alt: "Front view of the Black Halter Tankini Set on a black display mannequin (AI-generated visualization)", ai: true }] }
 
     ,
     /* ---------- Clothing & Accessories (shop.html) ----------

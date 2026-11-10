@@ -216,6 +216,7 @@ h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); line-height
 .gallery .sheet-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); grid-template-areas: "stage details" "pos details" "thumbs details"; grid-template-rows: max-content max-content max-content; align-content: start; gap: 10px 26px; align-items: start; }
 .gallery-stage { grid-area: stage; position: relative; background: var(--white); border-radius: var(--radius); overflow: hidden; touch-action: pan-y; user-select: none; }
 .gallery-stage img { width: 100%; height: min(62vh, 640px); height: min(62dvh, 640px); object-fit: contain; }
+.gallery-badge { position: absolute; top: 10px; left: 10px; background: rgba(18, 61, 61, .86); color: var(--white); border-radius: 999px; padding: 4px 11px; font-size: 12px; font-weight: 700; letter-spacing: .02em; pointer-events: none; }
 .gallery-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .92); box-shadow: 0 4px 14px rgba(0, 0, 0, .15); font-size: 28px; line-height: 1; color: var(--ink); }
 .gallery-arrow:hover { background: var(--yellow); }
 .gallery-arrow.prev { left: 10px; }
