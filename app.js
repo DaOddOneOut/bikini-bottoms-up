@@ -274,6 +274,7 @@
     '<div class="sheet-body">' +
       '<div class="gallery-stage" id="galleryStage">' +
         '<img id="galleryImage" alt="">' +
+        '<span class="gallery-badge" id="galleryBadge" hidden>AI visualization</span>' +
         '<button type="button" class="gallery-arrow prev" id="galleryPrev" aria-label="Previous photo">‹</button>' +
         '<button type="button" class="gallery-arrow next" id="galleryNext" aria-label="Next photo">›</button>' +
       "</div>" +
@@ -290,12 +291,13 @@
     var el = $("#galleryImage");
     el.src = img.src;
     el.alt = img.alt;
-    $("#galleryPosition").textContent = n > 1 ? "Photo " + (gIndex + 1) + " of " + n : "1 photo";
+    $("#galleryBadge").hidden = !img.ai;
+    $("#galleryPosition").textContent = (n > 1 ? "Photo " + (gIndex + 1) + " of " + n : "1 photo") + (img.ai ? " · AI visualization" : "");
     $("#galleryPrev").hidden = $("#galleryNext").hidden = n < 2;
     var thumbs = $("#galleryThumbs");
     thumbs.hidden = n < 2;
     thumbs.innerHTML = p.images.map(function (im, i) {
-      return '<button type="button" data-photo="' + i + '"' + (i === gIndex ? ' aria-current="true"' : "") + ' aria-label="Photo ' + (i + 1) + " of " + n + ": " + esc(im.alt) + '"><img src="' + esc(im.src) + '" alt="" loading="lazy"></button>';
+      return '<button type="button" data-photo="' + i + '"' + (i === gIndex ? ' aria-current="true"' : "") + ' aria-label="Photo ' + (i + 1) + " of " + n + ": " + esc(im.alt) + (im.ai ? " (AI visualization)" : "") + '"><img src="' + esc(im.src) + '" alt="" loading="lazy"></button>';
     }).join("");
     if (focusThumb) { var t = $('[data-photo="' + gIndex + '"]', thumbs); if (t) t.focus(); }
     var stock = stockText(p);
@@ -309,7 +311,9 @@
       '<div class="card-controls">' + controlsHtml(p, "gallery") + "</div>" +
       (p.illustrated
         ? '<p class="small illus-note">These images are styled illustrations made from the original photo of this item. Small details may differ from the real piece. Props and styling pieces are not included. Current stock to be confirmed.</p>'
-        : '<p class="small">Product reference photos. Props shown for styling are not included. Current stock to be confirmed.</p>');
+        : p.images.some(function (im) { return im.ai; })
+          ? '<p class="small illus-note">Views marked “AI visualization” are computer-generated to show how the piece sits on the body. The real product photos show the exact details. Props and styling pieces are not included. Current stock to be confirmed.</p>'
+          : '<p class="small">Product reference photos. Props shown for styling are not included. Current stock to be confirmed.</p>');
     // preload neighbours for smooth swiping
     [gIndex + 1, gIndex - 1].forEach(function (i) { var x = p.images[(i + n) % n]; if (x) (new Image()).src = x.src; });
   }
