@@ -7,7 +7,7 @@ A mobile-friendly boutique storefront for Bikini Bottoms Up. The owner prefers t
 | Page | What it shows |
 | --- | --- |
 | `index.html` | **Swimwear** — bikinis, one-pieces, swim tops, tankini sets. Also has the "Beyond the Beach" promo, About the brand and How to order. |
-| `shop.html` | **Clothing & Accessories** ("Beyond the Beach") — 120 pieces: Tops (11), Bottoms (20), Dresses & Sets (58), Sleepwear & Underwear (12), Shoes & Footwear (10), Bags (9). Accessories appears automatically once products are added; an empty shop shows a labelled "arriving soon" message. |
+| `shop.html` | **Clothing & Accessories** ("Beyond the Beach"): 189 pieces, shopped by department (**Women 134 · Men 47 · Kids 8**) and category (Tops, Bottoms, Dresses & Sets, Sleepwear & Underwear, Shoes & Footwear, Bags; Accessories appears when stocked). `shop.html#men` and `shop.html#kids` open those departments directly. Items with no department set count as Women's. |
 
 Both pages share the header, footer, product gallery and **one shopping bag** (saved in the browser, so it follows customers between pages and tabs).
 
@@ -39,6 +39,8 @@ Open `index.html` directly, or run `python3 -m http.server 8000` in this folder 
 ## Clothing & Accessories photos
 
 The clothing and bag images in `assets/shop/` are **AI-generated illustrations**; the footwear photos (`fw-*`) are real photos (a flat-lay plus a model or mannequin view) made from each item's original WhatsApp listing photo. The site says so in the product details and the page note. They were spot-checked against the originals; fixes are listed in `CLOTHING_REVIEW.csv`:
+
+Men's and kids' basics (batches 13 and 17–22, IDs like `20261110-WA0077`) are AI illustrations too. Kids' items use `department: "Youth"` and show "Youth size". Sold-out items use `stock: 0`, and `soldSizes` lists sizes already sold. Batch 21 arrived twice as identical files and was imported once.
 
 Swimwear galleries (`index.html`) show the real product photos first. 24 of the 27 styles also end with one **AI-generated front view** (`*-render.webp`, marked `ai: true` in `catalog.js`), shown with an "AI visualization" badge. The renders for olive-cross, lemon and polka were left out because they drop real details (front criss-cross straps, front tie bow, crossed straps over the cutout). No back views were generated; none should be invented.
 
