@@ -30,8 +30,10 @@
   function priceText(p) { return hasPrice(p) ? money(p.price) : "Price to be confirmed"; }
   function sizeText(p) {
     if (!needsSize(p)) return p.pieces > 1 ? "Set of " + p.pieces + " pieces" : "One piece";
-    if (!p.sizes || !p.sizes.length) return "Size to be confirmed";
-    return (p.sizes.length > 1 ? "Sizes: " : "Size: ") + p.sizes.join(", ");
+    var sold = p.soldSizes && p.soldSizes.length ? p.soldSizes.join(", ") + " sold out" : "";
+    var word = p.department === "Youth" ? "Youth size" : "Size";
+    if (!p.sizes || !p.sizes.length) return sold ? word + " " + sold : "Size to be confirmed";
+    return word + (p.sizes.length > 1 ? "s: " : ": ") + p.sizes.join(", ") + (sold ? " · " + sold : "");
   }
   function stockText(p) {
     if (p.stock === 0) return "Sold out";
@@ -39,7 +41,10 @@
     return "";
   }
   function showBrand(p) { return p.brand && p.name.toLowerCase().indexOf(p.brand.toLowerCase()) !== 0; }
-  function deptText(p) { return p.department === "Men" ? "Men’s" : p.department === "Women" ? "Women’s" : ""; }
+  function deptText(p) { return p.department === "Men" ? "Men’s" : p.department === "Women" ? "Women’s" : p.department === "Youth" ? "Kids’" : ""; }
+  // Shop departments. Items without a department count as Women's (the store is mainly women's).
+  var DEPTS = [{ id: "women", label: "Women" }, { id: "men", label: "Men" }, { id: "kids", label: "Kids" }];
+  function deptKey(p) { return p.department === "Men" ? "men" : p.department === "Youth" ? "kids" : "women"; }
   function plural(n, word) { return n + " " + word + (n === 1 ? "" : "s"); }
   function categoriesFor(collection) { return (CATALOG.categories && CATALOG.categories[collection]) || []; }
   function productsFor(collection) { return PRODUCTS.filter(function (p) { return p.collection === collection; }); }
@@ -118,6 +123,12 @@
   var countEl = $("[data-result-count]");
   var emptyEl = $("[data-empty]");
   var currentFilter = "all";
+  var deptsEl = $("[data-depts]");
+  function deptFromHash() {
+    var h = (location.hash || "").replace("#", "").toLowerCase();
+    return DEPTS.some(function (d) { return d.id === h; }) ? h : "all";
+  }
+  var currentDept = PAGE === "shop" ? deptFromHash() : "all";
 
   function controlsHtml(p, context) {
     if (!canBuy(p)) {
@@ -188,9 +199,34 @@
       '<div class="empty-actions">' + other + (wa ? '<a class="button button-ghost" href="' + esc(wa) + '" target="_blank" rel="noopener">Ask us on WhatsApp</a>' : "") + "</div>";
   }
 
+  function renderDepts(items) {
+    if (!deptsEl) return;
+    var present = DEPTS.filter(function (d) { return items.some(function (p) { return deptKey(p) === d.id; }); });
+    deptsEl.hidden = present.length < 2;
+    if (deptsEl.hidden) { currentDept = "all"; return; }
+    if (currentDept !== "all" && !present.some(function (d) { return d.id === currentDept; })) currentDept = "all";
+    var tabs = [{ id: "all", label: "All", n: items.length }].concat(present.map(function (d) {
+      return { id: d.id, label: d.label, n: items.filter(function (p) { return deptKey(p) === d.id; }).length };
+    }));
+    deptsEl.innerHTML = tabs.map(function (t) {
+      return '<button type="button" class="dept-tab" data-dept="' + t.id + '" aria-pressed="' + (t.id === currentDept) + '">' + esc(t.label) +
+        '<span class="chip-count" aria-hidden="true">' + t.n + '</span><span class="visually-hidden"> (' + t.n + ")</span></button>";
+    }).join("");
+  }
+  function updateNavCurrent() {
+    if (PAGE !== "shop") return;
+    $$("[data-dept-link]").forEach(function (a) {
+      var on = currentDept === "all" ? a.getAttribute("data-dept-link") === "women" : a.getAttribute("data-dept-link") === currentDept;
+      if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+  }
+
   function renderProducts() {
     if (!grid) return;
-    var items = productsFor(PAGE);
+    var all = productsFor(PAGE);
+    renderDepts(all);
+    updateNavCurrent();
+    var items = currentDept === "all" ? all : all.filter(function (p) { return deptKey(p) === currentDept; });
     renderFilters(items);
     if (!items.length) {
       grid.innerHTML = "";
@@ -204,7 +240,8 @@
     if (emptyEl) emptyEl.hidden = true;
     var shown = items.filter(function (p) { return currentFilter === "all" || p.category === currentFilter; });
     grid.innerHTML = shown.map(cardHtml).join("");
-    if (countEl) countEl.textContent = "Showing " + plural(shown.length, PAGE === "shop" ? "item" : "style");
+    var deptLabel = currentDept === "all" ? "" : " · " + DEPTS.filter(function (d) { return d.id === currentDept; })[0].label;
+    if (countEl) countEl.textContent = "Showing " + plural(shown.length, PAGE === "shop" ? "item" : "style") + deptLabel;
   }
 
   if (filtersEl) filtersEl.addEventListener("click", function (e) {
@@ -214,6 +251,24 @@
     renderProducts();
     var again = $('[data-filter="' + currentFilter + '"]', filtersEl);
     if (again) again.focus();
+  });
+
+  if (deptsEl) deptsEl.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-dept]");
+    if (!b) return;
+    currentDept = b.getAttribute("data-dept");
+    currentFilter = "all";
+    try { history.replaceState(null, "", currentDept === "all" ? location.pathname + location.search : "#" + currentDept); } catch (err) { /* ignore */ }
+    renderProducts();
+    var again = $('[data-dept="' + currentDept + '"]', deptsEl);
+    if (again) again.focus();
+  });
+  if (PAGE === "shop") window.addEventListener("hashchange", function () {
+    currentDept = deptFromHash();
+    currentFilter = "all";
+    renderProducts();
+    var sec = $("#shop");
+    if (sec && currentDept !== "all") sec.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
   });
 
   function handleAdd(button, root) {
@@ -518,4 +573,8 @@
   loadBag();
   saveBag(); // migrates any older bag to the shared key
   renderProducts();
+  if (PAGE === "shop" && currentDept !== "all") {
+    var sec0 = $("#shop");
+    if (sec0) setTimeout(function () { sec0.scrollIntoView({ block: "start" }); }, 0);
+  }
 })();

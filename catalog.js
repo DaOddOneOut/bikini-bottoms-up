@@ -17,7 +17,8 @@
     stock       null (not supplied), or a number of pieces in stock as supplied by the owner
     description optional short text; null if none supplied
     brand       optional brand as shown on the listing; null if unknown
-    department  optional "Women" / "Men"; null if not stated
+    department  optional "Women" / "Men" / "Youth" (shown as Kids); null counts as Women on the shop page
+    soldSizes   optional sizes already sold (shown as "sold out")
     includes    optional list of pieces included (for sets)
     illustrated true when photos are AI-generated illustrations of the real item
     sizeless    true for items with no size choice (bags, wallets); they can be ordered once priced
@@ -779,6 +780,353 @@ window.BBU_CATALOG = {
       description: "Circular bag with arched top handle, long detachable strap, gold zipper and ornate cream Roman-numeral clock-face front. Decorative clock motif; functionality unverified.", illustrated: true,
       images: [
         { src: "assets/shop/bag-29702-product.webp", alt: "Illustration of the round clock-face crossbody bag" },
-        { src: "assets/shop/bag-29702-carried.webp", alt: "Illustration of the round clock-face crossbody bag carried by a model" }] }
+        { src: "assets/shop/bag-29702-carried.webp", alt: "Illustration of the round clock-face crossbody bag carried by a model" }] },
+
+    /* ---------- Men's, kids' (Youth) and women's basics: batches 13, 17-22 (Nov 2026). Dated IDs from the listing photos; AI illustrations ---------- */
+    { id: "20261110-WA0077", collection: "shop", category: "bottoms", name: "Fruit of the Loom Cotton Shorts \u2014 Charcoal", tag: "Men's \u00b7 Shorts", price: 2500, sizes: [], stock: 0, brand: "Fruit of the Loom", department: "Men",
+      soldSizes: ["S"], illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0077-product.webp", alt: "Illustration of the Fruit of the Loom Cotton Shorts \u2014 Charcoal" },
+        { src: "assets/shop/20261110-wa0077-modeled.webp", alt: "Illustration of the Fruit of the Loom Cotton Shorts \u2014 Charcoal worn by a model" }] },
+    { id: "20261110-WA0078", collection: "shop", category: "bottoms", name: "Fruit of the Loom Cotton Shorts \u2014 Deep blue", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["M"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      soldSizes: ["S"], illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0078-product.webp", alt: "Illustration of the Fruit of the Loom Cotton Shorts \u2014 Deep blue" },
+        { src: "assets/shop/20261110-wa0078-modeled.webp", alt: "Illustration of the Fruit of the Loom Cotton Shorts \u2014 Deep blue worn by a model" }] },
+    { id: "20261110-WA0079", collection: "shop", category: "bottoms", name: "Fruit of the Loom Cotton Drawstring Shorts", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["M"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0079-product.webp", alt: "Illustration of the Fruit of the Loom Cotton Drawstring Shorts" },
+        { src: "assets/shop/20261110-wa0079-modeled.webp", alt: "Illustration of the Fruit of the Loom Cotton Drawstring Shorts worn by a model" }] },
+    { id: "20261110-WA0080", collection: "shop", category: "bottoms", name: "Fruit of the Loom Cotton Shorts \u2014 Light heather gray", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["M", "L", "XL"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0080-product.webp", alt: "Illustration of the Fruit of the Loom Cotton Shorts \u2014 Light heather gray" },
+        { src: "assets/shop/20261110-wa0080-modeled.webp", alt: "Illustration of the Fruit of the Loom Cotton Shorts \u2014 Light heather gray worn by a model" }] },
+    { id: "20261110-WA0081", collection: "shop", category: "bottoms", name: "Drawstring Cargo Shorts \u2014 Dark blue", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0081-product.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Dark blue" },
+        { src: "assets/shop/20261110-wa0081-modeled.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Dark blue worn by a model" }] },
+    { id: "20261110-WA0082", collection: "shop", category: "bottoms", name: "Long Drawstring Cargo Shorts \u2014 Royal blue", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["L"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0082-product.webp", alt: "Illustration of the long Drawstring Cargo Shorts \u2014 Royal blue" },
+        { src: "assets/shop/20261110-wa0082-modeled.webp", alt: "Illustration of the long Drawstring Cargo Shorts \u2014 Royal blue worn by a model" }] },
+    { id: "20261110-WA0083", collection: "shop", category: "bottoms", name: "Zip-Pocket Athletic Shorts", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0083-product.webp", alt: "Illustration of the zip-Pocket Athletic Shorts" },
+        { src: "assets/shop/20261110-wa0083-modeled.webp", alt: "Illustration of the zip-Pocket Athletic Shorts worn by a model" }] },
+    { id: "20261110-WA0084", collection: "shop", category: "bottoms", name: "Drawstring Cargo Shorts \u2014 Black", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0084-product.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Black" },
+        { src: "assets/shop/20261110-wa0084-modeled.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Black worn by a model" }] },
+    { id: "20261110-WA0085", collection: "shop", category: "bottoms", name: "Drawstring Panel Shorts \u2014 Black", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XXL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0085-product.webp", alt: "Illustration of the drawstring Panel Shorts \u2014 Black" },
+        { src: "assets/shop/20261110-wa0085-modeled.webp", alt: "Illustration of the drawstring Panel Shorts \u2014 Black worn by a model" }] },
+    { id: "20261110-WA0086", collection: "shop", category: "bottoms", name: "Side-Stripe Mesh Shorts", tag: "Men's \u00b7 Shorts", price: 1800, sizes: ["XXL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0086-product.webp", alt: "Illustration of the side-Stripe Mesh Shorts" },
+        { src: "assets/shop/20261110-wa0086-modeled.webp", alt: "Illustration of the side-Stripe Mesh Shorts worn by a model" }] },
+    { id: "20261110-WA0087", collection: "shop", category: "bottoms", name: "Snap-Flap Cargo Shorts \u2014 Black", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["34"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0087-product.webp", alt: "Illustration of the snap-Flap Cargo Shorts \u2014 Black" },
+        { src: "assets/shop/20261110-wa0087-modeled.webp", alt: "Illustration of the snap-Flap Cargo Shorts \u2014 Black worn by a model" }] },
+    { id: "20261110-WA0088", collection: "shop", category: "bottoms", name: "Long Drawstring Cargo Shorts \u2014 Black", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["L"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0088-product.webp", alt: "Illustration of the long Drawstring Cargo Shorts \u2014 Black" },
+        { src: "assets/shop/20261110-wa0088-modeled.webp", alt: "Illustration of the long Drawstring Cargo Shorts \u2014 Black worn by a model" }] },
+    { id: "20261110-WA0089", collection: "shop", category: "bottoms", name: "Contrast Drawstring Shorts", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0089-product.webp", alt: "Illustration of the contrast Drawstring Shorts" },
+        { src: "assets/shop/20261110-wa0089-modeled.webp", alt: "Illustration of the contrast Drawstring Shorts worn by a model" }] },
+    { id: "20261110-WA0090", collection: "shop", category: "bottoms", name: "Zip-Pocket Shorts \u2014 Light gray", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0090-product.webp", alt: "Illustration of the zip-Pocket Shorts \u2014 Light gray" },
+        { src: "assets/shop/20261110-wa0090-modeled.webp", alt: "Illustration of the zip-Pocket Shorts \u2014 Light gray worn by a model" }] },
+    { id: "20261110-WA0091", collection: "shop", category: "bottoms", name: "Silver-Accent Athletic Shorts \u2014 Dark blue", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0091-product.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Dark blue" },
+        { src: "assets/shop/20261110-wa0091-modeled.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Dark blue worn by a model" }] },
+    { id: "20261110-WA0092", collection: "shop", category: "bottoms", name: "Drawstring Cargo Shorts \u2014 Heather gray", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0092-product.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Heather gray" },
+        { src: "assets/shop/20261110-wa0092-modeled.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Heather gray worn by a model" }] },
+    { id: "20261110-WA0093", collection: "shop", category: "bottoms", name: "Side-Panel Athletic Shorts \u2014 Black and gray", tag: "Men's \u00b7 Shorts", price: 1800, sizes: ["XXL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0093-product.webp", alt: "Illustration of the side-Panel Athletic Shorts \u2014 Black and gray" },
+        { src: "assets/shop/20261110-wa0093-modeled.webp", alt: "Illustration of the side-Panel Athletic Shorts \u2014 Black and gray worn by a model" }] },
+    { id: "20261110-WA0094", collection: "shop", category: "bottoms", name: "Printed Side-Panel Athletic Shorts", tag: "Men's \u00b7 Shorts", price: 1800, sizes: ["XXL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0094-product.webp", alt: "Illustration of the printed Side-Panel Athletic Shorts" },
+        { src: "assets/shop/20261110-wa0094-modeled.webp", alt: "Illustration of the printed Side-Panel Athletic Shorts worn by a model" }] },
+    { id: "20261110-WA0095", collection: "shop", category: "bottoms", name: "Cargo Shorts", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0095-product.webp", alt: "Illustration of the cargo Shorts" },
+        { src: "assets/shop/20261110-wa0095-modeled.webp", alt: "Illustration of the cargo Shorts worn by a model" }] },
+    { id: "20261110-WA0096", collection: "shop", category: "bottoms", name: "Silver-Accent Athletic Shorts \u2014 Dark brown", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0096-product.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Dark brown" },
+        { src: "assets/shop/20261110-wa0096-modeled.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Dark brown worn by a model" }] },
+    { id: "20261106-WA0179", collection: "shop", category: "tops", name: "Gildan Crewneck T-Shirt", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["XL"], stock: null, brand: "Gildan", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261106-wa0179-product.webp", alt: "Illustration of the Gildan Crewneck T-Shirt" },
+        { src: "assets/shop/20261106-wa0179-modeled.webp", alt: "Illustration of the Gildan Crewneck T-Shirt worn by a model" }] },
+    { id: "20261110-WA0017", collection: "shop", category: "tops", name: "Fruit of the Loom Crewneck T-Shirt \u2014 Heather gray", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0017-product.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Heather gray" },
+        { src: "assets/shop/20261110-wa0017-modeled.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Heather gray worn by a model" }] },
+    { id: "20261110-WA0022", collection: "shop", category: "tops", name: "Fruit of the Loom Crewneck T-Shirt \u2014 Pink", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["3XL"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0022-product.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Pink" },
+        { src: "assets/shop/20261110-wa0022-modeled.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Pink worn by a model" }] },
+    { id: "20261110-WA0024", collection: "shop", category: "tops", name: "Fruit of the Loom Crewneck T-Shirt \u2014 Black", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0024-product.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Black" },
+        { src: "assets/shop/20261110-wa0024-modeled.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Black worn by a model" }] },
+    { id: "20261110-WA0025", collection: "shop", category: "tops", name: "Hanes Crewneck T-Shirt \u2014 Rust", tag: "Kids \u00b7 T-shirt", price: 1200, sizes: ["S", "L"], stock: null, brand: "Hanes", department: "Youth",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0025-product.webp", alt: "Illustration of the Hanes Crewneck T-Shirt \u2014 Rust" },
+        { src: "assets/shop/20261110-wa0025-modeled.webp", alt: "Illustration of the Hanes Crewneck T-Shirt \u2014 Rust on a display mannequin" }] },
+    { id: "20261110-WA0027", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 White", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0027-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 White" },
+        { src: "assets/shop/20261110-wa0027-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 White worn by a model" }] },
+    { id: "20261110-WA0043", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Burgundy", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["M", "2XL"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0043-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Burgundy" },
+        { src: "assets/shop/20261110-wa0043-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Burgundy worn by a model" }] },
+    { id: "20261110-WA0045", collection: "shop", category: "tops", name: "Fruit of the Loom Crewneck T-Shirt \u2014 Black", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["L", "XL"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0045-product.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Black" },
+        { src: "assets/shop/20261110-wa0045-modeled.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Black worn by a model" }] },
+    { id: "20261110-WA0047", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Light gray", tag: "Men's \u00b7 T-shirt", price: null, sizes: ["XL", "2XL"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0047-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Light gray" },
+        { src: "assets/shop/20261110-wa0047-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Light gray worn by a model" }] },
+    { id: "20261110-WA0062", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Red", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["XL"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0062-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Red" },
+        { src: "assets/shop/20261110-wa0062-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Red worn by a model" }] },
+    { id: "20261110-WA0064", collection: "shop", category: "tops", name: "Fruit of the Loom Crewneck T-Shirt \u2014 Peach", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["S"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0064-product.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Peach" },
+        { src: "assets/shop/20261110-wa0064-modeled.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Peach worn by a model" }] },
+    { id: "20261110-WA0066", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Black", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["XL"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0066-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Black" },
+        { src: "assets/shop/20261110-wa0066-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Black worn by a model" }] },
+    { id: "20261110-WA0068", collection: "shop", category: "tops", name: "Jerzees V-Neck T-Shirt", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Jerzees", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0068-product.webp", alt: "Illustration of the Jerzees V-Neck T-Shirt" },
+        { src: "assets/shop/20261110-wa0068-modeled.webp", alt: "Illustration of the Jerzees V-Neck T-Shirt worn by a model" }] },
+    { id: "20261110-WA0097", collection: "shop", category: "bottoms", name: "Side-Panel Athletic Shorts \u2014 Black and blue", tag: "Men's \u00b7 Shorts", price: 1800, sizes: ["XXL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0097-product.webp", alt: "Illustration of the side-Panel Athletic Shorts \u2014 Black and blue" },
+        { src: "assets/shop/20261110-wa0097-modeled.webp", alt: "Illustration of the side-Panel Athletic Shorts \u2014 Black and blue worn by a model" }] },
+    { id: "20261110-WA0098", collection: "shop", category: "bottoms", name: "Drawstring Panel Shorts \u2014 Heather gray", tag: "Men's \u00b7 Shorts", price: 2500, sizes: [], stock: 0, brand: null, department: "Men",
+      soldSizes: ["XXL"], illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0098-product.webp", alt: "Illustration of the drawstring Panel Shorts \u2014 Heather gray" },
+        { src: "assets/shop/20261110-wa0098-modeled.webp", alt: "Illustration of the drawstring Panel Shorts \u2014 Heather gray worn by a model" }] },
+    { id: "20261110-WA0099", collection: "shop", category: "bottoms", name: "Snap-Flap Cargo Shorts \u2014 Khaki", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["34"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0099-product.webp", alt: "Illustration of the snap-Flap Cargo Shorts \u2014 Khaki" },
+        { src: "assets/shop/20261110-wa0099-modeled.webp", alt: "Illustration of the snap-Flap Cargo Shorts \u2014 Khaki worn by a model" }] },
+    { id: "20261110-WA0100", collection: "shop", category: "bottoms", name: "Silver-Accent Athletic Shorts \u2014 Gray", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0100-product.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Gray" },
+        { src: "assets/shop/20261110-wa0100-modeled.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Gray worn by a model" }] },
+    { id: "20261110-WA0101", collection: "shop", category: "bottoms", name: "Drawstring Shorts \u2014 Dark blue", tag: "Men's \u00b7 Shorts", price: 2000, sizes: ["L"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0101-product.webp", alt: "Illustration of the drawstring Shorts \u2014 Dark blue" },
+        { src: "assets/shop/20261110-wa0101-modeled.webp", alt: "Illustration of the drawstring Shorts \u2014 Dark blue worn by a model" }] },
+    { id: "20261110-WA0102", collection: "shop", category: "bottoms", name: "Long Drawstring Shorts", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["L"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0102-product.webp", alt: "Illustration of the long Drawstring Shorts" },
+        { src: "assets/shop/20261110-wa0102-modeled.webp", alt: "Illustration of the long Drawstring Shorts worn by a model" }] },
+    { id: "20261110-WA0103", collection: "shop", category: "bottoms", name: "Drawstring Shorts \u2014 Heather gray", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0103-product.webp", alt: "Illustration of the drawstring Shorts \u2014 Heather gray" },
+        { src: "assets/shop/20261110-wa0103-modeled.webp", alt: "Illustration of the drawstring Shorts \u2014 Heather gray worn by a model" }] },
+    { id: "20261110-WA0029", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Peach", tag: "T-shirt", price: 1200, sizes: ["S"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0029-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Peach" },
+        { src: "assets/shop/20261110-wa0029-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Peach worn by a model" }] },
+    { id: "20261110-WA0030", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Light heather gray", tag: "T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0030-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Light heather gray" },
+        { src: "assets/shop/20261110-wa0030-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Light heather gray worn by a model" }] },
+    { id: "20261110-WA0031", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Charcoal heather", tag: "T-shirt", price: 1200, sizes: ["S", "XL"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0031-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Charcoal heather" },
+        { src: "assets/shop/20261110-wa0031-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Charcoal heather worn by a model" }] },
+    { id: "20261110-WA0038", collection: "shop", category: "tops", name: "Fruit of the Loom Crewneck T-Shirt \u2014 Mint green", tag: "T-shirt", price: 1200, sizes: ["S"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0038-product.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Mint green" },
+        { src: "assets/shop/20261110-wa0038-modeled.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Mint green worn by a model" }] },
+    { id: "20261110-WA0040", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Plum", tag: "T-shirt", price: 1200, sizes: ["2XL"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0040-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Plum" },
+        { src: "assets/shop/20261110-wa0040-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Plum worn by a model" }] },
+    { id: "20261110-WA0044", collection: "shop", category: "tops", name: "Fruit of the Loom Crewneck T-Shirt \u2014 Muted green", tag: "T-shirt", price: 1200, sizes: ["M"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0044-product.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Muted green" },
+        { src: "assets/shop/20261110-wa0044-modeled.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Muted green worn by a model" }] },
+    { id: "20261110-WA0056", collection: "shop", category: "tops", name: "Fruit of the Loom Crewneck T-Shirt \u2014 Deep purple", tag: "T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0056-product.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Deep purple" },
+        { src: "assets/shop/20261110-wa0056-modeled.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Deep purple worn by a model" }] },
+    { id: "20261110-WA0058", collection: "shop", category: "tops", name: "Fruit of the Loom Crewneck T-Shirt \u2014 Lavender", tag: "T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0058-product.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Lavender" },
+        { src: "assets/shop/20261110-wa0058-modeled.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt \u2014 Lavender worn by a model" }] },
+    { id: "20261110-WA0060", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Forest green", tag: "T-shirt", price: 1200, sizes: ["S", "L"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0060-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Forest green" },
+        { src: "assets/shop/20261110-wa0060-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Forest green worn by a model" }] },
+    { id: "20261110-WA0070", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Light blue", tag: "T-shirt", price: 1200, sizes: ["XL"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0070-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Light blue" },
+        { src: "assets/shop/20261110-wa0070-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Light blue worn by a model" }] },
+    { id: "20261106-WA0123", collection: "shop", category: "bottoms", name: "High-Waisted Wide-Leg Trousers", tag: "Trousers", price: 3500, sizes: ["L"], stock: null, brand: null, department: "Women",
+      description: "Front vertical seams.", illustrated: true,
+      images: [
+        { src: "assets/shop/20261106-wa0123-product.webp", alt: "Illustration of the high-Waisted Wide-Leg Trousers" },
+        { src: "assets/shop/20261106-wa0123-modeled.webp", alt: "Illustration of the high-Waisted Wide-Leg Trousers worn by a model" }] },
+    { id: "20261106-WA0140", collection: "shop", category: "bottoms", name: "Drawstring Wide-Leg Trousers", tag: "Trousers", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Women",
+      description: "No pockets, gathered drawstring waist.", illustrated: true,
+      images: [
+        { src: "assets/shop/20261106-wa0140-product.webp", alt: "Illustration of the drawstring Wide-Leg Trousers" },
+        { src: "assets/shop/20261106-wa0140-modeled.webp", alt: "Illustration of the drawstring Wide-Leg Trousers worn by a model" }] },
+    { id: "20261106-WA0145", collection: "shop", category: "bottoms", name: "Textured Wide-Leg Trousers", tag: "Trousers", price: 4000, sizes: ["S", "1XL"], stock: null, brand: null, department: "Women",
+      description: "Vertical texture, drawstring and side pockets.", illustrated: true,
+      images: [
+        { src: "assets/shop/20261106-wa0145-product.webp", alt: "Illustration of the textured Wide-Leg Trousers" },
+        { src: "assets/shop/20261106-wa0145-modeled.webp", alt: "Illustration of the textured Wide-Leg Trousers worn by a model" }] },
+    { id: "20261110-WA0009", collection: "shop", category: "dresses-sets", name: "R&M Richards Off-Shoulder Jumpsuit", tag: "Jumpsuit", price: 6500, sizes: ["22W"], stock: null, brand: "R&M Richards", department: "Women",
+      description: "Wide flutter overlay across chest and arms, slim silver straps, ruched waist, wide legs.", illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0009-product.webp", alt: "Illustration of the R&M Richards Off-Shoulder Jumpsuit" },
+        { src: "assets/shop/20261110-wa0009-modeled.webp", alt: "Illustration of the R&M Richards Off-Shoulder Jumpsuit worn by a model" }] },
+    { id: "20261110-WA0013", collection: "shop", category: "dresses-sets", name: "R&M Richards Asymmetric Lace Jumpsuit", tag: "Jumpsuit", price: 6000, sizes: ["20W"], stock: null, brand: "R&M Richards", department: "Women",
+      description: "One lace cape sleeve and long diagonal lace overlay on opposite leg, two separate trouser legs.", illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0013-product.webp", alt: "Illustration of the R&M Richards Asymmetric Lace Jumpsuit" },
+        { src: "assets/shop/20261110-wa0013-modeled.webp", alt: "Illustration of the R&M Richards Asymmetric Lace Jumpsuit worn by a model" }] },
+    { id: "20261110-WA0015", collection: "shop", category: "dresses-sets", name: "R&M Richards Cold-Shoulder Gown", tag: "Dress", price: 6500, sizes: ["10P"], stock: null, brand: "R&M Richards", department: "Women",
+      description: "Floor-length skirt, shoulder cutouts, silver connectors, three-quarter sleeves and ruched waist.", illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0015-product.webp", alt: "Illustration of the R&M Richards Cold-Shoulder Gown" },
+        { src: "assets/shop/20261110-wa0015-modeled.webp", alt: "Illustration of the R&M Richards Cold-Shoulder Gown worn by a model" }] },
+    { id: "20261110-WA0016", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 White", tag: "T-shirt", price: 1200, sizes: ["S"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0016-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 White" },
+        { src: "assets/shop/20261110-wa0016-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 White worn by a model" }] },
+    { id: "20261110-WA0033", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Navy", tag: "T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0033-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Navy" },
+        { src: "assets/shop/20261110-wa0033-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Navy worn by a model" }] },
+    { id: "20261110-WA0076", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Lavender", tag: "T-shirt", price: 1200, sizes: ["M", "L"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0076-product.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Lavender" },
+        { src: "assets/shop/20261110-wa0076-modeled.webp", alt: "Illustration of the Fruit of the Loom V-Neck T-Shirt \u2014 Lavender worn by a model" }] },
+    { id: "20261106-WA0127", collection: "shop", category: "tops", name: "Ornate Split-Neck Shirt", tag: "Men's \u00b7 Shirt", price: 4500, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261106-wa0127-product.webp", alt: "Illustration of the ornate Split-Neck Shirt" },
+        { src: "assets/shop/20261106-wa0127-modeled.webp", alt: "Illustration of the ornate Split-Neck Shirt worn by a model" }] },
+    { id: "20261106-WA0150", collection: "shop", category: "tops", name: "Amazon Essentials Ribbed Tank Top", tag: "Men's \u00b7 Tank top", price: 1200, sizes: ["XL"], stock: null, brand: "Amazon Essentials", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261106-wa0150-product.webp", alt: "Illustration of the Amazon Essentials Ribbed Tank Top" },
+        { src: "assets/shop/20261106-wa0150-modeled.webp", alt: "Illustration of the Amazon Essentials Ribbed Tank Top worn by a model" }] },
+    { id: "20261106-WA0173", collection: "shop", category: "tops", name: "Gildan Ribbed Tank Top", tag: "Men's \u00b7 Tank top", price: 1200, sizes: ["XL"], stock: null, brand: "Gildan", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261106-wa0173-product.webp", alt: "Illustration of the Gildan Ribbed Tank Top" },
+        { src: "assets/shop/20261106-wa0173-modeled.webp", alt: "Illustration of the Gildan Ribbed Tank Top worn by a model" }] },
+    { id: "20261110-WA0019", collection: "shop", category: "tops", name: "Hanes Crewneck T-Shirt \u2014 Forest green", tag: "Kids \u00b7 T-shirt", price: 1200, sizes: ["XS", "L"], stock: null, brand: "Hanes", department: "Youth",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0019-product.webp", alt: "Illustration of the Hanes Crewneck T-Shirt \u2014 Forest green" },
+        { src: "assets/shop/20261110-wa0019-modeled.webp", alt: "Illustration of the Hanes Crewneck T-Shirt \u2014 Forest green on a display mannequin" }] },
+    { id: "20261110-WA0021", collection: "shop", category: "tops", name: "Jerzees Crewneck T-Shirt", tag: "Kids \u00b7 T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Jerzees", department: "Youth",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0021-product.webp", alt: "Illustration of the Jerzees Crewneck T-Shirt" },
+        { src: "assets/shop/20261110-wa0021-modeled.webp", alt: "Illustration of the Jerzees Crewneck T-Shirt on a display mannequin" }] },
+    { id: "20261110-WA0049", collection: "shop", category: "tops", name: "Gildan Crewneck T-Shirt \u2014 Golden yellow", tag: "Kids \u00b7 T-shirt", price: 1200, sizes: ["XL"], stock: null, brand: "Gildan", department: "Youth",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0049-product.webp", alt: "Illustration of the Gildan Crewneck T-Shirt \u2014 Golden yellow" },
+        { src: "assets/shop/20261110-wa0049-modeled.webp", alt: "Illustration of the Gildan Crewneck T-Shirt \u2014 Golden yellow on a display mannequin" }] },
+    { id: "20261110-WA0052", collection: "shop", category: "tops", name: "Hanes Crewneck T-Shirt \u2014 Burgundy", tag: "Kids \u00b7 T-shirt", price: 1200, sizes: ["M"], stock: null, brand: "Hanes", department: "Youth",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0052-product.webp", alt: "Illustration of the Hanes Crewneck T-Shirt \u2014 Burgundy" },
+        { src: "assets/shop/20261110-wa0052-modeled.webp", alt: "Illustration of the Hanes Crewneck T-Shirt \u2014 Burgundy on a display mannequin" }] },
+    { id: "20261110-WA0054", collection: "shop", category: "tops", name: "Hanes Crewneck T-Shirt \u2014 Light pink", tag: "Kids \u00b7 T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Hanes", department: "Youth",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0054-product.webp", alt: "Illustration of the Hanes Crewneck T-Shirt \u2014 Light pink" },
+        { src: "assets/shop/20261110-wa0054-modeled.webp", alt: "Illustration of the Hanes Crewneck T-Shirt \u2014 Light pink on a display mannequin" }] },
+    { id: "20261110-WA0072", collection: "shop", category: "tops", name: "Fruit of the Loom Crewneck T-Shirt", tag: "Kids \u00b7 T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Fruit of the Loom", department: "Youth",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0072-product.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt" },
+        { src: "assets/shop/20261110-wa0072-modeled.webp", alt: "Illustration of the Fruit of the Loom Crewneck T-Shirt on a display mannequin" }] },
+    { id: "20261110-WA0075", collection: "shop", category: "tops", name: "Gildan Crewneck T-Shirt \u2014 Blue", tag: "Kids \u00b7 T-shirt", price: 1200, sizes: ["XL"], stock: null, brand: "Gildan", department: "Youth",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0075-product.webp", alt: "Illustration of the Gildan Crewneck T-Shirt \u2014 Blue" },
+        { src: "assets/shop/20261110-wa0075-modeled.webp", alt: "Illustration of the Gildan Crewneck T-Shirt \u2014 Blue on a display mannequin" }] }
   ]
 };

@@ -25,7 +25,9 @@
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"></span><span class="menu-text">Menu</span></button>
       <nav class="site-nav" id="site-nav" aria-label="Main">
         <a href="index.html#shop">Swimwear</a>
-        <a href="shop.html" aria-current="page">Clothing &amp; Accessories</a>
+        <a href="shop.html" aria-current="page" data-dept-link="women">Clothing &amp; Accessories</a>
+        <a href="shop.html#men" data-dept-link="men">Men</a>
+        <a href="shop.html#kids" data-dept-link="kids">Kids</a>
         <a href="index.html#story">About us</a>
         <a href="index.html#how">How to order</a>
       </nav>
@@ -42,12 +44,13 @@
       <a class="back-link" href="index.html#shop"><span aria-hidden="true">←</span> Back to Swimwear</a>
       <p class="eyebrow">Beyond the Beach</p>
       <h1 id="page-title">Clothing &amp; <em>Accessories</em></h1>
-      <p class="lede">The wider Bikini Bottoms Up collection — the same personal service, for pieces you’ll wear long after you’ve dried off.</p>
+      <p class="lede">The wider Bikini Bottoms Up collection, for women, men and kids. The same personal service, for pieces you’ll wear long after you’ve dried off.</p>
       <span class="bubble b1" aria-hidden="true"></span><span class="bubble b2" aria-hidden="true"></span><span class="bubble b3" aria-hidden="true"></span>
     </section>
 
     <section class="collection" id="shop" aria-labelledby="shop-title">
       <h2 id="shop-title" class="visually-hidden">Clothing and accessories</h2>
+      <div class="dept-tabs" role="group" aria-label="Shop by department" data-depts hidden></div>
       <div class="filters" role="group" aria-label="Filter clothing and accessories by category" data-filters></div>
       <p class="result-count" aria-live="polite" data-result-count></p>
       <div class="product-grid" data-products></div>
@@ -81,6 +84,8 @@
       <nav class="footer-nav" aria-label="Footer">
         <a href="index.html#shop">Swimwear</a>
         <a href="shop.html">Clothing &amp; Accessories</a>
+        <a href="shop.html#men">Men</a>
+        <a href="shop.html#kids">Kids</a>
         <a href="index.html#story">About us</a>
         <a href="index.html#how">How to order</a>
         <a data-whatsapp href="#" hidden>WhatsApp</a>
