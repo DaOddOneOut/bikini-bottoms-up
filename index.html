@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+  <script>try{var t=localStorage.getItem("bbu-theme");if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
 <body data-collection="swim">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -30,6 +31,7 @@
         <a href="shop.html#kids" data-dept-link="kids">Kids</a>
         <a href="#story">About us</a>
         <a href="#how">How to order</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button>
       </nav>
       <button class="bag-button" type="button" data-open-bag>
         <span class="bag-label">Bag</span>
@@ -49,10 +51,6 @@
           <a class="button" href="#shop">Shop swimwear <span aria-hidden="true">→</span></a>
           <a class="button button-ghost" href="shop.html">Clothing &amp; Accessories</a>
         </div>
-        <ul class="hero-points" aria-label="Why shop with us">
-          <li>Personal, reliable service</li>
-          <li>Prices in Guyanese dollars</li>
-        </ul>
       </div>
       <div class="hero-art">
         <img src="assets/banner.webp" width="1672" height="941" alt="Bikini Bottoms Up logo in bubbly yellow lettering on an aqua underwater background with flowers and bubbles">
