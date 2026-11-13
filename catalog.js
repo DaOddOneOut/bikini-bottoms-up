@@ -1127,6 +1127,108 @@ window.BBU_CATALOG = {
       illustrated: true,
       images: [
         { src: "assets/shop/20261110-wa0075-product.webp", alt: "Illustration of the Gildan Crewneck T-Shirt \u2014 Blue" },
-        { src: "assets/shop/20261110-wa0075-modeled.webp", alt: "Illustration of the Gildan Crewneck T-Shirt \u2014 Blue on a display mannequin" }] }
+        { src: "assets/shop/20261110-wa0075-modeled.webp", alt: "Illustration of the Gildan Crewneck T-Shirt \u2014 Blue on a display mannequin" }] },
+
+    /* ---------- Women's jeans, overalls and dresses: batches 23-24 (Nov 2026). AI illustrations ---------- */
+    { id: "20261110-WA0121", collection: "shop", category: "bottoms", name: "Lightly Distressed Straight-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["36"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0121-product.webp", alt: "Illustration of the lightly Distressed Straight-Leg Jeans" },
+        { src: "assets/shop/20261110-wa0121-modeled.webp", alt: "Illustration of the lightly Distressed Straight-Leg Jeans worn by a model" }] },
+    { id: "20261110-WA0122", collection: "shop", category: "bottoms", name: "Light-Wash Straight-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["XL"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0122-product.webp", alt: "Illustration of the light-Wash Straight-Leg Jeans" },
+        { src: "assets/shop/20261110-wa0122-modeled.webp", alt: "Illustration of the light-Wash Straight-Leg Jeans worn by a model" }] },
+    { id: "20261110-WA0123", collection: "shop", category: "bottoms", name: "Faded Straight-Leg Jeans \u2014 Size 34", tag: "Jeans", price: 6000, sizes: ["34"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0123-product.webp", alt: "Illustration of the faded Straight-Leg Jeans \u2014 Size 34" },
+        { src: "assets/shop/20261110-wa0123-modeled.webp", alt: "Illustration of the faded Straight-Leg Jeans \u2014 Size 34 worn by a model" }] },
+    { id: "20261110-WA0125", collection: "shop", category: "dresses-sets", name: "Distressed Denim Overalls", tag: "Overalls", price: 6000, sizes: ["XL"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0125-product.webp", alt: "Illustration of the distressed Denim Overalls" },
+        { src: "assets/shop/20261110-wa0125-modeled.webp", alt: "Illustration of the distressed Denim Overalls worn by a model" }] },
+    { id: "20261110-WA0126", collection: "shop", category: "bottoms", name: "Straight-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["34"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0126-product.webp", alt: "Illustration of the straight-Leg Jeans" },
+        { src: "assets/shop/20261110-wa0126-modeled.webp", alt: "Illustration of the straight-Leg Jeans worn by a model" }] },
+    { id: "20261110-WA0127", collection: "shop", category: "bottoms", name: "Dark-Wash Relaxed Jeans", tag: "Jeans", price: 6000, sizes: ["42"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0127-product.webp", alt: "Illustration of the dark-Wash Relaxed Jeans" },
+        { src: "assets/shop/20261110-wa0127-modeled.webp", alt: "Illustration of the dark-Wash Relaxed Jeans worn by a model" }] },
+    { id: "20261110-WA0128", collection: "shop", category: "bottoms", name: "Medium-Wash Straight-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["34"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0128-product.webp", alt: "Illustration of the medium-Wash Straight-Leg Jeans" },
+        { src: "assets/shop/20261110-wa0128-modeled.webp", alt: "Illustration of the medium-Wash Straight-Leg Jeans worn by a model" }] },
+    { id: "20261110-WA0129", collection: "shop", category: "bottoms", name: "Whiskered Straight-Leg Jeans \u2014 Size L", tag: "Jeans", price: 6000, sizes: ["L"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0129-product.webp", alt: "Illustration of the whiskered Straight-Leg Jeans \u2014 Size L" },
+        { src: "assets/shop/20261110-wa0129-modeled.webp", alt: "Illustration of the whiskered Straight-Leg Jeans \u2014 Size L worn by a model" }] },
+    { id: "20261110-WA0130", collection: "shop", category: "bottoms", name: "Washed Charcoal Wide-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["31"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0130-product.webp", alt: "Illustration of the washed Charcoal Wide-Leg Jeans" },
+        { src: "assets/shop/20261110-wa0130-modeled.webp", alt: "Illustration of the washed Charcoal Wide-Leg Jeans worn by a model" }] },
+    { id: "20261110-WA0131", collection: "shop", category: "bottoms", name: "Elastic-Waist Wide-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["XL"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0131-product.webp", alt: "Illustration of the elastic-Waist Wide-Leg Jeans" },
+        { src: "assets/shop/20261110-wa0131-modeled.webp", alt: "Illustration of the elastic-Waist Wide-Leg Jeans worn by a model" }] },
+    { id: "20261110-WA0109", collection: "shop", category: "dresses-sets", name: "Purple Floral Sleeveless Long Dress", tag: "Dress", price: 5000, sizes: ["2"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0109-product.webp", alt: "Illustration of the purple Floral Sleeveless Long Dress" },
+        { src: "assets/shop/20261110-wa0109-modeled.webp", alt: "Illustration of the purple Floral Sleeveless Long Dress worn by a model" }] },
+    { id: "20261110-WA0110", collection: "shop", category: "dresses-sets", name: "Multicolor Floral Sleeveless Long Dress", tag: "Dress", price: 5000, sizes: ["2"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0110-product.webp", alt: "Illustration of the multicolor Floral Sleeveless Long Dress" },
+        { src: "assets/shop/20261110-wa0110-modeled.webp", alt: "Illustration of the multicolor Floral Sleeveless Long Dress worn by a model" }] },
+    { id: "20261110-WA0111", collection: "shop", category: "dresses-sets", name: "Black Sleeveless Dress", tag: "Dress", price: 5000, sizes: ["4"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0111-product.webp", alt: "Illustration of the black Sleeveless Dress" },
+        { src: "assets/shop/20261110-wa0111-modeled.webp", alt: "Illustration of the black Sleeveless Dress worn by a model" }] },
+    { id: "20261110-WA0113", collection: "shop", category: "bottoms", name: "Gray Washed Wide-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["0XL"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0113-product.webp", alt: "Illustration of the gray Washed Wide-Leg Jeans" },
+        { src: "assets/shop/20261110-wa0113-modeled.webp", alt: "Illustration of the gray Washed Wide-Leg Jeans worn by a model" }] },
+    { id: "20261110-WA0115", collection: "shop", category: "bottoms", name: "Star and Stripe Wide-Leg Jeans", tag: "Jeans", price: 6500, sizes: ["31"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0115-product.webp", alt: "Illustration of the star and Stripe Wide-Leg Jeans" },
+        { src: "assets/shop/20261110-wa0115-modeled.webp", alt: "Illustration of the star and Stripe Wide-Leg Jeans worn by a model" }] },
+    { id: "20261110-WA0116", collection: "shop", category: "bottoms", name: "Charcoal Wide-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["31"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0116-product.webp", alt: "Illustration of the charcoal Wide-Leg Jeans" },
+        { src: "assets/shop/20261110-wa0116-modeled.webp", alt: "Illustration of the charcoal Wide-Leg Jeans worn by a model" }] },
+    { id: "20261110-WA0118", collection: "shop", category: "bottoms", name: "Light-Wash Cargo Jeans", tag: "Jeans", price: 6000, sizes: ["L"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0118-product.webp", alt: "Illustration of the light-Wash Cargo Jeans" },
+        { src: "assets/shop/20261110-wa0118-modeled.webp", alt: "Illustration of the light-Wash Cargo Jeans worn by a model" }] },
+    { id: "20261110-WA0119", collection: "shop", category: "dresses-sets", name: "Light-Wash Distressed Denim Overalls", tag: "Overalls", price: 6000, sizes: ["XXL"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0119-product.webp", alt: "Illustration of the light-Wash Distressed Denim Overalls" },
+        { src: "assets/shop/20261110-wa0119-modeled.webp", alt: "Illustration of the light-Wash Distressed Denim Overalls worn by a model" }] },
+    { id: "20261110-WA0120", collection: "shop", category: "bottoms", name: "Whiskered Straight-Leg Jeans \u2014 Size 38", tag: "Jeans", price: 6000, sizes: ["38"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0120-product.webp", alt: "Illustration of the whiskered Straight-Leg Jeans \u2014 Size 38" },
+        { src: "assets/shop/20261110-wa0120-modeled.webp", alt: "Illustration of the whiskered Straight-Leg Jeans \u2014 Size 38 worn by a model" }] },
+    { id: "20261110-WA0124", collection: "shop", category: "bottoms", name: "Faded Straight-Leg Jeans", tag: "Jeans", price: null, sizes: [], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0124-product.webp", alt: "Illustration of the faded Straight-Leg Jeans" },
+        { src: "assets/shop/20261110-wa0124-modeled.webp", alt: "Illustration of the faded Straight-Leg Jeans worn by a model" }] }
   ]
 };
