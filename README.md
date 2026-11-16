@@ -7,7 +7,7 @@ A mobile-friendly boutique storefront for Bikini Bottoms Up. The owner prefers t
 | Page | What it shows |
 | --- | --- |
 | `index.html` | **Swimwear** — bikinis, one-pieces, swim tops, tankini sets. Also has the "Beyond the Beach" promo, About the brand and How to order. |
-| `shop.html` | **Clothing & Accessories** ("Beyond the Beach"): 209 pieces, shopped by department (**Women 154 · Men 47 · Kids 8**) and category (Tops, Bottoms, Dresses & Sets, Sleepwear & Underwear, Shoes & Footwear, Bags; Accessories appears when stocked). `shop.html#men` and `shop.html#kids` open those departments directly. Items with no department set count as Women's. |
+| `shop.html` | **Clothing & Accessories** ("Beyond the Beach"): 229 pieces, shopped by department (**Women 168 · Men 53 · Kids 8**) and category (Tops, Bottoms, Dresses & Sets, Sleepwear & Underwear, Shoes & Footwear, Bags; Accessories appears when stocked). `shop.html#men` and `shop.html#kids` open those departments directly. Items with no department set count as Women's. |
 
 Both pages share the header, footer, product gallery and **one shopping bag** (saved in the browser, so it follows customers between pages and tabs).
 

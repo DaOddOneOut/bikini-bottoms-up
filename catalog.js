@@ -1229,6 +1229,108 @@ window.BBU_CATALOG = {
       illustrated: true,
       images: [
         { src: "assets/shop/20261110-wa0124-product.webp", alt: "Illustration of the faded Straight-Leg Jeans" },
-        { src: "assets/shop/20261110-wa0124-modeled.webp", alt: "Illustration of the faded Straight-Leg Jeans worn by a model" }] }
+        { src: "assets/shop/20261110-wa0124-modeled.webp", alt: "Illustration of the faded Straight-Leg Jeans worn by a model" }] },
+
+    /* ---------- Women's dresses/romper and graphic tees: batches 25-26 (Nov 2026). AI illustrations ---------- */
+    { id: "20261115-WA0020", collection: "shop", category: "dresses-sets", name: "Denim Collared Mini Dress", tag: "Dress", price: 6000, sizes: ["0XL"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0020-product.webp", alt: "Illustration of the denim Collared Mini Dress" },
+        { src: "assets/shop/20261115-wa0020-modeled.webp", alt: "Illustration of the denim Collared Mini Dress worn by a model" }] },
+    { id: "20261115-WA0023", collection: "shop", category: "dresses-sets", name: "Denim Wrap-Front Skort Romper", tag: "Romper", price: 6000, sizes: ["0XL"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0023-product.webp", alt: "Illustration of the denim Wrap-Front Skort Romper" },
+        { src: "assets/shop/20261115-wa0023-modeled.webp", alt: "Illustration of the denim Wrap-Front Skort Romper worn by a model" }] },
+    { id: "20261115-WA0024", collection: "shop", category: "dresses-sets", name: "Coral Halter Ruffle Dress", tag: "Dress", price: 6000, sizes: ["8", "10"], stock: null, brand: "SLNY", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0024-product.webp", alt: "Illustration of the coral Halter Ruffle Dress" },
+        { src: "assets/shop/20261115-wa0024-modeled.webp", alt: "Illustration of the coral Halter Ruffle Dress worn by a model" }] },
+    { id: "20261115-WA0025", collection: "shop", category: "dresses-sets", name: "Cream Botanical Shirt Dress", tag: "Dress", price: 4000, sizes: ["XL"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0025-product.webp", alt: "Illustration of the cream Botanical Shirt Dress" },
+        { src: "assets/shop/20261115-wa0025-modeled.webp", alt: "Illustration of the cream Botanical Shirt Dress worn by a model" }] },
+    { id: "20261115-WA0026", collection: "shop", category: "dresses-sets", name: "Red Buckle Wrap Dress", tag: "Dress", price: 6000, sizes: ["6P"], stock: null, brand: "R&M Richards", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0026-product.webp", alt: "Illustration of the red Buckle Wrap Dress" },
+        { src: "assets/shop/20261115-wa0026-modeled.webp", alt: "Illustration of the red Buckle Wrap Dress worn by a model" }] },
+    { id: "20261115-WA0027", collection: "shop", category: "dresses-sets", name: "Black-and-White Printed Dress", tag: "Dress", price: 5500, sizes: ["M"], stock: null, brand: "European Station", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0027-product.webp", alt: "Illustration of the black-and-White Printed Dress" },
+        { src: "assets/shop/20261115-wa0027-modeled.webp", alt: "Illustration of the black-and-White Printed Dress worn by a model" }] },
+    { id: "20261115-WA0028", collection: "shop", category: "dresses-sets", name: "Royal Blue Ruffle-Sleeve Dress", tag: "Dress", price: 6000, sizes: ["18W"], stock: null, brand: "R&M Richards", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0028-product.webp", alt: "Illustration of the royal Blue Ruffle-Sleeve Dress" },
+        { src: "assets/shop/20261115-wa0028-modeled.webp", alt: "Illustration of the royal Blue Ruffle-Sleeve Dress worn by a model" }] },
+    { id: "20261115-WA0029", collection: "shop", category: "dresses-sets", name: "Blush Tiered Flutter-Sleeve Dress", tag: "Dress", price: 5000, sizes: ["L"], stock: null, brand: "Morgan & Co", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0029-product.webp", alt: "Illustration of the blush Tiered Flutter-Sleeve Dress" },
+        { src: "assets/shop/20261115-wa0029-modeled.webp", alt: "Illustration of the blush Tiered Flutter-Sleeve Dress worn by a model" }] },
+    { id: "20261115-WA0030", collection: "shop", category: "dresses-sets", name: "Blue Floral One-Shoulder Dress", tag: "Dress", price: 6000, sizes: ["4P"], stock: null, brand: "Nightway", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0030-product.webp", alt: "Illustration of the blue Floral One-Shoulder Dress" },
+        { src: "assets/shop/20261115-wa0030-modeled.webp", alt: "Illustration of the blue Floral One-Shoulder Dress worn by a model" }] },
+    { id: "20261115-WA0031", collection: "shop", category: "dresses-sets", name: "Black Ditsy-Print Flutter-Sleeve Mini Dress", tag: "Dress", price: 3500, sizes: ["L"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0031-product.webp", alt: "Illustration of the black Ditsy-Print Flutter-Sleeve Mini Dress" },
+        { src: "assets/shop/20261115-wa0031-modeled.webp", alt: "Illustration of the black Ditsy-Print Flutter-Sleeve Mini Dress worn by a model" }] },
+    { id: "20261110-WA0108", collection: "shop", category: "tops", name: "New York City Graphic Tank", tag: "Tank top", price: 1500, sizes: ["L", "XL"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0108-product.webp", alt: "Illustration of the New York City Graphic Tank" },
+        { src: "assets/shop/20261110-wa0108-modeled.webp", alt: "Illustration of the New York City Graphic Tank worn by a model" }] },
+    { id: "20261110-WA0112", collection: "shop", category: "dresses-sets", name: "Pink Notch-Neck Shift Dress", tag: "Dress", price: 3000, sizes: ["XL"], stock: null, brand: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0112-product.webp", alt: "Illustration of the pink Notch-Neck Shift Dress" },
+        { src: "assets/shop/20261110-wa0112-modeled.webp", alt: "Illustration of the pink Notch-Neck Shift Dress worn by a model" }] },
+    { id: "20261115-WA0035", collection: "shop", category: "tops", name: "New York City Stripe Tee \u2014 Caramel brown", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["2XL"], stock: null, brand: "Gildan", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0035-product.webp", alt: "Illustration of the New York City Stripe Tee \u2014 Caramel brown" },
+        { src: "assets/shop/20261115-wa0035-modeled.webp", alt: "Illustration of the New York City Stripe Tee \u2014 Caramel brown worn by a model" }] },
+    { id: "20261115-WA0036", collection: "shop", category: "tops", name: "New York City Stripe Tee \u2014 Fuchsia", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["XL"], stock: null, brand: "Gildan", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0036-product.webp", alt: "Illustration of the New York City Stripe Tee \u2014 Fuchsia" },
+        { src: "assets/shop/20261115-wa0036-modeled.webp", alt: "Illustration of the New York City Stripe Tee \u2014 Fuchsia worn by a model" }] },
+    { id: "20261115-WA0037", collection: "shop", category: "tops", name: "NYC Block Graphic Tee", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["2XL"], stock: null, brand: "Gildan", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0037-product.webp", alt: "Illustration of the NYC Block Graphic Tee" },
+        { src: "assets/shop/20261115-wa0037-modeled.webp", alt: "Illustration of the NYC Block Graphic Tee worn by a model" }] },
+    { id: "20261115-WA0038", collection: "shop", category: "tops", name: "Big Apple New York Graphic Tee", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0038-product.webp", alt: "Illustration of the Big Apple New York Graphic Tee" },
+        { src: "assets/shop/20261115-wa0038-modeled.webp", alt: "Illustration of the Big Apple New York Graphic Tee worn by a model" }] },
+    { id: "20261115-WA0039", collection: "shop", category: "tops", name: "Coastal Town Graphic Tee", tag: "T-shirt", price: 5500, sizes: ["2XL"], stock: null, brand: "Express", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0039-product.webp", alt: "Illustration of the coastal Town Graphic Tee" },
+        { src: "assets/shop/20261115-wa0039-modeled.webp", alt: "Illustration of the coastal Town Graphic Tee worn by a model" }] },
+    { id: "20261115-WA0042", collection: "shop", category: "tops", name: "New York Varsity Tee", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["2XL"], stock: null, brand: "Gildan", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0042-product.webp", alt: "Illustration of the New York Varsity Tee" },
+        { src: "assets/shop/20261115-wa0042-modeled.webp", alt: "Illustration of the New York Varsity Tee worn by a model" }] },
+    { id: "20261115-WA0045", collection: "shop", category: "tops", name: "New York City Skyline Tee", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["L"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0045-product.webp", alt: "Illustration of the New York City Skyline Tee" },
+        { src: "assets/shop/20261115-wa0045-modeled.webp", alt: "Illustration of the New York City Skyline Tee worn by a model" }] },
+    { id: "20261115-WA0048", collection: "shop", category: "tops", name: "Taupe Abstract Graphic Tee", tag: "T-shirt", price: 5500, sizes: ["L"], stock: null, brand: "Express", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0048-product.webp", alt: "Illustration of the taupe Abstract Graphic Tee" },
+        { src: "assets/shop/20261115-wa0048-modeled.webp", alt: "Illustration of the taupe Abstract Graphic Tee worn by a model" }] }
   ]
 };
