@@ -7,6 +7,10 @@
                   Guyana example format: "592XXXXXXX". Leave "" until confirmed —
                   the "Message on WhatsApp" buttons stay hidden while it is empty.
 
+  inventoryCsvUrl The owner's Google Sheet, published to the web as CSV
+                  (File > Share > Publish to web > Products tab > CSV). Leave ""
+                  to use only the product list built into catalog.js.
+
   checkoutMode    "demo"  → checkout only previews an order. Nothing is sent or charged.
                   Real MMG payments need a merchant account, a secure server to hold
                   the MMG credentials, and server-side payment confirmation from MMG.
@@ -17,5 +21,6 @@ window.BBU_CONFIG = {
   businessName: "Bikini Bottoms Up",
   currency: "GYD",
   whatsappNumber: "",
+  inventoryCsvUrl: "",
   checkoutMode: "demo"
 };

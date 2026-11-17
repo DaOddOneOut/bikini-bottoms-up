@@ -729,9 +729,134 @@
 
   if (reduceMotion) document.documentElement.classList.add("reduce-motion");
 
+  /* ---------- live inventory from the owner's Google Sheet ----------
+     config.js → inventoryCsvUrl is the sheet's "Publish to web" CSV link (Products tab).
+     The sheet overrides prices, sizes, stock, names etc. by product ID. Photos stay in catalog.js.
+     If the sheet is missing, slow or malformed, the site keeps using catalog.js. */
+  var SHEET_URL = String(CONFIG.inventoryCsvUrl || "").trim();
+  var SHEET_CACHE = "bbu-sheet-cache-v1";
+  var BASE = PRODUCTS.map(function (p) { var c = {}; for (var k in p) c[k] = p[k]; return c; });
+  var CAT_BY_LABEL = {};
+  ["swim", "shop"].forEach(function (coll) {
+    categoriesFor(coll).forEach(function (c) { CAT_BY_LABEL[c.label.toLowerCase()] = { collection: coll, id: c.id }; });
+  });
+
+  function parseCsv(text) {
+    var rows = [], row = [], cell = "", q = false;
+    for (var i = 0; i < text.length; i++) {
+      var ch = text[i];
+      if (q) {
+        if (ch === '"') { if (text[i + 1] === '"') { cell += '"'; i++; } else q = false; }
+        else cell += ch;
+      } else if (ch === '"') q = true;
+      else if (ch === ",") { row.push(cell); cell = ""; }
+      else if (ch === "\n" || ch === "\r") {
+        if (ch === "\r" && text[i + 1] === "\n") i++;
+        row.push(cell); rows.push(row); row = []; cell = "";
+      } else cell += ch;
+    }
+    if (cell !== "" || row.length) { row.push(cell); rows.push(row); }
+    return rows;
+  }
+  function yes(v) { return /^(yes|y|true|1)$/i.test(String(v).trim()); }
+  function no(v) { return /^(no|n|false|0|hide|hidden)$/i.test(String(v).trim()); }
+  function list(v) { return String(v).split(/[,;\n]+/).map(function (x) { return x.trim(); }).filter(Boolean); }
+
+  // Returns the merged product list, or null if the sheet doesn't look right.
+  function mergeSheet(text) {
+    var rows = parseCsv(String(text || "").replace(/^﻿/, ""));
+    if (rows.length < 2) return null;
+    var head = rows[0].map(function (h) { return h.trim().toLowerCase(); });
+    var col = function (name) { return head.indexOf(name); };
+    if (col("id") === -1) return null;
+    var byRow = {};
+    rows.slice(1).forEach(function (r) { var id = (r[col("id")] || "").trim(); if (id) byRow[id] = r; });
+    var matched = BASE.filter(function (p) { return byRow[p.id]; }).length;
+    if (matched < Math.max(1, Math.floor(BASE.length * 0.5))) return null;   // wrong tab or broken export
+    var get = function (r, name) { var i = col(name); return i === -1 ? undefined : (r[i] === undefined ? "" : String(r[i]).trim()); };
+    var out = [];
+    BASE.forEach(function (base) {
+      var p = {}; for (var k in base) p[k] = base[k];
+      var r = byRow[base.id];
+      if (!r) { out.push(p); return; }                     // row missing: keep the built-in listing
+      var v;
+      if ((v = get(r, "show on site")) !== undefined && no(v)) return;   // hidden by the owner
+      if ((v = get(r, "name"))) p.name = v;
+      if ((v = get(r, "price (gyd)")) !== undefined) {
+        if (v === "") p.price = null;
+        else { var num = Number(v.replace(/[^0-9.]/g, "")); if (v.replace(/[^0-9]/g, "") !== "" && isFinite(num)) p.price = Math.round(num); }
+      }
+      if ((v = get(r, "sizes")) !== undefined) p.sizes = list(v);
+      if ((v = get(r, "sold-out sizes")) !== undefined) { var ss = list(v); if (ss.length) p.soldSizes = ss; else delete p.soldSizes; }
+      var st = get(r, "stock"), so = get(r, "sold out");
+      if (st !== undefined || so !== undefined) {          // only when the sheet has these columns
+        p.stock = st !== undefined && /^\d+$/.test(st) ? Number(st) : null;
+        if (so !== undefined && yes(so)) p.stock = 0;
+      }
+      if ((v = get(r, "category")) && CAT_BY_LABEL[v.toLowerCase()]) {
+        var c = CAT_BY_LABEL[v.toLowerCase()]; p.collection = c.collection; p.category = c.id;
+      }
+      if ((v = get(r, "department")) !== undefined) {
+        var d = v.toLowerCase();
+        p.department = d === "women" ? "Women" : d === "men" ? "Men" : (d === "kids" || d === "youth") ? "Youth" : null;
+      }
+      if ((v = get(r, "brand")) !== undefined) p.brand = v || null;
+      if ((v = get(r, "label"))) p.tag = v;
+      if ((v = get(r, "note")) !== undefined) { if (v) p.note = v; else delete p.note; }
+      if ((v = get(r, "description")) !== undefined) p.description = v || null;
+      out.push(p);
+    });
+    return out;
+  }
+  function useProducts(list) {
+    PRODUCTS.length = 0;
+    Array.prototype.push.apply(PRODUCTS, list);
+  }
+  function refreshAfterSheet() {
+    var before = JSON.stringify(bag);
+    bag = cleanBag(bag);                                   // drops items now hidden or sold out
+    if (JSON.stringify(bag) !== before) saveBag(); else updateBagCount();
+    if (status) {
+      var n = productsFor("shop").length;
+      status.textContent = n ? plural(n, "piece") + " in store" : "Arriving soon";
+    }
+    renderProducts();
+    if (cart.open && !$("#summaryText")) renderCart();
+  }
+  var sheetText = null;
+  if (SHEET_URL) {
+    try {
+      var cached = JSON.parse(localStorage.getItem(SHEET_CACHE) || "null");
+      if (cached && cached.url === SHEET_URL && Date.now() - cached.t < 7 * 864e5) {
+        var m0 = mergeSheet(cached.csv);
+        if (m0) { useProducts(m0); sheetText = cached.csv; }
+      }
+    } catch (e) { /* ignore a bad cache */ }
+  }
+  function fetchSheet() {
+    if (!SHEET_URL || !window.fetch) return;
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 10000) : null;
+    fetch(SHEET_URL, { cache: "no-store", signal: ctrl ? ctrl.signal : undefined })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.text(); })
+      .then(function (text) {
+        if (timer) clearTimeout(timer);
+        if (text === sheetText) return;
+        var merged = mergeSheet(text);
+        if (!merged) { if (window.console) console.warn("Inventory sheet ignored: it doesn't look like the Products tab."); return; }
+        sheetText = text;
+        try { localStorage.setItem(SHEET_CACHE, JSON.stringify({ url: SHEET_URL, t: Date.now(), csv: text })); } catch (e) { /* ignore */ }
+        useProducts(merged);
+        refreshAfterSheet();
+      })
+      .catch(function (err) { if (timer) clearTimeout(timer); if (window.console) console.warn("Inventory sheet not loaded; using built-in catalog.", err && err.message); });
+  }
+
   loadBag();
   saveBag(); // migrates any older bag to the shared key
   renderProducts();
+  if (status) { var n0 = productsFor("shop").length; status.textContent = n0 ? plural(n0, "piece") + " in store" : "Arriving soon"; }
+  fetchSheet();
   if (PAGE === "shop" && currentDept !== "all") {
     var sec0 = $("#shop");
     if (sec0) setTimeout(function () { sec0.scrollIntoView({ block: "start" }); }, 0);

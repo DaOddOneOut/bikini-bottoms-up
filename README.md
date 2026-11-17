@@ -11,6 +11,23 @@ A mobile-friendly boutique storefront for Bikini Bottoms Up. The owner prefers t
 
 Both pages share the header, footer, product gallery and **one shopping bag** (saved in the browser, so it follows customers between pages and tabs).
 
+## Owner inventory sheet (Google Sheets)
+
+The owner edits products in a Google Sheet, **Bikini Bottoms Up — Website Inventory**, and the site reads it as she makes changes.
+
+- **What the sheet controls:** name, price, sizes, sold-out sizes, sold out, show on site (hide or unhide), stock, category (which also moves an item between the Swimwear and Clothing pages), department, brand, photo label, note and description. Rows are matched to products by **ID**.
+- **What it doesn't control:** photos. Those stay in `catalog.js` and `assets/`. A new product needs its photos added to the repo first. Then add a row to the sheet with the same ID.
+- **How it loads:** `config.js` → `inventoryCsvUrl` holds the sheet's *Publish to web* CSV link for the **Products** tab only. Each visitor sees the last version of the sheet their browser saved straight away, then the site fetches the latest copy in the background and updates the page if anything changed. Google refreshes the published copy about every 5 minutes.
+- **Safety:** if the link is empty, the sheet can't be reached, or the CSV doesn't look like the Products tab (no `ID` header, or fewer than half the IDs match), the site uses `catalog.js` as it is. A bad price (e.g. text) keeps the built-in price. Items hidden or sold out in the sheet are removed from any visitor's bag.
+- **Keep headers as they are.** The site reads columns by their row-1 names: `ID, Name, Price (GYD), Sizes, Sold-out sizes, Sold out, Show on site, Stock, Category, Department, Brand, Label, Note, Description`. `Photo` and `Page` are for the owner's reference only.
+- **Rebuilding the sheet** from `catalog.js`: see `tools/build_inventory_sheet.py`. `catalog.js` is the built-in fallback. Once the sheet is live, the sheet is the source of truth, so sync any sheet edits back into `catalog.js` when new products are imported.
+
+### Setup (one time)
+1. Open the sheet in Google Sheets → **File → Share → Publish to web**.
+2. Under *Link*, choose the **Products** tab (not "Entire document") and **Comma-separated values (.csv)**, then click **Publish**.
+3. Put the link in `config.js` as `inventoryCsvUrl`.
+4. Share the sheet with the owner as **Editor** (Share button → her email).
+
 ## Browsing tools
 
 Both product grids have a search box, a **Size** filter, **Sort** (Featured, Newest arrivals, Price low to high and high to low), and **Show 25 / 50 / 100** with a **Load more** button. The size filter groups spellings of the same size ("Small" = "S", "XXL" = "2XL"), while each card still shows the size exactly as listed. Items that can't be ordered yet (no price, no size or sold out) always sort last. "Newest arrivals" follows the order products were added to `catalog.js`, so add new products at the end. Each visitor's Show amount is remembered (`bbu-page-size`).
