@@ -130,6 +130,17 @@ h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); line-height
 .chip[aria-pressed="true"] { background: var(--teal); border-color: var(--teal); color: var(--white); }
 .chip-count { font-size: 12px; background: var(--aqua-soft); color: var(--teal-deep); border-radius: 999px; padding: 1px 8px; }
 .chip[aria-pressed="true"] .chip-count { background: rgba(255, 255, 255, .22); color: var(--white); }
+.browse-bar { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 12px; margin: 4px 0 14px; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.field select, .field input { min-height: 44px; padding: 8px 34px 8px 14px; border: 1.5px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--ink); font: 500 15px/1.2 var(--body); letter-spacing: 0; text-transform: none; }
+.field input { padding-right: 14px; }
+.field-search { flex: 1 1 240px; }
+.field-search input { width: 100%; }
+.field select:focus-visible, .field input:focus-visible { border-color: var(--teal); }
+.load-more { display: flex; flex-direction: column; align-items: center; gap: 10px; margin: 28px 0 0; text-align: center; }
+.load-more .small { margin: 0; }
+.no-results { grid-column: 1 / -1; text-align: center; padding: 32px 16px; color: var(--muted); }
+.no-results .button { margin-top: 12px; }
 .result-count { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
 
 .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: clamp(14px, 2.2vw, 28px); }
@@ -370,6 +381,9 @@ html[data-theme="dark"] .site-footer { border-top: 1px solid var(--line); }
   .card-controls .size-field select { width: 100%; }
   .card-tag { font-size: 11px; padding: 3px 9px; top: 8px; left: 8px; }
   .chip { font-size: 14px; padding: 8px 13px; }
+  .browse-bar { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+  .field-search { grid-column: 1 / -1; }
+  .field select { width: 100%; padding-left: 14px; padding-right: 30px; font-size: 15px; text-overflow: ellipsis; }
   .dept-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; }
   .dept-tab { padding: 8px 4px; font-size: 14px; }
   .dept-tab .chip-count { display: none; }

@@ -199,6 +199,73 @@
       '<div class="empty-actions">' + other + (wa ? '<a class="button button-ghost" href="' + esc(wa) + '" target="_blank" rel="noopener">Ask us on WhatsApp</a>' : "") + "</div>";
   }
 
+  /* ---------- browse tools: search, size, sort, paging ---------- */
+  var searchEl = $("[data-search]"), sizeSel = $("[data-size-filter]"), sortSel = $("[data-sort]"), pageSel = $("[data-page-size]");
+  var moreBox = $("[data-more]"), moreBtn = $("[data-load-more]"), moreCount = $("[data-more-count]");
+  var PAGE_KEY = "bbu-page-size", PAGE_SIZES = [25, 50, 100];
+  var pageSize = (function () { try { var v = Number(localStorage.getItem(PAGE_KEY)); return PAGE_SIZES.indexOf(v) !== -1 ? v : 25; } catch (e) { return 25; } })();
+  var visibleCount = pageSize, searchText = "", sizeFilter = "", sortMode = "featured";
+  if (pageSel) pageSel.value = String(pageSize);
+  var ORDER = {};
+  PRODUCTS.forEach(function (p, i) { ORDER[p.id] = i; });
+
+  // Size filter: the same size written different ways is one choice ("Small" = "S", "XXL" = "2XL").
+  var SIZE_WORDS = { small: "S", medium: "M", large: "L", "x-small": "XS", "extra small": "XS", "x-large": "XL", "extra large": "XL", xxl: "2XL", xxxl: "3XL" };
+  function sizeKey(s) { var t = String(s).trim(); return SIZE_WORDS[t.toLowerCase()] || t.toUpperCase(); }
+  var LETTER_ORDER = ["XS", "S", "M", "L", "LX", "XL", "0XL", "1XL", "2XL", "2XB", "3XL", "4XL", "5XL"];
+  function sizeRank(k) {
+    var i = LETTER_ORDER.indexOf(k);
+    if (i !== -1) return [0, i, 0];
+    var m = k.match(/^(\d+)X(\d+)$/);
+    if (m) return [2, Number(m[1]), Number(m[2])];
+    m = k.match(/^(\d+)([A-Z]*)$/);
+    if (m) return [1, Number(m[1]), m[2] ? m[2].charCodeAt(0) : 0];
+    return [3, 0, 0];
+  }
+  function bySize(a, b) {
+    var x = sizeRank(a), y = sizeRank(b);
+    return x[0] - y[0] || x[1] - y[1] || x[2] - y[2] || (a < b ? -1 : a > b ? 1 : 0);
+  }
+  function searchBlob(p) {
+    var cat = categoriesFor(p.collection).filter(function (c) { return c.id === p.category; })[0];
+    return [p.name, p.brand, p.tag, cat && cat.label, p.description, deptText(p)].filter(Boolean).join(" ").toLowerCase();
+  }
+  function matchesSearch(p) {
+    if (!searchText) return true;
+    var blob = searchBlob(p);
+    return searchText.split(/\s+/).every(function (w) { return blob.indexOf(w) !== -1; });
+  }
+  function renderSizeOptions(items) {
+    if (!sizeSel) return;
+    var keys = {};
+    items.forEach(function (p) { (p.sizes || []).forEach(function (s) { keys[sizeKey(s)] = (keys[sizeKey(s)] || 0) + 1; }); });
+    var list = Object.keys(keys).sort(bySize);
+    if (sizeFilter && !keys[sizeFilter]) sizeFilter = "";
+    sizeSel.innerHTML = '<option value="">All sizes</option>' + list.map(function (k) {
+      return '<option value="' + esc(k) + '"' + (k === sizeFilter ? " selected" : "") + ">" + esc(k) + " (" + keys[k] + ")</option>";
+    }).join("");
+  }
+  function sortItems(list) {
+    var buyable = function (p) { return canBuy(p) ? 0 : 1; };   // anything not orderable yet goes last
+    return list.slice().sort(function (a, b) {
+      var d = buyable(a) - buyable(b);
+      if (d) return d;
+      if (sortMode === "newest") return ORDER[b.id] - ORDER[a.id];
+      if (sortMode === "price-asc" || sortMode === "price-desc") {
+        var pa = hasPrice(a) ? a.price : Infinity, pb = hasPrice(b) ? b.price : Infinity;
+        if (pa !== pb) return sortMode === "price-asc" ? pa - pb : (pb === Infinity ? -1 : pa === Infinity ? 1 : pb - pa);
+      }
+      return ORDER[a.id] - ORDER[b.id];
+    });
+  }
+  function resetPaging() { visibleCount = pageSize; }
+  function clearBrowse() {
+    searchText = ""; sizeFilter = ""; currentFilter = "all";
+    if (searchEl) searchEl.value = "";
+    resetPaging();
+    renderProducts();
+  }
+
   function renderDepts(items) {
     if (!deptsEl) return;
     var present = DEPTS.filter(function (d) { return items.some(function (p) { return deptKey(p) === d.id; }); });
@@ -238,16 +305,38 @@
     }
     grid.hidden = false;
     if (emptyEl) emptyEl.hidden = true;
-    var shown = items.filter(function (p) { return currentFilter === "all" || p.category === currentFilter; });
-    grid.innerHTML = shown.map(cardHtml).join("");
+    var inCat = items.filter(function (p) { return currentFilter === "all" || p.category === currentFilter; });
+    renderSizeOptions(inCat);
+    var matched = sortItems(inCat.filter(function (p) {
+      return matchesSearch(p) && (!sizeFilter || (p.sizes || []).some(function (s) { return sizeKey(s) === sizeFilter; }));
+    }));
+    var shown = matched.slice(0, visibleCount);
+    var word = PAGE === "shop" ? "item" : "style";
     var deptLabel = currentDept === "all" ? "" : " · " + DEPTS.filter(function (d) { return d.id === currentDept; })[0].label;
-    if (countEl) countEl.textContent = "Showing " + plural(shown.length, PAGE === "shop" ? "item" : "style") + deptLabel;
+    if (!matched.length) {
+      grid.innerHTML = '<div class="no-results"><p>No ' + word + 's match' + (searchText ? ' “' + esc(searchText) + '”' : "") + (sizeFilter ? " in size " + esc(sizeFilter) : "") + '.</p><button type="button" class="button" data-clear-browse>Clear search and filters</button></div>';
+      if (countEl) countEl.textContent = "No matches" + deptLabel;
+      if (moreBox) moreBox.hidden = true;
+      return;
+    }
+    grid.innerHTML = shown.map(cardHtml).join("");
+    var of = shown.length < matched.length ? shown.length + " of " + matched.length + " " + word + "s" : plural(matched.length, word);
+    if (countEl) countEl.textContent = "Showing " + of + deptLabel;
+    if (moreBox) {
+      var left = matched.length - shown.length;
+      moreBox.hidden = left <= 0;
+      if (left > 0) {
+        moreCount.textContent = "Showing " + shown.length + " of " + matched.length;
+        moreBtn.textContent = "Load " + Math.min(pageSize, left) + " more";
+      }
+    }
   }
 
   if (filtersEl) filtersEl.addEventListener("click", function (e) {
     var b = e.target.closest("[data-filter]");
     if (!b) return;
     currentFilter = b.getAttribute("data-filter");
+    resetPaging();
     renderProducts();
     var again = $('[data-filter="' + currentFilter + '"]', filtersEl);
     if (again) again.focus();
@@ -258,6 +347,7 @@
     if (!b) return;
     currentDept = b.getAttribute("data-dept");
     currentFilter = "all";
+    resetPaging();
     try { history.replaceState(null, "", currentDept === "all" ? location.pathname + location.search : "#" + currentDept); } catch (err) { /* ignore */ }
     renderProducts();
     var again = $('[data-dept="' + currentDept + '"]', deptsEl);
@@ -266,10 +356,49 @@
   if (PAGE === "shop") window.addEventListener("hashchange", function () {
     currentDept = deptFromHash();
     currentFilter = "all";
+    resetPaging();
     renderProducts();
     var sec = $("#shop");
     if (sec && currentDept !== "all") sec.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
   });
+
+  var searchTimer = null;
+  if (searchEl) searchEl.addEventListener("input", function () {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(function () {
+      searchText = searchEl.value.trim().toLowerCase().replace(/\s+/g, " ");
+      resetPaging();
+      renderProducts();
+    }, 200);
+  });
+  if (searchEl) searchEl.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); searchEl.blur(); } });
+  if (sizeSel) sizeSel.addEventListener("change", function () { sizeFilter = sizeSel.value; resetPaging(); renderProducts(); });
+  if (sortSel) sortSel.addEventListener("change", function () { sortMode = sortSel.value; resetPaging(); renderProducts(); });
+  if (pageSel) pageSel.addEventListener("change", function () {
+    pageSize = Number(pageSel.value) || 25;
+    try { localStorage.setItem(PAGE_KEY, String(pageSize)); } catch (e) { /* ignore */ }
+    if (visibleCount < pageSize) visibleCount = pageSize;   // keep what is already loaded
+    renderProducts();
+  });
+  if (moreBtn) moreBtn.addEventListener("click", function () {
+    var before = visibleCount;
+    visibleCount += pageSize;
+    renderProducts();
+    var cards = $$(".card", grid);
+    var first = cards[before] && $(".card-media", cards[before]);
+    if (first) first.focus({ preventScroll: true });
+    announce("Loaded " + (Math.min(visibleCount, cards.length) - before) + " more.");
+  });
+  if (grid) grid.addEventListener("click", function (e) { if (e.target.closest("[data-clear-browse]")) clearBrowse(); });
+
+  /* ---------- retry a product photo once if it fails to load (e.g. caught mid-publish) ---------- */
+  document.addEventListener("error", function (e) {
+    var img = e.target;
+    if (!img || img.tagName !== "IMG" || img.getAttribute("data-retried") || !img.getAttribute("src")) return;
+    img.setAttribute("data-retried", "1");
+    var src = img.getAttribute("src");
+    setTimeout(function () { img.src = src + (src.indexOf("?") === -1 ? "?" : "&") + "retry=" + Date.now(); }, 800);
+  }, true);
 
   function handleAdd(button, root) {
     var id = button.getAttribute("data-add");

@@ -72,8 +72,25 @@
       </div>
 
       <div class="filters" role="group" aria-label="Filter swimwear by category" data-filters></div>
+      <div class="browse-bar" data-browse>
+        <label class="field field-search"><span class="visually-hidden">Search</span><input type="search" placeholder="Search swimwear" autocomplete="off" enterkeyhint="search" data-search></label>
+        <label class="field"><span>Size</span><select data-size-filter><option value="">All sizes</option></select></label>
+        <label class="field"><span>Sort</span><select data-sort>
+          <option value="featured">Featured</option>
+          <option value="newest">Newest arrivals</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+        </select></label>
+        <label class="field"><span>Show</span><select data-page-size>
+          <option value="25">25</option><option value="50">50</option><option value="100">100</option>
+        </select></label>
+      </div>
       <p class="result-count" aria-live="polite" data-result-count></p>
       <div class="product-grid" data-products></div>
+      <div class="load-more" data-more hidden>
+        <p class="small" data-more-count></p>
+        <button type="button" class="button button-ghost" data-load-more>Load more</button>
+      </div>
       <div class="empty-state" data-empty hidden></div>
 
       <p class="catalog-note">Swim tops are sold <strong>without</strong> bottoms. Prices or sizes marked “to be confirmed” can’t be added to the bag yet. Accessories in photos are styling props and are not for sale with the swimwear.</p>
