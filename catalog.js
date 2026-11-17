@@ -171,18 +171,18 @@ window.BBU_CATALOG = {
     /* ---------- Swimwear · Tankini sets ---------- */
     { id: "black-halter", collection: "swim", category: "set", name: "Black Halter Tankini Set", tag: "Tankini set", price: 5500, sizes: ["S"], stock: null, description: null,
       images: [{ src: "assets/tankini-sets/black-halter-1.webp", alt: "Flat lay of a black high-neck halter tankini top with matching ruched bottoms" },
-        { src: "assets/tankini-sets/black-halter-render.webp", alt: "Front view of the Black Halter Tankini Set on a black display mannequin (AI-generated visualization)", ai: true }] }
+        { src: "assets/tankini-sets/black-halter-render.webp", alt: "Front view of the Black Halter Tankini Set on a black display mannequin (AI-generated visualization)", ai: true }] },
+    { id: "20261106-WA0108", collection: "swim", category: "one", name: "Pink One-Piece Swimsuit", tag: "One-piece", price: 5000, sizes: ["XS"], stock: null, brand: "Fashion Nova", department: null,
+      illustrated: true,
+      images: [
+        { src: "assets/one-pieces/20261106-wa0108-product.webp", alt: "Illustration of the pink one-piece swimsuit" },
+        { src: "assets/one-pieces/20261106-wa0108-modeled.webp", alt: "Illustration of the pink one-piece swimsuit worn by a model" }] }
 
     ,
     /* ---------- Clothing & Accessories (shop.html) ----------
        Imported from catalog batches 01–10 (WhatsApp listing photos, Nov 2026). IDs match the original
        photo numbers (WA####). Images are AI-generated illustrations based on those photos.
        Open items to confirm are listed in CLOTHING_REVIEW.csv. */
-    { id: "WA0012", collection: "shop", category: "dresses-sets", name: "Royal blue off-shoulder wide-leg jumpsuit", tag: "Jumpsuit", price: null, sizes: [], stock: null, brand: null, department: null,
-      description: "Thin shoulder straps, broad off-shoulder flounce, fitted waist, full length wide legs", illustrated: true,
-      images: [
-        { src: "assets/shop/wa0012-flatlay.webp", alt: "Flat-lay illustration of the royal blue off-shoulder wide-leg jumpsuit" },
-        { src: "assets/shop/wa0012-mannequin.webp", alt: "Illustration of the royal blue off-shoulder wide-leg jumpsuit on a display mannequin" }] },
     { id: "WA0020", collection: "shop", category: "dresses-sets", name: "Blue floral sleeveless sheath dress", tag: "Dress", price: 6000, sizes: ["4"], stock: null, brand: "Karl Lagerfeld", department: null,
       description: "Sleeveless fitted knee-length sheath, bright pink yellow green floral pattern over blue with fine vertical light lines", illustrated: true,
       images: [
@@ -226,8 +226,8 @@ window.BBU_CATALOG = {
     { id: "WA0035", collection: "shop", category: "dresses-sets", name: "Brown polka-dot V-neck dress", tag: "Dress", price: 5000, sizes: ["Large"], stock: null, brand: null, department: null,
       description: "White small polka dots on brown, V-neck button-front mini dress, short puff sleeves, gathered waist and flared skirt", illustrated: true,
       images: [
-        { src: "assets/shop/wa0035-mannequin.webp", alt: "Illustration of the brown polka-dot V-neck dress on a display mannequin" },
-        { src: "assets/shop/wa0035-flatlay.webp", alt: "Flat-lay illustration of the brown polka-dot V-neck dress" }] },
+        { src: "assets/shop/wa0035-mannequin.webp", alt: "Illustration of the brown polka-dot v-neck dress on a display mannequin" },
+        { src: "assets/shop/wa0035-flatlay.webp", alt: "Flat-lay illustration of the brown polka-dot v-neck dress" }] },
     { id: "WA0033", collection: "shop", category: "dresses-sets", name: "Rust botanical flutter-sleeve dress", tag: "Dress", price: 2500, sizes: ["XL"], stock: null, brand: null, department: null,
       description: "Short fit-and-flare dress, cream botanical leaf print on rust orange, high round neckline, flutter cap sleeves, defined waist and flared above-knee skirt", illustrated: true,
       images: [
@@ -311,8 +311,8 @@ window.BBU_CATALOG = {
     { id: "WA0059", collection: "shop", category: "dresses-sets", name: "Blue paisley V-neck mini dress", tag: "Dress", price: 4000, sizes: ["Medium"], stock: null, brand: "H&M", department: null,
       description: "Loose V-neck short dress, three-quarter flared sleeves, blue white intricate paisley print with decorative border at hem, relaxed flared above-knee skirt", illustrated: true,
       images: [
-        { src: "assets/shop/wa0059-flatlay.webp", alt: "Flat-lay illustration of the blue paisley V-neck mini dress" },
-        { src: "assets/shop/wa0059-model.webp", alt: "Illustration of the blue paisley V-neck mini dress on a model" }] },
+        { src: "assets/shop/wa0059-flatlay.webp", alt: "Flat-lay illustration of the blue paisley v-neck mini dress" },
+        { src: "assets/shop/wa0059-model.webp", alt: "Illustration of the blue paisley v-neck mini dress on a model" }] },
     { id: "WA0062", collection: "shop", category: "dresses-sets", name: "Red cold-shoulder embellished maxi dress", tag: "Dress", price: null, sizes: [], stock: null, brand: null, department: null,
       description: "V neckline, wide shoulder straps connected across cold shoulder cutouts with small silver jeweled hardware, three-quarter sleeves, gathered side waist, floor length straight draped skirt with side slit", illustrated: true,
       images: [
@@ -451,13 +451,13 @@ window.BBU_CATALOG = {
     { id: "WA0071-women", collection: "shop", category: "sleepwear", name: "Women's Christmas print pajama set", tag: "Pajama set", price: 5500, sizes: ["Small", "Medium"], stock: null, brand: null, department: "Women",
       description: "Women's ivory long-sleeve notched collar button pajama shirt and matching full-length relaxed trousers, red piping at collar placket pocket cuffs and hems, scattered Santa Claus reindeer sleigh Christmas tree snowflake motifs. Only women's set, no socks or headband.", includes: ["Pajama shirt", "Matching trousers"], illustrated: true,
       images: [
-        { src: "assets/shop/wa0071-women-flatlay.webp", alt: "Flat-lay illustration of the women's Christmas print pajama set" },
-        { src: "assets/shop/wa0071-women-model.webp", alt: "Illustration of the women's Christmas print pajama set on a model" }] },
+        { src: "assets/shop/wa0071-women-flatlay.webp", alt: "Flat-lay illustration of the women's christmas print pajama set" },
+        { src: "assets/shop/wa0071-women-model.webp", alt: "Illustration of the women's christmas print pajama set on a model" }] },
     { id: "WA0071-men", collection: "shop", category: "sleepwear", name: "Men's Christmas print pajama set", tag: "Men's · Pajama set", price: 6000, sizes: ["Medium", "Large"], stock: null, brand: null, department: "Men",
       description: "Men's ivory long-sleeve notched collar button pajama shirt and matching full-length relaxed trousers, red piping at collar placket pocket cuffs and hems, scattered Santa Claus reindeer sleigh Christmas tree snowflake motifs. Only men's set, no socks.", includes: ["Pajama shirt", "Matching trousers"], illustrated: true,
       images: [
-        { src: "assets/shop/wa0071-men-flatlay.webp", alt: "Flat-lay illustration of the men's Christmas print pajama set" },
-        { src: "assets/shop/wa0071-men-model.webp", alt: "Illustration of the men's Christmas print pajama set on a model" }] },
+        { src: "assets/shop/wa0071-men-flatlay.webp", alt: "Flat-lay illustration of the men's christmas print pajama set" },
+        { src: "assets/shop/wa0071-men-model.webp", alt: "Illustration of the men's christmas print pajama set on a model" }] },
     { id: "WA0072", collection: "shop", category: "sleepwear", name: "White bow-print long pajama set", tag: "Pajama set", price: 5500, sizes: ["Small"], stock: null, brand: null, department: "Women",
       description: "White subtle crinkle texture long-sleeve button pajama shirt and relaxed long trousers. Small burgundy bows and tiny dark green holiday botanical motifs, wide burgundy piping at notched collar placket pocket cuffs and hems.", includes: ["Pajama shirt", "Matching trousers"], illustrated: true,
       images: [
@@ -586,13 +586,13 @@ window.BBU_CATALOG = {
     { id: "WA0019", collection: "shop", category: "bottoms", name: "Navy tie-waist Bermuda shorts", tag: "Shorts", price: 2500, sizes: ["Small"], stock: null, brand: "Karen Scott", department: "Women",
       description: "Navy knee-length Bermuda shorts, matching fabric tie at front waist, side pockets relaxed straight leg hem. Shorts only.", illustrated: true,
       images: [
-        { src: "assets/shop/wa0019-flatlay.webp", alt: "Flat-lay illustration of the navy tie-waist Bermuda shorts" },
-        { src: "assets/shop/wa0019-model.webp", alt: "Illustration of the navy tie-waist Bermuda shorts on a model" }] },
+        { src: "assets/shop/wa0019-flatlay.webp", alt: "Flat-lay illustration of the navy tie-waist bermuda shorts" },
+        { src: "assets/shop/wa0019-model.webp", alt: "Illustration of the navy tie-waist bermuda shorts on a model" }] },
     { id: "WA0045", collection: "shop", category: "bottoms", name: "H&M black gold-button mini skirt", tag: "Skirt", price: 6000, sizes: ["18"], stock: null, brand: "H&M", department: "Women",
       description: "Black textured woven mini skirt, straight fitted cut, four embossed gold buttons in two vertical rows on overlapping front panel, belt loops, two short horizontal welt details near hips.", illustrated: true,
       images: [
-        { src: "assets/shop/wa0045-flatlay.webp", alt: "Flat-lay illustration of the h&M black gold-button mini skirt" },
-        { src: "assets/shop/wa0045-model.webp", alt: "Illustration of the h&M black gold-button mini skirt on a model" }] },
+        { src: "assets/shop/wa0045-flatlay.webp", alt: "Flat-lay illustration of the h&m black gold-button mini skirt" },
+        { src: "assets/shop/wa0045-model.webp", alt: "Illustration of the h&m black gold-button mini skirt on a model" }] },
     { id: "WA0057", collection: "shop", category: "bottoms", name: "A New Day navy seashell-print skort", tag: "Skort", price: 4000, sizes: ["12"], stock: null, brand: "A New Day", department: "Women",
       description: "Navy short A-line wrap-front skort, white scattered seashell starfish coral and jellyfish print, asymmetric overlapping front panels, integrated shorts beneath. Keep connected, one item.", illustrated: true,
       images: [
@@ -601,8 +601,8 @@ window.BBU_CATALOG = {
     { id: "WA0058", collection: "shop", category: "bottoms", name: "H&M navy plaid pleated mini skirt", tag: "Skirt", price: 4000, sizes: ["18"], stock: null, brand: "H&M", department: "Women",
       description: "Navy tartan plaid mini skirt broad cream gray checks fine red lines, flat waistband, crisp wide pleats around skirt, above-knee hem.", illustrated: true,
       images: [
-        { src: "assets/shop/wa0058-flatlay.webp", alt: "Flat-lay illustration of the h&M navy plaid pleated mini skirt" },
-        { src: "assets/shop/wa0058-model.webp", alt: "Illustration of the h&M navy plaid pleated mini skirt on a model" }] },
+        { src: "assets/shop/wa0058-flatlay.webp", alt: "Flat-lay illustration of the h&m navy plaid pleated mini skirt" },
+        { src: "assets/shop/wa0058-model.webp", alt: "Illustration of the h&m navy plaid pleated mini skirt on a model" }] },
     { id: "WA0112", collection: "shop", category: "bottoms", name: "Blue cargo swim shorts", tag: "Men's · Shorts", price: 2800, sizes: [], stock: null, brand: "Champion", department: "Men",
       description: "Bright blue mid-thigh swim shorts, elastic waistband straight hem side pockets and cargo flap pocket on left outer thigh, small Champion logo near lower leg as shown.", illustrated: true,
       images: [
@@ -744,8 +744,8 @@ window.BBU_CATALOG = {
     { id: "BAG-29535", collection: "shop", category: "bags", name: "b.o.c. Contrast-Stitch Wallet", tag: "Wallet", price: 2000, sizes: [], sizeless: true, pieces: 1, stock: null, brand: "b.o.c.", department: "Women",
       description: "Long flap wallet with ivory contrast stitching, antique brass brand plaque and buckle detail. No carrying strap.", illustrated: true,
       images: [
-        { src: "assets/shop/bag-29535-product.webp", alt: "Illustration of the b.o.c. Contrast-Stitch Wallet" },
-        { src: "assets/shop/bag-29535-carried.webp", alt: "Illustration of the b.o.c. Contrast-Stitch Wallet carried by a model" }] },
+        { src: "assets/shop/bag-29535-product.webp", alt: "Illustration of the b.o.c. contrast-stitch wallet" },
+        { src: "assets/shop/bag-29535-carried.webp", alt: "Illustration of the b.o.c. contrast-stitch wallet carried by a model" }] },
     { id: "BAG-29529", collection: "shop", category: "bags", name: "Cognac Top-Handle Satchel", tag: "Bag", price: 2500, sizes: [], sizeless: true, pieces: 1, stock: null, brand: null, department: "Women",
       description: "Curved flap, silver oval clasp, two vertical front zipper accents, top handle and detachable long strap.", illustrated: true,
       images: [
@@ -806,83 +806,83 @@ window.BBU_CATALOG = {
     { id: "20261110-WA0081", collection: "shop", category: "bottoms", name: "Drawstring Cargo Shorts \u2014 Dark blue", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0081-product.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Dark blue" },
-        { src: "assets/shop/20261110-wa0081-modeled.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Dark blue worn by a model" }] },
+        { src: "assets/shop/20261110-wa0081-product.webp", alt: "Illustration of the drawstring cargo shorts \u2014 dark blue" },
+        { src: "assets/shop/20261110-wa0081-modeled.webp", alt: "Illustration of the drawstring cargo shorts \u2014 dark blue worn by a model" }] },
     { id: "20261110-WA0082", collection: "shop", category: "bottoms", name: "Long Drawstring Cargo Shorts \u2014 Royal blue", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["L"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0082-product.webp", alt: "Illustration of the long Drawstring Cargo Shorts \u2014 Royal blue" },
-        { src: "assets/shop/20261110-wa0082-modeled.webp", alt: "Illustration of the long Drawstring Cargo Shorts \u2014 Royal blue worn by a model" }] },
+        { src: "assets/shop/20261110-wa0082-product.webp", alt: "Illustration of the long drawstring cargo shorts \u2014 royal blue" },
+        { src: "assets/shop/20261110-wa0082-modeled.webp", alt: "Illustration of the long drawstring cargo shorts \u2014 royal blue worn by a model" }] },
     { id: "20261110-WA0083", collection: "shop", category: "bottoms", name: "Zip-Pocket Athletic Shorts", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0083-product.webp", alt: "Illustration of the zip-Pocket Athletic Shorts" },
-        { src: "assets/shop/20261110-wa0083-modeled.webp", alt: "Illustration of the zip-Pocket Athletic Shorts worn by a model" }] },
+        { src: "assets/shop/20261110-wa0083-product.webp", alt: "Illustration of the zip-pocket athletic shorts" },
+        { src: "assets/shop/20261110-wa0083-modeled.webp", alt: "Illustration of the zip-pocket athletic shorts worn by a model" }] },
     { id: "20261110-WA0084", collection: "shop", category: "bottoms", name: "Drawstring Cargo Shorts \u2014 Black", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0084-product.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Black" },
-        { src: "assets/shop/20261110-wa0084-modeled.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Black worn by a model" }] },
+        { src: "assets/shop/20261110-wa0084-product.webp", alt: "Illustration of the drawstring cargo shorts \u2014 black" },
+        { src: "assets/shop/20261110-wa0084-modeled.webp", alt: "Illustration of the drawstring cargo shorts \u2014 black worn by a model" }] },
     { id: "20261110-WA0085", collection: "shop", category: "bottoms", name: "Drawstring Panel Shorts \u2014 Black", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XXL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0085-product.webp", alt: "Illustration of the drawstring Panel Shorts \u2014 Black" },
-        { src: "assets/shop/20261110-wa0085-modeled.webp", alt: "Illustration of the drawstring Panel Shorts \u2014 Black worn by a model" }] },
+        { src: "assets/shop/20261110-wa0085-product.webp", alt: "Illustration of the drawstring panel shorts \u2014 black" },
+        { src: "assets/shop/20261110-wa0085-modeled.webp", alt: "Illustration of the drawstring panel shorts \u2014 black worn by a model" }] },
     { id: "20261110-WA0086", collection: "shop", category: "bottoms", name: "Side-Stripe Mesh Shorts", tag: "Men's \u00b7 Shorts", price: 1800, sizes: ["XXL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0086-product.webp", alt: "Illustration of the side-Stripe Mesh Shorts" },
-        { src: "assets/shop/20261110-wa0086-modeled.webp", alt: "Illustration of the side-Stripe Mesh Shorts worn by a model" }] },
+        { src: "assets/shop/20261110-wa0086-product.webp", alt: "Illustration of the side-stripe mesh shorts" },
+        { src: "assets/shop/20261110-wa0086-modeled.webp", alt: "Illustration of the side-stripe mesh shorts worn by a model" }] },
     { id: "20261110-WA0087", collection: "shop", category: "bottoms", name: "Snap-Flap Cargo Shorts \u2014 Black", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["34"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0087-product.webp", alt: "Illustration of the snap-Flap Cargo Shorts \u2014 Black" },
-        { src: "assets/shop/20261110-wa0087-modeled.webp", alt: "Illustration of the snap-Flap Cargo Shorts \u2014 Black worn by a model" }] },
+        { src: "assets/shop/20261110-wa0087-product.webp", alt: "Illustration of the snap-flap cargo shorts \u2014 black" },
+        { src: "assets/shop/20261110-wa0087-modeled.webp", alt: "Illustration of the snap-flap cargo shorts \u2014 black worn by a model" }] },
     { id: "20261110-WA0088", collection: "shop", category: "bottoms", name: "Long Drawstring Cargo Shorts \u2014 Black", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["L"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0088-product.webp", alt: "Illustration of the long Drawstring Cargo Shorts \u2014 Black" },
-        { src: "assets/shop/20261110-wa0088-modeled.webp", alt: "Illustration of the long Drawstring Cargo Shorts \u2014 Black worn by a model" }] },
+        { src: "assets/shop/20261110-wa0088-product.webp", alt: "Illustration of the long drawstring cargo shorts \u2014 black" },
+        { src: "assets/shop/20261110-wa0088-modeled.webp", alt: "Illustration of the long drawstring cargo shorts \u2014 black worn by a model" }] },
     { id: "20261110-WA0089", collection: "shop", category: "bottoms", name: "Contrast Drawstring Shorts", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0089-product.webp", alt: "Illustration of the contrast Drawstring Shorts" },
-        { src: "assets/shop/20261110-wa0089-modeled.webp", alt: "Illustration of the contrast Drawstring Shorts worn by a model" }] },
+        { src: "assets/shop/20261110-wa0089-product.webp", alt: "Illustration of the contrast drawstring shorts" },
+        { src: "assets/shop/20261110-wa0089-modeled.webp", alt: "Illustration of the contrast drawstring shorts worn by a model" }] },
     { id: "20261110-WA0090", collection: "shop", category: "bottoms", name: "Zip-Pocket Shorts \u2014 Light gray", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0090-product.webp", alt: "Illustration of the zip-Pocket Shorts \u2014 Light gray" },
-        { src: "assets/shop/20261110-wa0090-modeled.webp", alt: "Illustration of the zip-Pocket Shorts \u2014 Light gray worn by a model" }] },
+        { src: "assets/shop/20261110-wa0090-product.webp", alt: "Illustration of the zip-pocket shorts \u2014 light gray" },
+        { src: "assets/shop/20261110-wa0090-modeled.webp", alt: "Illustration of the zip-pocket shorts \u2014 light gray worn by a model" }] },
     { id: "20261110-WA0091", collection: "shop", category: "bottoms", name: "Silver-Accent Athletic Shorts \u2014 Dark blue", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0091-product.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Dark blue" },
-        { src: "assets/shop/20261110-wa0091-modeled.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Dark blue worn by a model" }] },
+        { src: "assets/shop/20261110-wa0091-product.webp", alt: "Illustration of the silver-accent athletic shorts \u2014 dark blue" },
+        { src: "assets/shop/20261110-wa0091-modeled.webp", alt: "Illustration of the silver-accent athletic shorts \u2014 dark blue worn by a model" }] },
     { id: "20261110-WA0092", collection: "shop", category: "bottoms", name: "Drawstring Cargo Shorts \u2014 Heather gray", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0092-product.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Heather gray" },
-        { src: "assets/shop/20261110-wa0092-modeled.webp", alt: "Illustration of the drawstring Cargo Shorts \u2014 Heather gray worn by a model" }] },
+        { src: "assets/shop/20261110-wa0092-product.webp", alt: "Illustration of the drawstring cargo shorts \u2014 heather gray" },
+        { src: "assets/shop/20261110-wa0092-modeled.webp", alt: "Illustration of the drawstring cargo shorts \u2014 heather gray worn by a model" }] },
     { id: "20261110-WA0093", collection: "shop", category: "bottoms", name: "Side-Panel Athletic Shorts \u2014 Black and gray", tag: "Men's \u00b7 Shorts", price: 1800, sizes: ["XXL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0093-product.webp", alt: "Illustration of the side-Panel Athletic Shorts \u2014 Black and gray" },
-        { src: "assets/shop/20261110-wa0093-modeled.webp", alt: "Illustration of the side-Panel Athletic Shorts \u2014 Black and gray worn by a model" }] },
+        { src: "assets/shop/20261110-wa0093-product.webp", alt: "Illustration of the side-panel athletic shorts \u2014 black and gray" },
+        { src: "assets/shop/20261110-wa0093-modeled.webp", alt: "Illustration of the side-panel athletic shorts \u2014 black and gray worn by a model" }] },
     { id: "20261110-WA0094", collection: "shop", category: "bottoms", name: "Printed Side-Panel Athletic Shorts", tag: "Men's \u00b7 Shorts", price: 1800, sizes: ["XXL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0094-product.webp", alt: "Illustration of the printed Side-Panel Athletic Shorts" },
-        { src: "assets/shop/20261110-wa0094-modeled.webp", alt: "Illustration of the printed Side-Panel Athletic Shorts worn by a model" }] },
+        { src: "assets/shop/20261110-wa0094-product.webp", alt: "Illustration of the printed side-panel athletic shorts" },
+        { src: "assets/shop/20261110-wa0094-modeled.webp", alt: "Illustration of the printed side-panel athletic shorts worn by a model" }] },
     { id: "20261110-WA0095", collection: "shop", category: "bottoms", name: "Cargo Shorts", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0095-product.webp", alt: "Illustration of the cargo Shorts" },
-        { src: "assets/shop/20261110-wa0095-modeled.webp", alt: "Illustration of the cargo Shorts worn by a model" }] },
+        { src: "assets/shop/20261110-wa0095-product.webp", alt: "Illustration of the cargo shorts" },
+        { src: "assets/shop/20261110-wa0095-modeled.webp", alt: "Illustration of the cargo shorts worn by a model" }] },
     { id: "20261110-WA0096", collection: "shop", category: "bottoms", name: "Silver-Accent Athletic Shorts \u2014 Dark brown", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0096-product.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Dark brown" },
-        { src: "assets/shop/20261110-wa0096-modeled.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Dark brown worn by a model" }] },
+        { src: "assets/shop/20261110-wa0096-product.webp", alt: "Illustration of the silver-accent athletic shorts \u2014 dark brown" },
+        { src: "assets/shop/20261110-wa0096-modeled.webp", alt: "Illustration of the silver-accent athletic shorts \u2014 dark brown worn by a model" }] },
     { id: "20261106-WA0179", collection: "shop", category: "tops", name: "Gildan Crewneck T-Shirt", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["XL"], stock: null, brand: "Gildan", department: "Men",
       illustrated: true,
       images: [
@@ -951,38 +951,38 @@ window.BBU_CATALOG = {
     { id: "20261110-WA0097", collection: "shop", category: "bottoms", name: "Side-Panel Athletic Shorts \u2014 Black and blue", tag: "Men's \u00b7 Shorts", price: 1800, sizes: ["XXL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0097-product.webp", alt: "Illustration of the side-Panel Athletic Shorts \u2014 Black and blue" },
-        { src: "assets/shop/20261110-wa0097-modeled.webp", alt: "Illustration of the side-Panel Athletic Shorts \u2014 Black and blue worn by a model" }] },
+        { src: "assets/shop/20261110-wa0097-product.webp", alt: "Illustration of the side-panel athletic shorts \u2014 black and blue" },
+        { src: "assets/shop/20261110-wa0097-modeled.webp", alt: "Illustration of the side-panel athletic shorts \u2014 black and blue worn by a model" }] },
     { id: "20261110-WA0098", collection: "shop", category: "bottoms", name: "Drawstring Panel Shorts \u2014 Heather gray", tag: "Men's \u00b7 Shorts", price: 2500, sizes: [], stock: 0, brand: null, department: "Men",
       soldSizes: ["XXL"], illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0098-product.webp", alt: "Illustration of the drawstring Panel Shorts \u2014 Heather gray" },
-        { src: "assets/shop/20261110-wa0098-modeled.webp", alt: "Illustration of the drawstring Panel Shorts \u2014 Heather gray worn by a model" }] },
+        { src: "assets/shop/20261110-wa0098-product.webp", alt: "Illustration of the drawstring panel shorts \u2014 heather gray" },
+        { src: "assets/shop/20261110-wa0098-modeled.webp", alt: "Illustration of the drawstring panel shorts \u2014 heather gray worn by a model" }] },
     { id: "20261110-WA0099", collection: "shop", category: "bottoms", name: "Snap-Flap Cargo Shorts \u2014 Khaki", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["34"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0099-product.webp", alt: "Illustration of the snap-Flap Cargo Shorts \u2014 Khaki" },
-        { src: "assets/shop/20261110-wa0099-modeled.webp", alt: "Illustration of the snap-Flap Cargo Shorts \u2014 Khaki worn by a model" }] },
+        { src: "assets/shop/20261110-wa0099-product.webp", alt: "Illustration of the snap-flap cargo shorts \u2014 khaki" },
+        { src: "assets/shop/20261110-wa0099-modeled.webp", alt: "Illustration of the snap-flap cargo shorts \u2014 khaki worn by a model" }] },
     { id: "20261110-WA0100", collection: "shop", category: "bottoms", name: "Silver-Accent Athletic Shorts \u2014 Gray", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0100-product.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Gray" },
-        { src: "assets/shop/20261110-wa0100-modeled.webp", alt: "Illustration of the silver-Accent Athletic Shorts \u2014 Gray worn by a model" }] },
+        { src: "assets/shop/20261110-wa0100-product.webp", alt: "Illustration of the silver-accent athletic shorts \u2014 gray" },
+        { src: "assets/shop/20261110-wa0100-modeled.webp", alt: "Illustration of the silver-accent athletic shorts \u2014 gray worn by a model" }] },
     { id: "20261110-WA0101", collection: "shop", category: "bottoms", name: "Drawstring Shorts \u2014 Dark blue", tag: "Men's \u00b7 Shorts", price: 2000, sizes: ["L"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0101-product.webp", alt: "Illustration of the drawstring Shorts \u2014 Dark blue" },
-        { src: "assets/shop/20261110-wa0101-modeled.webp", alt: "Illustration of the drawstring Shorts \u2014 Dark blue worn by a model" }] },
+        { src: "assets/shop/20261110-wa0101-product.webp", alt: "Illustration of the drawstring shorts \u2014 dark blue" },
+        { src: "assets/shop/20261110-wa0101-modeled.webp", alt: "Illustration of the drawstring shorts \u2014 dark blue worn by a model" }] },
     { id: "20261110-WA0102", collection: "shop", category: "bottoms", name: "Long Drawstring Shorts", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["L"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0102-product.webp", alt: "Illustration of the long Drawstring Shorts" },
-        { src: "assets/shop/20261110-wa0102-modeled.webp", alt: "Illustration of the long Drawstring Shorts worn by a model" }] },
+        { src: "assets/shop/20261110-wa0102-product.webp", alt: "Illustration of the long drawstring shorts" },
+        { src: "assets/shop/20261110-wa0102-modeled.webp", alt: "Illustration of the long drawstring shorts worn by a model" }] },
     { id: "20261110-WA0103", collection: "shop", category: "bottoms", name: "Drawstring Shorts \u2014 Heather gray", tag: "Men's \u00b7 Shorts", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0103-product.webp", alt: "Illustration of the drawstring Shorts \u2014 Heather gray" },
-        { src: "assets/shop/20261110-wa0103-modeled.webp", alt: "Illustration of the drawstring Shorts \u2014 Heather gray worn by a model" }] },
+        { src: "assets/shop/20261110-wa0103-product.webp", alt: "Illustration of the drawstring shorts \u2014 heather gray" },
+        { src: "assets/shop/20261110-wa0103-modeled.webp", alt: "Illustration of the drawstring shorts \u2014 heather gray worn by a model" }] },
     { id: "20261110-WA0029", collection: "shop", category: "tops", name: "Fruit of the Loom V-Neck T-Shirt \u2014 Peach", tag: "T-shirt", price: 1200, sizes: ["S"], stock: null, brand: "Fruit of the Loom", department: "Women",
       illustrated: true,
       images: [
@@ -1036,18 +1036,18 @@ window.BBU_CATALOG = {
     { id: "20261106-WA0123", collection: "shop", category: "bottoms", name: "High-Waisted Wide-Leg Trousers", tag: "Trousers", price: 3500, sizes: ["L"], stock: null, brand: null, department: "Women",
       description: "Front vertical seams.", illustrated: true,
       images: [
-        { src: "assets/shop/20261106-wa0123-product.webp", alt: "Illustration of the high-Waisted Wide-Leg Trousers" },
-        { src: "assets/shop/20261106-wa0123-modeled.webp", alt: "Illustration of the high-Waisted Wide-Leg Trousers worn by a model" }] },
+        { src: "assets/shop/20261106-wa0123-product.webp", alt: "Illustration of the high-waisted wide-leg trousers" },
+        { src: "assets/shop/20261106-wa0123-modeled.webp", alt: "Illustration of the high-waisted wide-leg trousers worn by a model" }] },
     { id: "20261106-WA0140", collection: "shop", category: "bottoms", name: "Drawstring Wide-Leg Trousers", tag: "Trousers", price: 2500, sizes: ["XL"], stock: null, brand: null, department: "Women",
       description: "No pockets, gathered drawstring waist.", illustrated: true,
       images: [
-        { src: "assets/shop/20261106-wa0140-product.webp", alt: "Illustration of the drawstring Wide-Leg Trousers" },
-        { src: "assets/shop/20261106-wa0140-modeled.webp", alt: "Illustration of the drawstring Wide-Leg Trousers worn by a model" }] },
+        { src: "assets/shop/20261106-wa0140-product.webp", alt: "Illustration of the drawstring wide-leg trousers" },
+        { src: "assets/shop/20261106-wa0140-modeled.webp", alt: "Illustration of the drawstring wide-leg trousers worn by a model" }] },
     { id: "20261106-WA0145", collection: "shop", category: "bottoms", name: "Textured Wide-Leg Trousers", tag: "Trousers", price: 4000, sizes: ["S", "1XL"], stock: null, brand: null, department: "Women",
       description: "Vertical texture, drawstring and side pockets.", illustrated: true,
       images: [
-        { src: "assets/shop/20261106-wa0145-product.webp", alt: "Illustration of the textured Wide-Leg Trousers" },
-        { src: "assets/shop/20261106-wa0145-modeled.webp", alt: "Illustration of the textured Wide-Leg Trousers worn by a model" }] },
+        { src: "assets/shop/20261106-wa0145-product.webp", alt: "Illustration of the textured wide-leg trousers" },
+        { src: "assets/shop/20261106-wa0145-modeled.webp", alt: "Illustration of the textured wide-leg trousers worn by a model" }] },
     { id: "20261110-WA0009", collection: "shop", category: "dresses-sets", name: "R&M Richards Off-Shoulder Jumpsuit", tag: "Jumpsuit", price: 6500, sizes: ["22W"], stock: null, brand: "R&M Richards", department: "Women",
       description: "Wide flutter overlay across chest and arms, slim silver straps, ruched waist, wide legs.", illustrated: true,
       images: [
@@ -1081,8 +1081,8 @@ window.BBU_CATALOG = {
     { id: "20261106-WA0127", collection: "shop", category: "tops", name: "Ornate Split-Neck Shirt", tag: "Men's \u00b7 Shirt", price: 4500, sizes: ["XL"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261106-wa0127-product.webp", alt: "Illustration of the ornate Split-Neck Shirt" },
-        { src: "assets/shop/20261106-wa0127-modeled.webp", alt: "Illustration of the ornate Split-Neck Shirt worn by a model" }] },
+        { src: "assets/shop/20261106-wa0127-product.webp", alt: "Illustration of the ornate split-neck shirt" },
+        { src: "assets/shop/20261106-wa0127-modeled.webp", alt: "Illustration of the ornate split-neck shirt worn by a model" }] },
     { id: "20261106-WA0150", collection: "shop", category: "tops", name: "Amazon Essentials Ribbed Tank Top", tag: "Men's \u00b7 Tank top", price: 1200, sizes: ["XL"], stock: null, brand: "Amazon Essentials", department: "Men",
       illustrated: true,
       images: [
@@ -1133,155 +1133,155 @@ window.BBU_CATALOG = {
     { id: "20261110-WA0121", collection: "shop", category: "bottoms", name: "Lightly Distressed Straight-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["36"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0121-product.webp", alt: "Illustration of the lightly Distressed Straight-Leg Jeans" },
-        { src: "assets/shop/20261110-wa0121-modeled.webp", alt: "Illustration of the lightly Distressed Straight-Leg Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0121-product.webp", alt: "Illustration of the lightly distressed straight-leg Jeans" },
+        { src: "assets/shop/20261110-wa0121-modeled.webp", alt: "Illustration of the lightly distressed straight-leg Jeans worn by a model" }] },
     { id: "20261110-WA0122", collection: "shop", category: "bottoms", name: "Light-Wash Straight-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["XL"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0122-product.webp", alt: "Illustration of the light-Wash Straight-Leg Jeans" },
-        { src: "assets/shop/20261110-wa0122-modeled.webp", alt: "Illustration of the light-Wash Straight-Leg Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0122-product.webp", alt: "Illustration of the light-wash straight-leg Jeans" },
+        { src: "assets/shop/20261110-wa0122-modeled.webp", alt: "Illustration of the light-wash straight-leg Jeans worn by a model" }] },
     { id: "20261110-WA0123", collection: "shop", category: "bottoms", name: "Faded Straight-Leg Jeans \u2014 Size 34", tag: "Jeans", price: 6000, sizes: ["34"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0123-product.webp", alt: "Illustration of the faded Straight-Leg Jeans \u2014 Size 34" },
-        { src: "assets/shop/20261110-wa0123-modeled.webp", alt: "Illustration of the faded Straight-Leg Jeans \u2014 Size 34 worn by a model" }] },
+        { src: "assets/shop/20261110-wa0123-product.webp", alt: "Illustration of the faded straight-leg Jeans \u2014 size 34" },
+        { src: "assets/shop/20261110-wa0123-modeled.webp", alt: "Illustration of the faded straight-leg Jeans \u2014 size 34 worn by a model" }] },
     { id: "20261110-WA0125", collection: "shop", category: "dresses-sets", name: "Distressed Denim Overalls", tag: "Overalls", price: 6000, sizes: ["XL"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0125-product.webp", alt: "Illustration of the distressed Denim Overalls" },
-        { src: "assets/shop/20261110-wa0125-modeled.webp", alt: "Illustration of the distressed Denim Overalls worn by a model" }] },
+        { src: "assets/shop/20261110-wa0125-product.webp", alt: "Illustration of the distressed denim overalls" },
+        { src: "assets/shop/20261110-wa0125-modeled.webp", alt: "Illustration of the distressed denim overalls worn by a model" }] },
     { id: "20261110-WA0126", collection: "shop", category: "bottoms", name: "Straight-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["34"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0126-product.webp", alt: "Illustration of the straight-Leg Jeans" },
-        { src: "assets/shop/20261110-wa0126-modeled.webp", alt: "Illustration of the straight-Leg Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0126-product.webp", alt: "Illustration of the straight-leg Jeans" },
+        { src: "assets/shop/20261110-wa0126-modeled.webp", alt: "Illustration of the straight-leg Jeans worn by a model" }] },
     { id: "20261110-WA0127", collection: "shop", category: "bottoms", name: "Dark-Wash Relaxed Jeans", tag: "Jeans", price: 6000, sizes: ["42"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0127-product.webp", alt: "Illustration of the dark-Wash Relaxed Jeans" },
-        { src: "assets/shop/20261110-wa0127-modeled.webp", alt: "Illustration of the dark-Wash Relaxed Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0127-product.webp", alt: "Illustration of the dark-wash relaxed Jeans" },
+        { src: "assets/shop/20261110-wa0127-modeled.webp", alt: "Illustration of the dark-wash relaxed Jeans worn by a model" }] },
     { id: "20261110-WA0128", collection: "shop", category: "bottoms", name: "Medium-Wash Straight-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["34"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0128-product.webp", alt: "Illustration of the medium-Wash Straight-Leg Jeans" },
-        { src: "assets/shop/20261110-wa0128-modeled.webp", alt: "Illustration of the medium-Wash Straight-Leg Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0128-product.webp", alt: "Illustration of the medium-wash straight-leg Jeans" },
+        { src: "assets/shop/20261110-wa0128-modeled.webp", alt: "Illustration of the medium-wash straight-leg Jeans worn by a model" }] },
     { id: "20261110-WA0129", collection: "shop", category: "bottoms", name: "Whiskered Straight-Leg Jeans \u2014 Size L", tag: "Jeans", price: 6000, sizes: ["L"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0129-product.webp", alt: "Illustration of the whiskered Straight-Leg Jeans \u2014 Size L" },
-        { src: "assets/shop/20261110-wa0129-modeled.webp", alt: "Illustration of the whiskered Straight-Leg Jeans \u2014 Size L worn by a model" }] },
+        { src: "assets/shop/20261110-wa0129-product.webp", alt: "Illustration of the whiskered straight-leg Jeans \u2014 size l" },
+        { src: "assets/shop/20261110-wa0129-modeled.webp", alt: "Illustration of the whiskered straight-leg Jeans \u2014 size l worn by a model" }] },
     { id: "20261110-WA0130", collection: "shop", category: "bottoms", name: "Washed Charcoal Wide-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["31"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0130-product.webp", alt: "Illustration of the washed Charcoal Wide-Leg Jeans" },
-        { src: "assets/shop/20261110-wa0130-modeled.webp", alt: "Illustration of the washed Charcoal Wide-Leg Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0130-product.webp", alt: "Illustration of the washed charcoal wide-leg Jeans" },
+        { src: "assets/shop/20261110-wa0130-modeled.webp", alt: "Illustration of the washed charcoal wide-leg Jeans worn by a model" }] },
     { id: "20261110-WA0131", collection: "shop", category: "bottoms", name: "Elastic-Waist Wide-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["XL"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0131-product.webp", alt: "Illustration of the elastic-Waist Wide-Leg Jeans" },
-        { src: "assets/shop/20261110-wa0131-modeled.webp", alt: "Illustration of the elastic-Waist Wide-Leg Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0131-product.webp", alt: "Illustration of the elastic-waist wide-leg Jeans" },
+        { src: "assets/shop/20261110-wa0131-modeled.webp", alt: "Illustration of the elastic-waist wide-leg Jeans worn by a model" }] },
     { id: "20261110-WA0109", collection: "shop", category: "dresses-sets", name: "Purple Floral Sleeveless Long Dress", tag: "Dress", price: 5000, sizes: ["2"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0109-product.webp", alt: "Illustration of the purple Floral Sleeveless Long Dress" },
-        { src: "assets/shop/20261110-wa0109-modeled.webp", alt: "Illustration of the purple Floral Sleeveless Long Dress worn by a model" }] },
+        { src: "assets/shop/20261110-wa0109-product.webp", alt: "Illustration of the purple floral sleeveless long dress" },
+        { src: "assets/shop/20261110-wa0109-modeled.webp", alt: "Illustration of the purple floral sleeveless long dress worn by a model" }] },
     { id: "20261110-WA0110", collection: "shop", category: "dresses-sets", name: "Multicolor Floral Sleeveless Long Dress", tag: "Dress", price: 5000, sizes: ["2"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0110-product.webp", alt: "Illustration of the multicolor Floral Sleeveless Long Dress" },
-        { src: "assets/shop/20261110-wa0110-modeled.webp", alt: "Illustration of the multicolor Floral Sleeveless Long Dress worn by a model" }] },
+        { src: "assets/shop/20261110-wa0110-product.webp", alt: "Illustration of the multicolor floral sleeveless long dress" },
+        { src: "assets/shop/20261110-wa0110-modeled.webp", alt: "Illustration of the multicolor floral sleeveless long dress worn by a model" }] },
     { id: "20261110-WA0111", collection: "shop", category: "dresses-sets", name: "Black Sleeveless Dress", tag: "Dress", price: 5000, sizes: ["4"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0111-product.webp", alt: "Illustration of the black Sleeveless Dress" },
-        { src: "assets/shop/20261110-wa0111-modeled.webp", alt: "Illustration of the black Sleeveless Dress worn by a model" }] },
+        { src: "assets/shop/20261110-wa0111-product.webp", alt: "Illustration of the black sleeveless dress" },
+        { src: "assets/shop/20261110-wa0111-modeled.webp", alt: "Illustration of the black sleeveless dress worn by a model" }] },
     { id: "20261110-WA0113", collection: "shop", category: "bottoms", name: "Gray Washed Wide-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["0XL"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0113-product.webp", alt: "Illustration of the gray Washed Wide-Leg Jeans" },
-        { src: "assets/shop/20261110-wa0113-modeled.webp", alt: "Illustration of the gray Washed Wide-Leg Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0113-product.webp", alt: "Illustration of the gray washed wide-leg Jeans" },
+        { src: "assets/shop/20261110-wa0113-modeled.webp", alt: "Illustration of the gray washed wide-leg Jeans worn by a model" }] },
     { id: "20261110-WA0115", collection: "shop", category: "bottoms", name: "Star and Stripe Wide-Leg Jeans", tag: "Jeans", price: 6500, sizes: ["31"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0115-product.webp", alt: "Illustration of the star and Stripe Wide-Leg Jeans" },
-        { src: "assets/shop/20261110-wa0115-modeled.webp", alt: "Illustration of the star and Stripe Wide-Leg Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0115-product.webp", alt: "Illustration of the star and stripe wide-leg Jeans" },
+        { src: "assets/shop/20261110-wa0115-modeled.webp", alt: "Illustration of the star and stripe wide-leg Jeans worn by a model" }] },
     { id: "20261110-WA0116", collection: "shop", category: "bottoms", name: "Charcoal Wide-Leg Jeans", tag: "Jeans", price: 6000, sizes: ["31"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0116-product.webp", alt: "Illustration of the charcoal Wide-Leg Jeans" },
-        { src: "assets/shop/20261110-wa0116-modeled.webp", alt: "Illustration of the charcoal Wide-Leg Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0116-product.webp", alt: "Illustration of the charcoal wide-leg Jeans" },
+        { src: "assets/shop/20261110-wa0116-modeled.webp", alt: "Illustration of the charcoal wide-leg Jeans worn by a model" }] },
     { id: "20261110-WA0118", collection: "shop", category: "bottoms", name: "Light-Wash Cargo Jeans", tag: "Jeans", price: 6000, sizes: ["L"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0118-product.webp", alt: "Illustration of the light-Wash Cargo Jeans" },
-        { src: "assets/shop/20261110-wa0118-modeled.webp", alt: "Illustration of the light-Wash Cargo Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0118-product.webp", alt: "Illustration of the light-wash cargo Jeans" },
+        { src: "assets/shop/20261110-wa0118-modeled.webp", alt: "Illustration of the light-wash cargo Jeans worn by a model" }] },
     { id: "20261110-WA0119", collection: "shop", category: "dresses-sets", name: "Light-Wash Distressed Denim Overalls", tag: "Overalls", price: 6000, sizes: ["XXL"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0119-product.webp", alt: "Illustration of the light-Wash Distressed Denim Overalls" },
-        { src: "assets/shop/20261110-wa0119-modeled.webp", alt: "Illustration of the light-Wash Distressed Denim Overalls worn by a model" }] },
+        { src: "assets/shop/20261110-wa0119-product.webp", alt: "Illustration of the light-wash distressed denim overalls" },
+        { src: "assets/shop/20261110-wa0119-modeled.webp", alt: "Illustration of the light-wash distressed denim overalls worn by a model" }] },
     { id: "20261110-WA0120", collection: "shop", category: "bottoms", name: "Whiskered Straight-Leg Jeans \u2014 Size 38", tag: "Jeans", price: 6000, sizes: ["38"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0120-product.webp", alt: "Illustration of the whiskered Straight-Leg Jeans \u2014 Size 38" },
-        { src: "assets/shop/20261110-wa0120-modeled.webp", alt: "Illustration of the whiskered Straight-Leg Jeans \u2014 Size 38 worn by a model" }] },
+        { src: "assets/shop/20261110-wa0120-product.webp", alt: "Illustration of the whiskered straight-leg Jeans \u2014 size 38" },
+        { src: "assets/shop/20261110-wa0120-modeled.webp", alt: "Illustration of the whiskered straight-leg Jeans \u2014 size 38 worn by a model" }] },
     { id: "20261110-WA0124", collection: "shop", category: "bottoms", name: "Faded Straight-Leg Jeans", tag: "Jeans", price: null, sizes: [], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0124-product.webp", alt: "Illustration of the faded Straight-Leg Jeans" },
-        { src: "assets/shop/20261110-wa0124-modeled.webp", alt: "Illustration of the faded Straight-Leg Jeans worn by a model" }] },
+        { src: "assets/shop/20261110-wa0124-product.webp", alt: "Illustration of the faded straight-leg Jeans" },
+        { src: "assets/shop/20261110-wa0124-modeled.webp", alt: "Illustration of the faded straight-leg Jeans worn by a model" }] },
 
     /* ---------- Women's dresses/romper and graphic tees: batches 25-26 (Nov 2026). AI illustrations ---------- */
     { id: "20261115-WA0020", collection: "shop", category: "dresses-sets", name: "Denim Collared Mini Dress", tag: "Dress", price: 6000, sizes: ["0XL"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0020-product.webp", alt: "Illustration of the denim Collared Mini Dress" },
-        { src: "assets/shop/20261115-wa0020-modeled.webp", alt: "Illustration of the denim Collared Mini Dress worn by a model" }] },
+        { src: "assets/shop/20261115-wa0020-product.webp", alt: "Illustration of the denim collared mini dress" },
+        { src: "assets/shop/20261115-wa0020-modeled.webp", alt: "Illustration of the denim collared mini dress worn by a model" }] },
     { id: "20261115-WA0023", collection: "shop", category: "dresses-sets", name: "Denim Wrap-Front Skort Romper", tag: "Romper", price: 6000, sizes: ["0XL"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0023-product.webp", alt: "Illustration of the denim Wrap-Front Skort Romper" },
-        { src: "assets/shop/20261115-wa0023-modeled.webp", alt: "Illustration of the denim Wrap-Front Skort Romper worn by a model" }] },
+        { src: "assets/shop/20261115-wa0023-product.webp", alt: "Illustration of the denim wrap-front skort romper" },
+        { src: "assets/shop/20261115-wa0023-modeled.webp", alt: "Illustration of the denim wrap-front skort romper worn by a model" }] },
     { id: "20261115-WA0024", collection: "shop", category: "dresses-sets", name: "Coral Halter Ruffle Dress", tag: "Dress", price: 6000, sizes: ["8", "10"], stock: null, brand: "SLNY", department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0024-product.webp", alt: "Illustration of the coral Halter Ruffle Dress" },
-        { src: "assets/shop/20261115-wa0024-modeled.webp", alt: "Illustration of the coral Halter Ruffle Dress worn by a model" }] },
+        { src: "assets/shop/20261115-wa0024-product.webp", alt: "Illustration of the coral halter ruffle dress" },
+        { src: "assets/shop/20261115-wa0024-modeled.webp", alt: "Illustration of the coral halter ruffle dress worn by a model" }] },
     { id: "20261115-WA0025", collection: "shop", category: "dresses-sets", name: "Cream Botanical Shirt Dress", tag: "Dress", price: 4000, sizes: ["XL"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0025-product.webp", alt: "Illustration of the cream Botanical Shirt Dress" },
-        { src: "assets/shop/20261115-wa0025-modeled.webp", alt: "Illustration of the cream Botanical Shirt Dress worn by a model" }] },
+        { src: "assets/shop/20261115-wa0025-product.webp", alt: "Illustration of the cream botanical shirt dress" },
+        { src: "assets/shop/20261115-wa0025-modeled.webp", alt: "Illustration of the cream botanical shirt dress worn by a model" }] },
     { id: "20261115-WA0026", collection: "shop", category: "dresses-sets", name: "Red Buckle Wrap Dress", tag: "Dress", price: 6000, sizes: ["6P"], stock: null, brand: "R&M Richards", department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0026-product.webp", alt: "Illustration of the red Buckle Wrap Dress" },
-        { src: "assets/shop/20261115-wa0026-modeled.webp", alt: "Illustration of the red Buckle Wrap Dress worn by a model" }] },
+        { src: "assets/shop/20261115-wa0026-product.webp", alt: "Illustration of the red buckle wrap dress" },
+        { src: "assets/shop/20261115-wa0026-modeled.webp", alt: "Illustration of the red buckle wrap dress worn by a model" }] },
     { id: "20261115-WA0027", collection: "shop", category: "dresses-sets", name: "Black-and-White Printed Dress", tag: "Dress", price: 5500, sizes: ["M"], stock: null, brand: "European Station", department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0027-product.webp", alt: "Illustration of the black-and-White Printed Dress" },
-        { src: "assets/shop/20261115-wa0027-modeled.webp", alt: "Illustration of the black-and-White Printed Dress worn by a model" }] },
+        { src: "assets/shop/20261115-wa0027-product.webp", alt: "Illustration of the black-and-white printed dress" },
+        { src: "assets/shop/20261115-wa0027-modeled.webp", alt: "Illustration of the black-and-white printed dress worn by a model" }] },
     { id: "20261115-WA0028", collection: "shop", category: "dresses-sets", name: "Royal Blue Ruffle-Sleeve Dress", tag: "Dress", price: 6000, sizes: ["18W"], stock: null, brand: "R&M Richards", department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0028-product.webp", alt: "Illustration of the royal Blue Ruffle-Sleeve Dress" },
-        { src: "assets/shop/20261115-wa0028-modeled.webp", alt: "Illustration of the royal Blue Ruffle-Sleeve Dress worn by a model" }] },
+        { src: "assets/shop/20261115-wa0028-product.webp", alt: "Illustration of the royal blue ruffle-sleeve dress" },
+        { src: "assets/shop/20261115-wa0028-modeled.webp", alt: "Illustration of the royal blue ruffle-sleeve dress worn by a model" }] },
     { id: "20261115-WA0029", collection: "shop", category: "dresses-sets", name: "Blush Tiered Flutter-Sleeve Dress", tag: "Dress", price: 5000, sizes: ["L"], stock: null, brand: "Morgan & Co", department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0029-product.webp", alt: "Illustration of the blush Tiered Flutter-Sleeve Dress" },
-        { src: "assets/shop/20261115-wa0029-modeled.webp", alt: "Illustration of the blush Tiered Flutter-Sleeve Dress worn by a model" }] },
+        { src: "assets/shop/20261115-wa0029-product.webp", alt: "Illustration of the blush tiered flutter-sleeve dress" },
+        { src: "assets/shop/20261115-wa0029-modeled.webp", alt: "Illustration of the blush tiered flutter-sleeve dress worn by a model" }] },
     { id: "20261115-WA0030", collection: "shop", category: "dresses-sets", name: "Blue Floral One-Shoulder Dress", tag: "Dress", price: 6000, sizes: ["4P"], stock: null, brand: "Nightway", department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0030-product.webp", alt: "Illustration of the blue Floral One-Shoulder Dress" },
-        { src: "assets/shop/20261115-wa0030-modeled.webp", alt: "Illustration of the blue Floral One-Shoulder Dress worn by a model" }] },
+        { src: "assets/shop/20261115-wa0030-product.webp", alt: "Illustration of the blue floral one-shoulder dress" },
+        { src: "assets/shop/20261115-wa0030-modeled.webp", alt: "Illustration of the blue floral one-shoulder dress worn by a model" }] },
     { id: "20261115-WA0031", collection: "shop", category: "dresses-sets", name: "Black Ditsy-Print Flutter-Sleeve Mini Dress", tag: "Dress", price: 3500, sizes: ["L"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0031-product.webp", alt: "Illustration of the black Ditsy-Print Flutter-Sleeve Mini Dress" },
-        { src: "assets/shop/20261115-wa0031-modeled.webp", alt: "Illustration of the black Ditsy-Print Flutter-Sleeve Mini Dress worn by a model" }] },
+        { src: "assets/shop/20261115-wa0031-product.webp", alt: "Illustration of the black ditsy-print flutter-sleeve mini dress" },
+        { src: "assets/shop/20261115-wa0031-modeled.webp", alt: "Illustration of the black ditsy-print flutter-sleeve mini dress worn by a model" }] },
     { id: "20261110-WA0108", collection: "shop", category: "tops", name: "New York City Graphic Tank", tag: "Tank top", price: 1500, sizes: ["L", "XL"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
@@ -1290,8 +1290,8 @@ window.BBU_CATALOG = {
     { id: "20261110-WA0112", collection: "shop", category: "dresses-sets", name: "Pink Notch-Neck Shift Dress", tag: "Dress", price: 3000, sizes: ["XL"], stock: null, brand: null, department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261110-wa0112-product.webp", alt: "Illustration of the pink Notch-Neck Shift Dress" },
-        { src: "assets/shop/20261110-wa0112-modeled.webp", alt: "Illustration of the pink Notch-Neck Shift Dress worn by a model" }] },
+        { src: "assets/shop/20261110-wa0112-product.webp", alt: "Illustration of the pink notch-neck shift dress" },
+        { src: "assets/shop/20261110-wa0112-modeled.webp", alt: "Illustration of the pink notch-neck shift dress worn by a model" }] },
     { id: "20261115-WA0035", collection: "shop", category: "tops", name: "New York City Stripe Tee \u2014 Caramel brown", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["2XL"], stock: null, brand: "Gildan", department: "Men",
       illustrated: true,
       images: [
@@ -1315,22 +1315,219 @@ window.BBU_CATALOG = {
     { id: "20261115-WA0039", collection: "shop", category: "tops", name: "Coastal Town Graphic Tee", tag: "T-shirt", price: 5500, sizes: ["2XL"], stock: null, brand: "Express", department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0039-product.webp", alt: "Illustration of the coastal Town Graphic Tee" },
-        { src: "assets/shop/20261115-wa0039-modeled.webp", alt: "Illustration of the coastal Town Graphic Tee worn by a model" }] },
+        { src: "assets/shop/20261115-wa0039-product.webp", alt: "Illustration of the coastal town graphic tee" },
+        { src: "assets/shop/20261115-wa0039-modeled.webp", alt: "Illustration of the coastal town graphic tee worn by a model" }] },
     { id: "20261115-WA0042", collection: "shop", category: "tops", name: "New York Varsity Tee", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["2XL"], stock: null, brand: "Gildan", department: "Men",
       illustrated: true,
       images: [
         { src: "assets/shop/20261115-wa0042-product.webp", alt: "Illustration of the New York Varsity Tee" },
         { src: "assets/shop/20261115-wa0042-modeled.webp", alt: "Illustration of the New York Varsity Tee worn by a model" }] },
-    { id: "20261115-WA0045", collection: "shop", category: "tops", name: "New York City Skyline Tee", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["L"], stock: null, brand: null, department: "Men",
+    { id: "20261115-WA0045", collection: "shop", category: "tops", name: "New York City Skyline Tee — Washed dark navy", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["L"], stock: null, brand: null, department: "Men",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0045-product.webp", alt: "Illustration of the New York City Skyline Tee" },
-        { src: "assets/shop/20261115-wa0045-modeled.webp", alt: "Illustration of the New York City Skyline Tee worn by a model" }] },
+        { src: "assets/shop/20261115-wa0045-product.webp", alt: "Illustration of the New York City Skyline Tee — Washed dark navy" },
+        { src: "assets/shop/20261115-wa0045-modeled.webp", alt: "Illustration of the New York City Skyline Tee — Washed dark navy worn by a model" }] },
     { id: "20261115-WA0048", collection: "shop", category: "tops", name: "Taupe Abstract Graphic Tee", tag: "T-shirt", price: 5500, sizes: ["L"], stock: null, brand: "Express", department: "Women",
       illustrated: true,
       images: [
-        { src: "assets/shop/20261115-wa0048-product.webp", alt: "Illustration of the taupe Abstract Graphic Tee" },
-        { src: "assets/shop/20261115-wa0048-modeled.webp", alt: "Illustration of the taupe Abstract Graphic Tee worn by a model" }] }
+        { src: "assets/shop/20261115-wa0048-product.webp", alt: "Illustration of the taupe abstract graphic tee" },
+        { src: "assets/shop/20261115-wa0048-modeled.webp", alt: "Illustration of the taupe abstract graphic tee worn by a model" }] },
+
+    /* ---------- Graphic tees, men's tops, bags and mixed items: batches 27-30 (Nov 2026). AI illustrations ---------- */
+    { id: "20261116-WA0081", collection: "shop", category: "tops", name: "Graphic Pocket Tee", tag: "Men's \u00b7 T-shirt", price: 2800, sizes: ["2XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0081-product.webp", alt: "Illustration of the graphic pocket tee" },
+        { src: "assets/shop/20261116-wa0081-modeled.webp", alt: "Illustration of the graphic pocket tee worn by a model" }] },
+    { id: "20261116-WA0082", collection: "shop", category: "tops", name: "Basketball Graphic Tee", tag: "Men's \u00b7 T-shirt", price: 2800, sizes: ["L"], stock: null, brand: "Gildan", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0082-product.webp", alt: "Illustration of the basketball graphic tee" },
+        { src: "assets/shop/20261116-wa0082-modeled.webp", alt: "Illustration of the basketball graphic tee worn by a model" }] },
+    { id: "20261116-WA0083", collection: "shop", category: "tops", name: "NY Bat Logo Tee", tag: "Men's \u00b7 T-shirt", price: 2800, sizes: ["XL"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0083-product.webp", alt: "Illustration of the NY Bat Logo Tee" },
+        { src: "assets/shop/20261116-wa0083-modeled.webp", alt: "Illustration of the NY Bat Logo Tee worn by a model" }] },
+    { id: "20261116-WA0084", collection: "shop", category: "tops", name: "Winged Graphic Tee", tag: "Men's \u00b7 T-shirt", price: 4000, sizes: ["S"], stock: null, brand: "On the Low", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0084-product.webp", alt: "Illustration of the winged graphic tee" },
+        { src: "assets/shop/20261116-wa0084-modeled.webp", alt: "Illustration of the winged graphic tee worn by a model" }] },
+    { id: "20261116-WA0085", collection: "shop", category: "tops", name: "Danger Slogan Tee", tag: "Men's \u00b7 T-shirt", price: 2800, sizes: ["M"], stock: null, brand: "Gildan", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0085-product.webp", alt: "Illustration of the danger slogan tee" },
+        { src: "assets/shop/20261116-wa0085-modeled.webp", alt: "Illustration of the danger slogan tee worn by a model" }] },
+    { id: "20261116-WA0086", collection: "shop", category: "tops", name: "My Face Will Slogan Tee", tag: "T-shirt", price: 3000, sizes: ["XL"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0086-product.webp", alt: "Illustration of the my face will slogan tee" },
+        { src: "assets/shop/20261116-wa0086-modeled.webp", alt: "Illustration of the my face will slogan tee worn by a model" }] },
+    { id: "20261116-WA0087", collection: "shop", category: "tops", name: "Money Talks Slogan Tee", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["M"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0087-product.webp", alt: "Illustration of the money talks slogan tee" },
+        { src: "assets/shop/20261116-wa0087-modeled.webp", alt: "Illustration of the money talks slogan tee worn by a model" }] },
+    { id: "20261116-WA0088", collection: "shop", category: "tops", name: "NYC Stars Tee", tag: "Men's \u00b7 T-shirt", price: 2800, sizes: ["M"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0088-product.webp", alt: "Illustration of the NYC Stars Tee" },
+        { src: "assets/shop/20261116-wa0088-modeled.webp", alt: "Illustration of the NYC Stars Tee worn by a model" }] },
+    { id: "20261116-WA0089", collection: "shop", category: "tops", name: "Manhattan NYC Tee", tag: "Men's \u00b7 T-shirt", price: 2800, sizes: ["XL"], stock: null, brand: "Gildan", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0089-product.webp", alt: "Illustration of the Manhattan NYC Tee" },
+        { src: "assets/shop/20261116-wa0089-modeled.webp", alt: "Illustration of the Manhattan NYC Tee worn by a model" }] },
+    { id: "20261116-WA0090", collection: "shop", category: "tops", name: "New York City Skyline Tee \u2014 Muted berry", tag: "Men's \u00b7 T-shirt", price: 2800, sizes: ["M"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0090-product.webp", alt: "Illustration of the New York City Skyline Tee \u2014 Muted berry" },
+        { src: "assets/shop/20261116-wa0090-modeled.webp", alt: "Illustration of the New York City Skyline Tee \u2014 Muted berry worn by a model" }] },
+    { id: "20261116-WA0025", collection: "shop", category: "tops", name: "Nautica 83 Graphic Tee", tag: "Men's \u00b7 T-shirt", price: 6000, sizes: ["M"], stock: null, brand: "Nautica", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0025-product.webp", alt: "Illustration of the Nautica 83 Graphic Tee" },
+        { src: "assets/shop/20261116-wa0025-modeled.webp", alt: "Illustration of the Nautica 83 Graphic Tee worn by a model" }] },
+    { id: "20261116-WA0046", collection: "shop", category: "tops", name: "Botanical Short-Sleeve Button-Up", tag: "Men's \u00b7 Shirt", price: 5000, sizes: ["2XL"], stock: null, brand: "Rhythm", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0046-product.webp", alt: "Illustration of the botanical short-sleeve button-up" },
+        { src: "assets/shop/20261116-wa0046-modeled.webp", alt: "Illustration of the botanical short-sleeve button-up worn by a model" }] },
+    { id: "20261116-WA0051", collection: "shop", category: "tops", name: "Navy Tonal Print Tee", tag: "Men's \u00b7 T-shirt", price: 2500, sizes: ["L"], stock: null, brand: "Runcati", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0051-product.webp", alt: "Illustration of the navy tonal print tee" },
+        { src: "assets/shop/20261116-wa0051-modeled.webp", alt: "Illustration of the navy tonal print tee worn by a model" }] },
+    { id: "20261116-WA0052", collection: "shop", category: "tops", name: "Chest Stripe Crewneck Tee", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["L"], stock: null, brand: "Hardaddy", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0052-product.webp", alt: "Illustration of the chest stripe crewneck tee" },
+        { src: "assets/shop/20261116-wa0052-modeled.webp", alt: "Illustration of the chest stripe crewneck tee worn by a model" }] },
+    { id: "20261116-WA0060", collection: "shop", category: "tops", name: "Black Champion Script Tee", tag: "Men's \u00b7 T-shirt", price: 4000, sizes: ["L"], stock: null, brand: "Champion", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0060-product.webp", alt: "Illustration of the black Champion script tee" },
+        { src: "assets/shop/20261116-wa0060-modeled.webp", alt: "Illustration of the black Champion script tee worn by a model" }] },
+    { id: "20261116-WA0064", collection: "shop", category: "tops", name: "Heather Gray Champion Script Tee", tag: "Men's \u00b7 T-shirt", price: 4000, sizes: ["2XB"], stock: null, brand: "Champion", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0064-product.webp", alt: "Illustration of the heather gray Champion script tee" },
+        { src: "assets/shop/20261116-wa0064-modeled.webp", alt: "Illustration of the heather gray Champion script tee worn by a model" }] },
+    { id: "20261116-WA0066", collection: "shop", category: "tops", name: "Black Short-Sleeve Button-Up", tag: "Men's \u00b7 Shirt", price: 5000, sizes: ["M"], stock: null, brand: "COOFANDY", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0066-product.webp", alt: "Illustration of the black short-sleeve button-up" },
+        { src: "assets/shop/20261116-wa0066-modeled.webp", alt: "Illustration of the black short-sleeve button-up worn by a model" }] },
+    { id: "20261116-WA0068", collection: "shop", category: "tops", name: "DKNY Outline Logo Tee", tag: "Men's \u00b7 T-shirt", price: 6000, sizes: ["XL"], stock: null, brand: "DKNY", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0068-product.webp", alt: "Illustration of the DKNY Outline Logo Tee" },
+        { src: "assets/shop/20261116-wa0068-modeled.webp", alt: "Illustration of the DKNY Outline Logo Tee worn by a model" }] },
+    { id: "20261116-WA0069", collection: "shop", category: "tops", name: "Mossy Oak Graphic Tee", tag: "Men's \u00b7 T-shirt", price: 2500, sizes: ["L"], stock: null, brand: "Mossy Oak", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0069-product.webp", alt: "Illustration of the Mossy Oak Graphic Tee" },
+        { src: "assets/shop/20261116-wa0069-modeled.webp", alt: "Illustration of the Mossy Oak Graphic Tee worn by a model" }] },
+    { id: "20261116-WA0077", collection: "shop", category: "tops", name: "Champagne Satin Button-Up", tag: "Men's \u00b7 Shirt", price: 5000, sizes: ["M"], stock: null, brand: "PJ Paul Jones", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0077-product.webp", alt: "Illustration of the champagne satin button-up" },
+        { src: "assets/shop/20261116-wa0077-modeled.webp", alt: "Illustration of the champagne satin button-up worn by a model" }] },
+    { id: "20261110-WA0020", collection: "shop", category: "tops", name: "Sage V-Neck Tee", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["2XL"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0020-product.webp", alt: "Illustration of the sage v-neck tee" },
+        { src: "assets/shop/20261110-wa0020-modeled.webp", alt: "Illustration of the sage v-neck tee worn by a model" }] },
+    { id: "20261110-WA0032", collection: "shop", category: "tops", name: "Royal Blue V-Neck Tee", tag: "T-shirt", price: 1200, sizes: ["M", "L"], stock: null, brand: "Fruit of the Loom", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0032-product.webp", alt: "Illustration of the royal blue v-neck tee" },
+        { src: "assets/shop/20261110-wa0032-modeled.webp", alt: "Illustration of the royal blue v-neck tee worn by a model" }] },
+    { id: "20261110-WA0041", collection: "shop", category: "tops", name: "Navy V-Neck Tee", tag: "Men's \u00b7 T-shirt", price: 1200, sizes: ["L"], stock: null, brand: "Fruit of the Loom", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0041-product.webp", alt: "Illustration of the navy v-neck tee" },
+        { src: "assets/shop/20261110-wa0041-modeled.webp", alt: "Illustration of the navy v-neck tee worn by a model" }] },
+    { id: "20261116-WA0036", collection: "shop", category: "tops", name: "Duck Slogan Tee", tag: "Men's \u00b7 T-shirt", price: 4000, sizes: ["XL"], stock: null, brand: "Port & Company", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0036-product.webp", alt: "Illustration of the duck slogan tee" },
+        { src: "assets/shop/20261116-wa0036-modeled.webp", alt: "Illustration of the duck slogan tee worn by a model" }] },
+    { id: "20261116-WA0038", collection: "shop", category: "tops", name: "FUBU 05 Graphic Tee", tag: "Men's \u00b7 T-shirt", price: 5000, sizes: ["S"], stock: null, brand: "FUBU", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0038-product.webp", alt: "Illustration of the FUBU 05 Graphic Tee" },
+        { src: "assets/shop/20261116-wa0038-modeled.webp", alt: "Illustration of the FUBU 05 Graphic Tee worn by a model" }] },
+    { id: "20261116-WA0047", collection: "shop", category: "tops", name: "Off-White Crewneck Tee", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["L"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0047-product.webp", alt: "Illustration of the off-white crewneck tee" },
+        { src: "assets/shop/20261116-wa0047-modeled.webp", alt: "Illustration of the off-white crewneck tee worn by a model" }] },
+    { id: "20261116-WA0048", collection: "shop", category: "tops", name: "Savage Graphic Tee", tag: "Men's \u00b7 T-shirt", price: 3500, sizes: ["XL"], stock: null, brand: "Eight", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0048-product.webp", alt: "Illustration of the savage graphic tee" },
+        { src: "assets/shop/20261116-wa0048-modeled.webp", alt: "Illustration of the savage graphic tee worn by a model" }] },
+    { id: "20261116-WA0050", collection: "shop", category: "tops", name: "Black Short-Sleeve Henley", tag: "Men's \u00b7 Henley", price: 4000, sizes: ["2XL"], stock: null, brand: "X Ray Jeans", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0050-product.webp", alt: "Illustration of the black short-sleeve henley" },
+        { src: "assets/shop/20261116-wa0050-modeled.webp", alt: "Illustration of the black short-sleeve henley worn by a model" }] },
+    { id: "20261116-WA0057", collection: "shop", category: "tops", name: "Chance of Sarcasm Graphic Tee", tag: "Men's \u00b7 T-shirt", price: 4000, sizes: ["L"], stock: null, brand: "Crazy Dog", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0057-product.webp", alt: "Illustration of the chance of sarcasm graphic tee" },
+        { src: "assets/shop/20261116-wa0057-modeled.webp", alt: "Illustration of the chance of sarcasm graphic tee worn by a model" }] },
+    { id: "20261116-WA0079", collection: "shop", category: "tops", name: "Washed Charcoal Crewneck Tee", tag: "Men's \u00b7 T-shirt", price: 3000, sizes: ["L"], stock: null, brand: null, department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0079-product.webp", alt: "Illustration of the washed charcoal crewneck tee" },
+        { src: "assets/shop/20261116-wa0079-modeled.webp", alt: "Illustration of the washed charcoal crewneck tee worn by a model" }] },
+    { id: "20261110-WA0104", collection: "shop", category: "tops", name: "White Crewneck Tee", tag: "Men's \u00b7 T-shirt", price: 1300, sizes: ["XL"], stock: null, brand: "Gildan", department: "Men",
+      note: "Price is per shirt.", illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0104-product.webp", alt: "Illustration of the white crewneck tee" },
+        { src: "assets/shop/20261110-wa0104-modeled.webp", alt: "Illustration of the white crewneck tee worn by a model" }] },
+    { id: "20261110-WA0105", collection: "shop", category: "tops", name: "White Tagless Crewneck Tee", tag: "Men's \u00b7 T-shirt", price: 1300, sizes: ["2XL"], stock: null, brand: "Hanes", department: "Men",
+      note: "Price is per shirt.", illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0105-product.webp", alt: "Illustration of the white tagless crewneck tee" },
+        { src: "assets/shop/20261110-wa0105-modeled.webp", alt: "Illustration of the white tagless crewneck tee worn by a model" }] },
+    { id: "20261110-WA0106", collection: "shop", category: "bags", name: "Black Quilted Sling Bag", tag: "Bag", price: 2000, sizes: [], stock: null, brand: null, department: null, sizeless: true, pieces: 1,
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0106-product.webp", alt: "Illustration of the black quilted sling bag" },
+        { src: "assets/shop/20261110-wa0106-modeled.webp", alt: "Illustration of the black quilted sling bag worn across the body by a model" }] },
+    { id: "20261110-WA0107", collection: "shop", category: "bags", name: "Pink Quilted Sling Bag", tag: "Bag", price: 2000, sizes: [], stock: null, brand: null, department: null, sizeless: true, pieces: 1,
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0107-product.webp", alt: "Illustration of the pink quilted sling bag" },
+        { src: "assets/shop/20261110-wa0107-modeled.webp", alt: "Illustration of the pink quilted sling bag worn across the body by a model" }] },
+    { id: "20261110-WA0114", collection: "shop", category: "bottoms", name: "Gray Elastic-Waist Wide-Leg Jeans", tag: "Jeans", price: null, sizes: [], stock: null, brand: null, department: null,
+      note: "Photos show the back of the jeans.", illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0114-product.webp", alt: "Illustration of the back of the gray elastic-waist wide-leg Jeans" },
+        { src: "assets/shop/20261110-wa0114-modeled.webp", alt: "Illustration of the back of the gray elastic-waist wide-leg Jeans worn by a model" }] },
+    { id: "20261110-WA0117", collection: "shop", category: "bottoms", name: "Gray Straight-Leg Trousers", tag: "Trousers", price: null, sizes: ["36x32", "36x30", "34x30", "34x34", "30x30", "32x32", "38x32", "40x32"], stock: null, brand: null, department: null,
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261110-wa0117-product.webp", alt: "Illustration of the gray straight-leg trousers" },
+        { src: "assets/shop/20261110-wa0117-modeled.webp", alt: "Illustration of the gray straight-leg trousers worn by a model" }] },
+    { id: "20261115-WA0032", collection: "shop", category: "dresses-sets", name: "Royal Blue Off-Shoulder Wide-Leg Jumpsuit", tag: "Jumpsuit", price: 6500, sizes: ["22W", "20W"], stock: null, brand: "R&M Richards", department: "Women",
+      description: "Thin shoulder straps, broad off-shoulder flounce, fitted waist, full length wide legs", illustrated: true,
+      images: [
+        { src: "assets/shop/20261115-wa0032-product.webp", alt: "Illustration of the royal blue off-shoulder wide-leg jumpsuit" },
+        { src: "assets/shop/20261115-wa0032-modeled.webp", alt: "Illustration of the royal blue off-shoulder wide-leg jumpsuit worn by a model" }] },
+    { id: "20261116-WA0030", collection: "shop", category: "tops", name: "Red FUBU Logo Tee", tag: "Men's \u00b7 T-shirt", price: 6000, sizes: ["M"], stock: null, brand: "FUBU", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0030-product.webp", alt: "Illustration of the red FUBU logo tee" },
+        { src: "assets/shop/20261116-wa0030-modeled.webp", alt: "Illustration of the red FUBU logo tee worn by a model" }] },
+    { id: "20261116-WA0063", collection: "shop", category: "tops", name: "America\u2019s Black Prophet Graphic Tee", tag: "Men's \u00b7 T-shirt", price: 2800, sizes: ["XL"], stock: null, brand: "Gildan", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261116-wa0063-product.webp", alt: "Illustration of the America\u2019s Black Prophet Graphic Tee" },
+        { src: "assets/shop/20261116-wa0063-modeled.webp", alt: "Illustration of the America\u2019s Black Prophet Graphic Tee worn by a model" }] }
   ]
 };
