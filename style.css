@@ -229,6 +229,8 @@ h2 { font-family: var(--display); font-size: clamp(32px, 4vw, 52px); line-height
 .site-footer .wordmark { color: var(--white); }
 .site-footer .wordmark em { color: var(--aqua); }
 .footer-brand p { margin: 10px 0 0; }
+.footer-contact { font-size: 14px; line-height: 1.6; color: #a9c6c1; }
+.footer-contact a { color: var(--white); font-weight: 700; text-underline-offset: 3px; }
 .footer-nav { display: flex; flex-wrap: wrap; gap: 4px 6px; justify-content: flex-end; }
 .footer-nav a { padding: 10px 12px; min-height: 44px; display: inline-flex; align-items: center; text-decoration: none; border-radius: 8px; }
 .footer-nav a:hover { background: rgba(255, 255, 255, .08); text-decoration: underline; }

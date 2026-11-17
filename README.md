@@ -78,6 +78,8 @@ Material claims from listings (for example "silk", "100% cotton") are not shown 
 
 ## Checkout and payments
 
+**Current setup:** WhatsApp ordering is live (`whatsappNumber` in `config.js`). Checkout builds an order request that the customer sends to the shop on WhatsApp; nothing is charged online. If the number is cleared, checkout goes back to a labelled demo. Business hours (Monday to Saturday, 9 AM to 5 PM Guyana time, closed Sunday) and the Instagram link are in the footer of both pages.
+
 The checkout is a **demo**. It previews an order summary the customer can copy, and no order or payment is sent. If a WhatsApp number is set in `config.js`, the summary can also be sent to the business as a WhatsApp message (still not a payment).
 
 ### Connecting real MMG payments (not done yet)

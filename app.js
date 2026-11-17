@@ -585,12 +585,14 @@
     bottom.innerHTML =
       '<div class="total"><span>Subtotal <span class="small">(' + plural(bagCount(), "item") + ")</span></span><strong>" + esc(money(bagSubtotal())) + "</strong></div>" +
       '<p class="small">Delivery or pickup fees not included — to be confirmed.</p>' +
-      '<div class="demo-banner" role="note"><strong>Demo checkout.</strong> Online payment with MMG isn’t connected yet. Nothing is sent and no payment is taken.</div>' +
+      (whatsappNumber()
+        ? '<div class="demo-banner" role="note"><strong>Orders are confirmed on WhatsApp.</strong> Send us your order and we’ll confirm stock, delivery and payment with you. Nothing is charged online. We reply Monday to Saturday, 9 AM to 5 PM.</div>'
+        : '<div class="demo-banner" role="note"><strong>Demo checkout.</strong> Online payment with MMG isn’t connected yet. Nothing is sent and no payment is taken.</div>') +
       '<form class="checkout-form" id="checkout" novalidate>' +
         '<label for="co-name">Your name</label><input id="co-name" name="customer" required maxlength="80" autocomplete="name">' +
         '<label for="co-phone">Phone number</label><input id="co-phone" name="phone" type="tel" required maxlength="30" autocomplete="tel" inputmode="tel">' +
         '<p class="form-error" id="co-error" role="alert" hidden></p>' +
-        '<button class="button" type="submit">Preview my order <span aria-hidden="true">→</span></button>' +
+        '<button class="button" type="submit">' + (whatsappNumber() ? "Continue" : "Preview my order") + ' <span aria-hidden="true">→</span></button>' +
       "</form>";
 
     $("#checkout").addEventListener("submit", function (e) {
@@ -607,21 +609,25 @@
   }
 
   function showSummary(name, phone) {
-    var lines = ["BIKINI BOTTOMS UP — ORDER PREVIEW"].concat(orderLines(), [
+    var live = !!whatsappNumber();
+    var lines = [live ? "BIKINI BOTTOMS UP — ORDER REQUEST" : "BIKINI BOTTOMS UP — ORDER PREVIEW"].concat(orderLines(), [
       "Subtotal: " + money(bagSubtotal()),
       "Name: " + name,
       "Phone: " + phone,
       "Delivery / pickup: to be confirmed",
-      "PREVIEW ONLY — not paid."
+      live ? "Not paid yet. Please confirm stock, delivery and payment." : "PREVIEW ONLY — not paid."
     ]);
     var text = lines.join("\n");
     var wa = whatsappLink(text);
     $("#cartBottom").innerHTML =
-      '<div class="summary"><h3 tabindex="-1" id="summaryTitle">Your order preview</h3>' +
-      '<p class="small">This is a preview only. MMG online payment will be added once the store’s merchant account and a secure payment confirmation are set up. Your order has <strong>not</strong> been sent or paid.</p>' +
+      '<div class="summary"><h3 tabindex="-1" id="summaryTitle">' + (live ? "Your order" : "Your order preview") + '</h3>' +
+      (live
+        ? '<p class="small">Tap <strong>Send this order on WhatsApp</strong> to send it to us. Your order isn’t placed until you send it, and nothing is charged online. We’ll reply to confirm stock, delivery and payment (Monday to Saturday, 9 AM to 5 PM).</p>'
+        : '<p class="small">This is a preview only. MMG online payment will be added once the store’s merchant account and a secure payment confirmation are set up. Your order has <strong>not</strong> been sent or paid.</p>') +
       '<label for="summaryText" class="visually-hidden">Order summary</label><textarea id="summaryText" readonly rows="8"></textarea>' +
-      '<div class="summary-actions"><button type="button" class="button" id="copySummary">Copy summary</button>' +
-      (wa ? '<a class="button button-ghost" href="' + esc(wa) + '" target="_blank" rel="noopener">Send this order on WhatsApp</a>' : "") +
+      '<div class="summary-actions">' +
+      (wa ? '<a class="button" href="' + esc(wa) + '" target="_blank" rel="noopener">Send this order on WhatsApp</a>' : "") +
+      '<button type="button" class="' + (wa ? "button button-ghost" : "button") + '" id="copySummary">Copy summary</button>' +
       '<button type="button" class="btn-secondary" id="backToBag">Back to bag</button></div>' +
       '<p class="small" id="copyStatus" role="status"></p></div>';
     $("#summaryText").value = text;

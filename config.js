@@ -20,7 +20,7 @@
 window.BBU_CONFIG = {
   businessName: "Bikini Bottoms Up",
   currency: "GYD",
-  whatsappNumber: "",
+  whatsappNumber: "5926797322",
   inventoryCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRQcU3PvCXEUbv-Yi4khkzj5_GMXjIpwuk9dE8zGh9kmTDtgNV2Ks4_ZOIZ_tpHPqYx8508OeI42rI5/pub?gid=765979781&single=true&output=csv",
   checkoutMode: "demo"
 };
