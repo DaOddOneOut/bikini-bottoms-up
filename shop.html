@@ -54,8 +54,25 @@
       <h2 id="shop-title" class="visually-hidden">Clothing and accessories</h2>
       <div class="dept-tabs" role="group" aria-label="Shop by department" data-depts hidden></div>
       <div class="filters" role="group" aria-label="Filter clothing and accessories by category" data-filters></div>
+      <div class="browse-bar" data-browse>
+        <label class="field field-search"><span class="visually-hidden">Search</span><input type="search" placeholder="Search items, brands, colours" autocomplete="off" enterkeyhint="search" data-search></label>
+        <label class="field"><span>Size</span><select data-size-filter><option value="">All sizes</option></select></label>
+        <label class="field"><span>Sort</span><select data-sort>
+          <option value="featured">Featured</option>
+          <option value="newest">Newest arrivals</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+        </select></label>
+        <label class="field"><span>Show</span><select data-page-size>
+          <option value="25">25</option><option value="50">50</option><option value="100">100</option>
+        </select></label>
+      </div>
       <p class="result-count" aria-live="polite" data-result-count></p>
       <div class="product-grid" data-products></div>
+      <div class="load-more" data-more hidden>
+        <p class="small" data-more-count></p>
+        <button type="button" class="button button-ghost" data-load-more>Load more</button>
+      </div>
       <div class="empty-state" data-empty hidden></div>
 
       <p class="catalog-note">Items marked “Top only” do not include the bottoms shown in photos. Prices or sizes marked “to be confirmed” can’t be added to the bag yet. Props and styling pieces in photos are not for sale unless listed as their own product. Product images are styled illustrations made from each item’s original photo, so small details may differ — tap a product for details.</p>

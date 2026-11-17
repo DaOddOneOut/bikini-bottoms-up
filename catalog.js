@@ -226,8 +226,8 @@ window.BBU_CATALOG = {
     { id: "WA0035", collection: "shop", category: "dresses-sets", name: "Brown polka-dot V-neck dress", tag: "Dress", price: 5000, sizes: ["Large"], stock: null, brand: null, department: null,
       description: "White small polka dots on brown, V-neck button-front mini dress, short puff sleeves, gathered waist and flared skirt", illustrated: true,
       images: [
-        { src: "assets/shop/wa0035-mannequin.webp", alt: "Illustration of the brown polka-dot v-neck dress on a display mannequin" },
-        { src: "assets/shop/wa0035-flatlay.webp", alt: "Flat-lay illustration of the brown polka-dot v-neck dress" }] },
+        { src: "assets/shop/wa0035-flatlay.webp", alt: "Flat-lay illustration of the brown polka-dot v-neck dress" },
+        { src: "assets/shop/wa0035-mannequin.webp", alt: "Illustration of the brown polka-dot v-neck dress on a display mannequin" }] },
     { id: "WA0033", collection: "shop", category: "dresses-sets", name: "Rust botanical flutter-sleeve dress", tag: "Dress", price: 2500, sizes: ["XL"], stock: null, brand: null, department: null,
       description: "Short fit-and-flare dress, cream botanical leaf print on rust orange, high round neckline, flutter cap sleeves, defined waist and flared above-knee skirt", illustrated: true,
       images: [
@@ -641,6 +641,7 @@ window.BBU_CATALOG = {
     { id: "WA0097", collection: "shop", category: "dresses-sets", name: "White and black bow-back halter mini dress", tag: "Dress", price: 8000, sizes: ["Small"], stock: null, brand: null, department: "Women",
       description: "White fitted mini shift dress with contrasting broad black halter neck framing front, deep open back framed black panels and oversized black bow tied at back waist, straight above-knee hem. Preserve bow attached to dress.", illustrated: true,
       images: [
+        { src: "assets/shop/wa0097-flatlay-back.webp", alt: "Flat-lay illustration of the back of the white and black bow-back halter mini dress, showing the open back, black panel and bow" },
         { src: "assets/shop/wa0097-model.webp", alt: "Illustration of the white and black bow-back halter mini dress on a model" }] },
     { id: "WA0099", collection: "shop", category: "dresses-sets", name: "White gold-button vest and trouser set", tag: "Matching set", price: 9500, sizes: ["Medium"], stock: null, brand: null, department: "Women",
       description: "Two-piece white strapless tailored vest and long wide-leg trousers. Vest asymmetric pointed top and pointed split front hem, four gold curved teardrop buttons down front, fitted waist. Matching white high-waist wide-leg full-length trousers.", includes: ["Matching top", "Matching trousers"], illustrated: true,

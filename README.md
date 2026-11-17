@@ -11,6 +11,10 @@ A mobile-friendly boutique storefront for Bikini Bottoms Up. The owner prefers t
 
 Both pages share the header, footer, product gallery and **one shopping bag** (saved in the browser, so it follows customers between pages and tabs).
 
+## Browsing tools
+
+Both product grids have a search box, a **Size** filter, **Sort** (Featured, Newest arrivals, Price low to high and high to low), and **Show 25 / 50 / 100** with a **Load more** button. The size filter groups spellings of the same size ("Small" = "S", "XXL" = "2XL"), while each card still shows the size exactly as listed. Items that can't be ordered yet (no price, no size or sold out) always sort last. "Newest arrivals" follows the order products were added to `catalog.js`, so add new products at the end. Each visitor's Show amount is remembered (`bbu-page-size`).
+
 ## Light and dark mode
 
 Both pages have a moon/sun toggle (in the menu on phones). The dark theme is a deep ocean teal (`#0f2e33`), not black. It follows the device's dark-mode setting until the visitor chooses, then remembers their choice (`bbu-theme` in the browser). Colours are CSS variables at the top of `style.css`, and the dark values live in the `html[data-theme="dark"]` block.
@@ -49,7 +53,7 @@ Men's and kids' basics (batches 13 and 17–22, IDs like `20261110-WA0077`) are 
 Swimwear galleries (`index.html`) show the real product photos first. 24 of the 28 styles also end with one **AI-generated front view** (`*-render.webp`, marked `ai: true` in `catalog.js`), shown with an "AI visualization" badge. The renders for olive-cross, lemon and polka were left out because they drop real details (front criss-cross straps, front tie bow, crossed straps over the cutout). No back views were generated; none should be invented.
 
 - **WA0091** — price set to 5,000 as written on the listing photo (the import file said 4,500).
-- **WA0097** — flat-lay removed because it put the black back panel and bow on the front; the model view is used instead.
+- **WA0097**: the flat-lay is a **back** view (open back, black panel, bow) and is labelled that way, shown before the model view.
 - **WA0035** — mannequin view shown first, per the import notes (the flat-lay hem doesn't match).
 - **WA0102 and WA0146** — flagged for a closer look (finish / length).
 
