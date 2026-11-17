@@ -7,7 +7,7 @@ A mobile-friendly boutique storefront for Bikini Bottoms Up. The owner prefers t
 | Page | What it shows |
 | --- | --- |
 | `index.html` | **Swimwear** — bikinis, one-pieces, swim tops, tankini sets. Also has the "Beyond the Beach" promo, About the brand and How to order. |
-| `shop.html` | **Clothing & Accessories** ("Beyond the Beach"): 229 pieces, shopped by department (**Women 168 · Men 53 · Kids 8**) and category (Tops, Bottoms, Dresses & Sets, Sleepwear & Underwear, Shoes & Footwear, Bags; Accessories appears when stocked). `shop.html#men` and `shop.html#kids` open those departments directly. Items with no department set count as Women's. |
+| `shop.html` | **Clothing & Accessories** ("Beyond the Beach"): 267 pieces, shopped by department (**Women 174 · Men 85 · Kids 8**) and category (Tops, Bottoms, Dresses & Sets, Sleepwear & Underwear, Shoes & Footwear, Bags; Accessories appears when stocked). `shop.html#men` and `shop.html#kids` open those departments directly. Items with no department set count as Women's. |
 
 Both pages share the header, footer, product gallery and **one shopping bag** (saved in the browser, so it follows customers between pages and tabs).
 
@@ -46,7 +46,7 @@ The clothing and bag images in `assets/shop/` are **AI-generated illustrations**
 
 Men's and kids' basics (batches 13 and 17–22, IDs like `20261110-WA0077`) are AI illustrations too. Kids' items use `department: "Youth"` and show "Youth size". Sold-out items use `stock: 0`, and `soldSizes` lists sizes already sold. Batch 21 arrived twice as identical files and was imported once.
 
-Swimwear galleries (`index.html`) show the real product photos first. 24 of the 27 styles also end with one **AI-generated front view** (`*-render.webp`, marked `ai: true` in `catalog.js`), shown with an "AI visualization" badge. The renders for olive-cross, lemon and polka were left out because they drop real details (front criss-cross straps, front tie bow, crossed straps over the cutout). No back views were generated; none should be invented.
+Swimwear galleries (`index.html`) show the real product photos first. 24 of the 28 styles also end with one **AI-generated front view** (`*-render.webp`, marked `ai: true` in `catalog.js`), shown with an "AI visualization" badge. The renders for olive-cross, lemon and polka were left out because they drop real details (front criss-cross straps, front tie bow, crossed straps over the cutout). No back views were generated; none should be invented.
 
 - **WA0091** — price set to 5,000 as written on the listing photo (the import file said 4,500).
 - **WA0097** — flat-lay removed because it put the black back panel and bow on the front; the model view is used instead.
@@ -83,6 +83,6 @@ Then set `checkoutMode` and wire the checkout button to the backend.
 
 - Removed the owner's portrait at her request. It still exists in this repository's git history; ask if it needs to be purged.
 - Removed `polka-5.webp`, an exact duplicate of `polka-2.webp`.
-- The swimwear collection has 27 styles: Bikinis 11, One-pieces 11, Swim tops 4, Tankini sets 1.
+- The swimwear collection has 28 styles: Bikinis 11, One-pieces 12, Swim tops 4, Tankini sets 1.
 - Fonts load from Google Fonts. If they can't load, the site falls back to system fonts.
 - Tested in headless Chrome at 360, 390, 768, 1024 and 1440 px wide. Not yet tested on physical phones or in Safari.
