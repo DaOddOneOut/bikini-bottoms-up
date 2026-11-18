@@ -67,7 +67,7 @@ The clothing and bag images in `assets/shop/` are **AI-generated illustrations**
 
 Men's and kids' basics (batches 13 and 17–22, IDs like `20261110-WA0077`) are AI illustrations too. Kids' items use `department: "Youth"` and show "Youth size". Sold-out items use `stock: 0`, and `soldSizes` lists sizes already sold. Batch 21 arrived twice as identical files and was imported once.
 
-Swimwear galleries (`index.html`) show the real product photos first. 24 of the 28 styles also end with one **AI-generated front view** (`*-render.webp`, marked `ai: true` in `catalog.js`), shown with an "AI visualization" badge. The renders for olive-cross, lemon and polka were left out because they drop real details (front criss-cross straps, front tie bow, crossed straps over the cutout). No back views were generated; none should be invented.
+Swimwear galleries (`index.html`) show the real product photos first. 24 of the 41 styles also end with one **AI-generated front view** (`*-render.webp`, marked `ai: true` in `catalog.js`), shown with an "AI visualization" badge. The renders for olive-cross, lemon and polka were left out because they drop real details (front criss-cross straps, front tie bow, crossed straps over the cutout). No back views were generated; none should be invented.
 
 - **WA0091** — price set to 5,000 as written on the listing photo (the import file said 4,500).
 - **WA0097**: the flat-lay is a **back** view (open back, black panel, bow) and is labelled that way, shown before the model view.
@@ -106,6 +106,6 @@ Then set `checkoutMode` and wire the checkout button to the backend.
 
 - Removed the owner's portrait at her request. It still exists in this repository's git history; ask if it needs to be purged.
 - Removed `polka-5.webp`, an exact duplicate of `polka-2.webp`.
-- The swimwear collection has 28 styles: Bikinis 11, One-pieces 12, Swim tops 4, Tankini sets 1.
+- The swimwear collection has 41 styles: Bikinis 18, One-pieces 13, Tankini sets 3, Swim tops 4, Swim bottoms 2, Swim dresses 1 (counts as of Nov 18).
 - Fonts load from Google Fonts. If they can't load, the site falls back to system fonts.
 - Tested in headless Chrome at 360, 390, 768, 1024 and 1440 px wide. Not yet tested on physical phones or in Safari.
