@@ -57,6 +57,18 @@
     return n ? "https://wa.me/" + n + (text ? "?text=" + encodeURIComponent(text) : "") : "";
   }
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var HEART = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 8 3.3 4.5 6.9 4.5c2.1 0 3.6 1.2 5.1 3 1.5-1.8 3-3 5.1-3 3.6 0 5.5 3.5 4.2 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>';
+  function isSoldOut(p) { return p.stock === 0; }
+  // "Notify me": a ready-made WhatsApp message to the owner. There is no automatic alert system.
+  function notifyLink(p, size) {
+    return whatsappLink("Hi Bikini Bottoms Up! Please let me know if the " + p.name + (size ? " in size " + size : "") + " comes back in stock. (Item ID: " + p.id + ")");
+  }
+  function notifyHtml(p, size, cls) {
+    var href = notifyLink(p, size);
+    if (!href) return "";
+    return '<a class="' + (cls || "btn-secondary btn-notify") + '" href="' + esc(href) + '" target="_blank" rel="noopener" data-notify="' + esc(p.id) + '">Notify me' +
+      (size ? " about size " + esc(size) : "") + '<span class="visually-hidden"> on WhatsApp when ' + esc(p.name) + " is back (opens WhatsApp)</span></a>";
+  }
 
   /* ---------- live announcements for screen readers ---------- */
   var live = document.createElement("div");
@@ -117,6 +129,39 @@
     return true;
   }
 
+  /* ---------- wishlist (saved on this device, shared by both pages and tabs) ---------- */
+  var WISH_KEY = "bbu-wishlist-v1";
+  var wish = [];
+  function loadWish() {
+    try { var w = JSON.parse(localStorage.getItem(WISH_KEY) || "[]"); wish = Array.isArray(w) ? w.filter(function (x, i) { return typeof x === "string" && w.indexOf(x) === i; }) : []; }
+    catch (e) { wish = []; }
+  }
+  function inWish(id) { return wish.indexOf(id) !== -1; }
+  function wishItems() { return wish.map(byId).filter(Boolean); }   // skips anything the owner has hidden
+  function updateWishUi() {
+    var n = wishItems().length;
+    $$("[data-wish-count]").forEach(function (el) { el.textContent = n; el.hidden = n === 0; });
+    $$("[data-open-wishlist]").forEach(function (b) { if (b.classList.contains("wish-button")) b.setAttribute("aria-label", "Wishlist, " + n + " saved"); });
+    $$("[data-wish]").forEach(function (b) {
+      var id = b.getAttribute("data-wish"), on = inWish(id), p = byId(id);
+      b.setAttribute("aria-pressed", String(on));
+      if (p) b.setAttribute("aria-label", (on ? "Saved to wishlist: " : "Save to wishlist: ") + p.name);
+      var t = $(".wish-text", b); if (t) t.textContent = on ? "Saved to wishlist" : "Save to wishlist";
+    });
+  }
+  function saveWish() {
+    try { localStorage.setItem(WISH_KEY, JSON.stringify(wish)); } catch (e) { /* ignore */ }
+    updateWishUi();
+  }
+  function toggleWish(id, force) {
+    var p = byId(id); if (!p) return;
+    var on = typeof force === "boolean" ? force : !inWish(id);
+    if (on === inWish(id)) return;
+    if (on) wish.unshift(id); else wish.splice(wish.indexOf(id), 1);
+    saveWish();
+    announce(on ? p.name + " saved to your wishlist." : p.name + " removed from your wishlist.");
+  }
+
   /* ---------- product grid + category filters ---------- */
   var grid = $("[data-products]");
   var filtersEl = $("[data-filters]");
@@ -132,10 +177,11 @@
 
   function controlsHtml(p, context) {
     if (!canBuy(p)) {
-      var reason = p.stock === 0 ? "Sold out" : "Details to be confirmed";
-      return context === "card"
-        ? '<button type="button" class="btn-secondary" data-gallery="' + esc(p.id) + '">View photos</button><span class="unavailable">' + reason + "</span>"
-        : '<p class="unavailable">' + reason + " — can’t be added to the bag yet.</p>";
+      var sold = isSoldOut(p), reason = sold ? "Sold out" : "Details to be confirmed";
+      var notify = sold ? notifyHtml(p, "") : "";
+      if (context === "card") return (notify || '<button type="button" class="btn-secondary" data-gallery="' + esc(p.id) + '">View photos</button>') + '<span class="unavailable">' + reason + "</span>";
+      if (context === "wish") return notify + '<span class="unavailable">' + reason + "</span>";
+      return '<p class="unavailable">' + reason + " — can’t be added to the bag yet.</p>" + notify;
     }
     var sid = "size-" + context + "-" + p.id;
     if (!needsSize(p)) return '<input type="hidden" data-size-for="' + esc(p.id) + '" value=""><button type="button" class="btn-add" data-add="' + esc(p.id) + '">Add to bag<span class="visually-hidden">: ' + esc(p.name) + "</span></button>";
@@ -146,17 +192,62 @@
     return sizeField + '<button type="button" class="btn-add" data-add="' + esc(p.id) + '">Add to bag<span class="visually-hidden">: ' + esc(p.name) + (p.sizes.length === 1 ? ", size " + esc(p.sizes[0]) : "") + "</span></button>";
   }
 
+  // The photo shown on hover: a model-worn shot when the card leads with a flat lay,
+  // a real photo when the card leads with an AI view, otherwise simply the next photo.
+  function hoverImage(p) {
+    var rest = p.images.slice(1);
+    if (!rest.length) return null;
+    var first = p.images[0];
+    var worn = function (im) { return /\b(model|worn|wearing|mannequin)\b/i.test(im.alt); };
+    var pick = function (f) { return rest.filter(f)[0]; };
+    if (first.ai) return pick(function (im) { return !im.ai && worn(im); }) || pick(function (im) { return !im.ai; }) || rest[0];
+    if (!worn(first)) return pick(function (im) { return worn(im) && !im.ai; }) || pick(worn) || rest[0];
+    return rest[0];
+  }
+  function quickSizes(p) {
+    var seen = {}, out = [];
+    (p.sizes || []).forEach(function (s) { if (!seen[s]) { seen[s] = 1; out.push({ s: s, sold: false }); } });
+    (p.soldSizes || []).forEach(function (s) { if (!seen[s]) { seen[s] = 1; out.push({ s: s, sold: true }); } });
+    return out.sort(function (a, b) { return bySize(sizeKey(a.s), sizeKey(b.s)); });
+  }
+  // Mouse-only shortcut. Everything here is also available through the regular card controls,
+  // so it is hidden from screen readers and skipped by the Tab key.
+  function quickAddHtml(p) {
+    if (!canBuy(p)) return "";
+    var btns = needsSize(p)
+      ? quickSizes(p).map(function (x) {
+          return x.sold
+            ? '<button type="button" class="qa-size sold" tabindex="-1" disabled title="Size ' + esc(x.s) + ' is sold out">' + esc(x.s) + "</button>"
+            : '<button type="button" class="qa-size" tabindex="-1" data-quick="' + esc(p.id) + '" data-size="' + esc(x.s) + '">' + esc(x.s) + "</button>";
+        }).join("")
+      : '<button type="button" class="qa-size qa-one" tabindex="-1" data-quick="' + esc(p.id) + '" data-size="">Add to bag</button>';
+    return '<div class="quick-add" aria-hidden="true"><p class="qa-label">' + (needsSize(p) ? "Quick add · pick a size" : "Quick add") + '</p><div class="qa-sizes">' + btns + "</div></div>";
+  }
+  function wishButton(p, cls) {
+    var on = inWish(p.id);
+    return '<button type="button" class="' + (cls || "wish-toggle") + '" data-wish="' + esc(p.id) + '" aria-pressed="' + on + '" aria-label="' + (on ? "Saved to wishlist: " : "Save to wishlist: ") + esc(p.name) + '">' + HEART +
+      (cls === "wish-inline" ? '<span class="wish-text">' + (on ? "Saved to wishlist" : "Save to wishlist") + "</span>" : "") + "</button>";
+  }
+
   function cardHtml(p) {
     var img = p.images[0];
+    var alt = hoverImage(p);
     var n = p.images.length;
     var stock = stockText(p);
-    return '<article class="card" data-id="' + esc(p.id) + '">' +
+    var aiCls = img.ai && alt && !alt.ai ? " rest-only" : !img.ai && alt && alt.ai ? " hover-only" : "";
+    return '<article class="card' + (isSoldOut(p) ? " is-sold" : "") + '" data-id="' + esc(p.id) + '">' +
+      '<div class="card-visual">' +
       '<button type="button" class="card-media" data-gallery="' + esc(p.id) + '" aria-label="View ' + esc(plural(n, "photo")) + " of " + esc(p.name) + '">' +
-        '<img src="' + esc(img.src) + '" alt="' + esc(img.alt) + '" loading="lazy" decoding="async" width="600" height="800">' +
+        '<img class="card-img" src="' + esc(img.src) + '" alt="' + esc(img.alt) + '" loading="lazy" decoding="async" width="600" height="800">' +
+        (alt ? '<img class="card-alt" data-src="' + esc(alt.src) + '" alt="" aria-hidden="true" decoding="async" width="600" height="800">' : "") +
         '<span class="card-tag' + (p.category === "top" || p.tag === "Top only" ? " card-tag-alert" : "") + '">' + esc(p.tag) + "</span>" +
+        (img.ai || (alt && alt.ai) ? '<span class="card-ai' + aiCls + '">AI view</span>' : "") +
+        (isSoldOut(p) ? '<span class="card-sold">Sold out</span>' : "") +
         (n > 1 ? '<span class="card-count" aria-hidden="true">' + n + " photos</span>" : "") +
-        (img.ai ? '<span class="card-ai">AI view</span>' : "") +
       "</button>" +
+      wishButton(p) +
+      quickAddHtml(p) +
+      "</div>" +
       '<div class="card-body">' +
         (showBrand(p) ? '<p class="card-brand">' + esc(p.brand) + "</p>" : "") +
         "<h3>" + esc(p.name) + "</h3>" +
@@ -200,15 +291,25 @@
       '<div class="empty-actions">' + other + (wa ? '<a class="button button-ghost" href="' + esc(wa) + '" target="_blank" rel="noopener">Ask us on WhatsApp</a>' : "") + "</div>";
   }
 
-  /* ---------- browse tools: search, size, sort, paging ---------- */
-  var searchEl = $("[data-search]"), sizeSel = $("[data-size-filter]"), sortSel = $("[data-sort]"), pageSel = $("[data-page-size]");
+  /* ---------- browse tools: search, availability, size, sort, paging ---------- */
+  var searchEl = $("[data-search]"), pageSel = $("[data-page-size]");
+  var activeEl = $("[data-active-filters]"), sortLabelEl = $("[data-sort-label]");
   var moreBox = $("[data-more]"), moreBtn = $("[data-load-more]"), moreCount = $("[data-more-count]");
   var PAGE_KEY = "bbu-page-size", PAGE_SIZES = [25, 50, 100];
   var pageSize = (function () { try { var v = Number(localStorage.getItem(PAGE_KEY)); return PAGE_SIZES.indexOf(v) !== -1 ? v : 25; } catch (e) { return 25; } })();
-  var visibleCount = pageSize, searchText = "", sizeFilter = "", sortMode = "featured";
+  var visibleCount = pageSize, searchText = "", sizeFilters = [], availFilters = [], sortMode = "featured";
   if (pageSel) pageSel.value = String(pageSize);
   var ORDER = {};
   PRODUCTS.forEach(function (p, i) { ORDER[p.id] = i; });
+  var SORTS = [
+    { id: "featured", label: "Featured" },
+    { id: "newest", label: "Newest" },
+    { id: "price-asc", label: "Price, low to high" },
+    { id: "price-desc", label: "Price, high to low" },
+    { id: "az", label: "Alphabetically, A–Z" },
+    { id: "za", label: "Alphabetically, Z–A" }
+  ];
+  var AVAIL = [{ id: "in", label: "Available" }, { id: "out", label: "Sold out" }];
 
   // Size filter: the same size written different ways is one choice ("Small" = "S", "XXL" = "2XL").
   var SIZE_WORDS = { small: "S", medium: "M", large: "L", "x-small": "XS", "extra small": "XS", "x-large": "XL", "extra large": "XL", xxl: "2XL", xxxl: "3XL" };
@@ -236,19 +337,13 @@
     var blob = searchBlob(p);
     return searchText.split(/\s+/).every(function (w) { return blob.indexOf(w) !== -1; });
   }
-  function renderSizeOptions(items) {
-    if (!sizeSel) return;
-    var keys = {};
-    items.forEach(function (p) { (p.sizes || []).forEach(function (s) { keys[sizeKey(s)] = (keys[sizeKey(s)] || 0) + 1; }); });
-    var list = Object.keys(keys).sort(bySize);
-    if (sizeFilter && !keys[sizeFilter]) sizeFilter = "";
-    sizeSel.innerHTML = '<option value="">All sizes</option>' + list.map(function (k) {
-      return '<option value="' + esc(k) + '"' + (k === sizeFilter ? " selected" : "") + ">" + esc(k) + " (" + keys[k] + ")</option>";
-    }).join("");
-  }
+  function matchesAvail(p) { return availFilters.length !== 1 || (availFilters[0] === "out") === isSoldOut(p); }
+  function matchesSize(p) { return !sizeFilters.length || (p.sizes || []).some(function (s) { return sizeFilters.indexOf(sizeKey(s)) !== -1; }); }
   function sortItems(list) {
-    var buyable = function (p) { return canBuy(p) ? 0 : 1; };   // anything not orderable yet goes last
+    var alpha = sortMode === "az" || sortMode === "za";
+    var buyable = function (p) { return canBuy(p) ? 0 : 1; };   // anything not orderable yet goes last (except A–Z)
     return list.slice().sort(function (a, b) {
+      if (alpha) { var c = a.name.localeCompare(b.name, "en", { sensitivity: "base" }); return (sortMode === "za" ? -c : c) || ORDER[a.id] - ORDER[b.id]; }
       var d = buyable(a) - buyable(b);
       if (d) return d;
       if (sortMode === "newest") return ORDER[b.id] - ORDER[a.id];
@@ -261,10 +356,74 @@
   }
   function resetPaging() { visibleCount = pageSize; }
   function clearBrowse() {
-    searchText = ""; sizeFilter = ""; currentFilter = "all";
+    searchText = ""; sizeFilters = []; availFilters = []; currentFilter = "all";
     if (searchEl) searchEl.value = "";
     resetPaging();
     renderProducts();
+  }
+
+  /* filter / sort pop-overs */
+  function popPanel(key) { return $('[data-pop="' + key + '"]'); }
+  function popButton(key) { return $('[data-pop-btn="' + key + '"]'); }
+  function closePops(except) {
+    $$("[data-pop-btn]").forEach(function (b) {
+      var k = b.getAttribute("data-pop-btn");
+      if (k === except) return;
+      b.setAttribute("aria-expanded", "false");
+      var panel = popPanel(k); if (panel) panel.hidden = true;
+    });
+  }
+  function optionHtml(type, name, value, label, checked, n) {
+    return '<label class="pop-opt' + (n === 0 && !checked ? " is-empty" : "") + '"><input type="' + type + '" name="' + name + '" value="' + esc(value) + '"' + (checked ? " checked" : "") + ">" +
+      '<span class="pop-label">' + esc(label) + "</span>" + (n == null ? "" : '<span class="n">' + n + "</span>") + "</label>";
+  }
+  function popHead(label, count, resetKey) {
+    return '<div class="pop-head"><span>' + (count ? count + " selected" : label) + "</span>" +
+      (count ? '<button type="button" class="link-button" data-pop-reset="' + resetKey + '">Reset</button>' : "") + "</div>";
+  }
+  function renderPop(key, html) {
+    var panel = popPanel(key); if (!panel) return;
+    var focused = document.activeElement && panel.contains(document.activeElement) ? document.activeElement : null;
+    var fv = focused && (focused.value || focused.getAttribute("data-pop-reset"));
+    panel.innerHTML = html;
+    if (focused) {
+      var again = (fv && $('input[value="' + fv + '"]', panel)) || $("input", panel);
+      if (again) again.focus();
+    }
+  }
+  function renderToolbar(base) {
+    var forAvail = base.filter(matchesSize), forSize = base.filter(matchesAvail);
+    // sizes still on offer here (drop any selected size that no longer exists in this view)
+    var keys = {};
+    forSize.forEach(function (p) { (p.sizes || []).forEach(function (sz) { var k = sizeKey(sz); keys[k] = (keys[k] || 0) + 1; }); });
+    sizeFilters = sizeFilters.filter(function (k) { return keys[k]; });
+    var sizeList = Object.keys(keys).sort(bySize);
+    var availN = { "in": forAvail.filter(function (p) { return !isSoldOut(p); }).length, out: forAvail.filter(isSoldOut).length };
+
+    renderPop("avail", '<fieldset><legend class="visually-hidden">Availability</legend>' + popHead("Availability", availFilters.length, "avail") +
+      AVAIL.map(function (a) { return optionHtml("checkbox", "avail", a.id, a.label, availFilters.indexOf(a.id) !== -1, availN[a.id]); }).join("") + "</fieldset>");
+    renderPop("size", '<fieldset><legend class="visually-hidden">Size</legend>' + popHead("Size", sizeFilters.length, "size") +
+      (sizeList.length ? '<div class="pop-grid">' + sizeList.map(function (k) { return optionHtml("checkbox", "size", k, k, sizeFilters.indexOf(k) !== -1, keys[k]); }).join("") + "</div>"
+        : '<p class="small pop-none">No sizes listed here.</p>') + "</fieldset>");
+    renderPop("sort", '<fieldset><legend class="visually-hidden">Sort by</legend>' +
+      SORTS.map(function (o) { return optionHtml("radio", "sort-" + PAGE, o.id, o.label, o.id === sortMode, null); }).join("") + "</fieldset>");
+
+    [["avail", availFilters.length], ["size", sizeFilters.length]].forEach(function (x) {
+      var badge = $('[data-pop-badge="' + x[0] + '"]'); if (!badge) return;
+      badge.hidden = !x[1]; badge.textContent = x[1];
+      var btn = popButton(x[0]); if (btn) btn.setAttribute("aria-label", (x[0] === "avail" ? "Availability" : "Size") + (x[1] ? ", " + x[1] + " selected" : ""));
+    });
+    if (sortLabelEl) sortLabelEl.textContent = ": " + SORTS.filter(function (o) { return o.id === sortMode; })[0].label;
+
+    if (activeEl) {
+      var chips = availFilters.map(function (a) { return { kind: "avail", value: a, label: AVAIL.filter(function (x) { return x.id === a; })[0].label }; })
+        .concat(sizeFilters.map(function (k) { return { kind: "size", value: k, label: "Size " + k }; }))
+        .concat(searchText ? [{ kind: "search", value: "", label: "“" + searchText + "”" }] : []);
+      activeEl.hidden = !chips.length;
+      activeEl.innerHTML = chips.length ? '<button type="button" class="af-chip af-clear" data-af-clear>Clear all</button>' + chips.map(function (c) {
+        return '<button type="button" class="af-chip" data-af="' + c.kind + '" data-af-value="' + esc(c.value) + '">' + esc(c.label) + '<span aria-hidden="true">×</span><span class="visually-hidden"> — remove filter</span></button>';
+      }).join("") : "";
+    }
   }
 
   function renderDepts(items) {
@@ -307,15 +466,14 @@
     grid.hidden = false;
     if (emptyEl) emptyEl.hidden = true;
     var inCat = items.filter(function (p) { return currentFilter === "all" || p.category === currentFilter; });
-    renderSizeOptions(inCat);
-    var matched = sortItems(inCat.filter(function (p) {
-      return matchesSearch(p) && (!sizeFilter || (p.sizes || []).some(function (s) { return sizeKey(s) === sizeFilter; }));
-    }));
+    var base = inCat.filter(matchesSearch);
+    renderToolbar(base);
+    var matched = sortItems(base.filter(function (p) { return matchesAvail(p) && matchesSize(p); }));
     var shown = matched.slice(0, visibleCount);
     var word = PAGE === "shop" ? "item" : "style";
     var deptLabel = currentDept === "all" ? "" : " · " + DEPTS.filter(function (d) { return d.id === currentDept; })[0].label;
     if (!matched.length) {
-      grid.innerHTML = '<div class="no-results"><p>No ' + word + 's match' + (searchText ? ' “' + esc(searchText) + '”' : "") + (sizeFilter ? " in size " + esc(sizeFilter) : "") + '.</p><button type="button" class="button" data-clear-browse>Clear search and filters</button></div>';
+      grid.innerHTML = '<div class="no-results"><p>No ' + word + 's match' + (searchText ? ' “' + esc(searchText) + '”' : "") + (sizeFilters.length ? " in size " + esc(sizeFilters.join(" or ")) : "") + (availFilters.length === 1 ? (availFilters[0] === "in" ? " that are available" : " that are sold out") : "") + '.</p><button type="button" class="button" data-clear-browse>Clear search and filters</button></div>';
       if (countEl) countEl.textContent = "No matches" + deptLabel;
       if (moreBox) moreBox.hidden = true;
       return;
@@ -355,6 +513,7 @@
     if (again) again.focus();
   });
   if (PAGE === "shop") window.addEventListener("hashchange", function () {
+    if (/^#cat-/.test(location.hash)) return;   // handled by the category-link listener
     currentDept = deptFromHash();
     currentFilter = "all";
     resetPaging();
@@ -373,8 +532,58 @@
     }, 200);
   });
   if (searchEl) searchEl.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); searchEl.blur(); } });
-  if (sizeSel) sizeSel.addEventListener("change", function () { sizeFilter = sizeSel.value; resetPaging(); renderProducts(); });
-  if (sortSel) sortSel.addEventListener("change", function () { sortMode = sortSel.value; resetPaging(); renderProducts(); });
+  // pop-over buttons, choices and the active-filter chips
+  $$("[data-pop-btn]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var k = b.getAttribute("data-pop-btn"), open = b.getAttribute("aria-expanded") !== "true";
+      closePops(k);
+      b.setAttribute("aria-expanded", String(open));
+      popPanel(k).hidden = !open;
+      if (open) { var first = $("input:checked", popPanel(k)) || $("input", popPanel(k)); if (first) first.focus(); }
+    });
+  });
+  $$("[data-pop]").forEach(function (panel) {
+    panel.addEventListener("change", function (e) {
+      var t = e.target; if (!t.name) return;
+      var key = panel.getAttribute("data-pop");
+      if (key === "sort") { sortMode = t.value; }
+      else {
+        var arr = key === "size" ? sizeFilters : availFilters;
+        var i = arr.indexOf(t.value);
+        if (t.checked && i === -1) arr.push(t.value);
+        if (!t.checked && i !== -1) arr.splice(i, 1);
+      }
+      resetPaging();
+      renderProducts();
+      if (key === "sort") { closePops(); popButton("sort").focus(); announce("Sorted: " + SORTS.filter(function (o) { return o.id === sortMode; })[0].label + "."); }
+    });
+    panel.addEventListener("click", function (e) {
+      var r = e.target.closest("[data-pop-reset]"); if (!r) return;
+      if (r.getAttribute("data-pop-reset") === "size") sizeFilters = []; else availFilters = [];
+      resetPaging(); renderProducts();
+      var first = $("input", panel); if (first) first.focus();
+    });
+  });
+  document.addEventListener("click", function (e) { if (!e.target.closest(".pop-wrap")) closePops(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    var openBtn = $('[data-pop-btn][aria-expanded="true"]');
+    if (openBtn) { closePops(); openBtn.focus(); }
+  });
+  if (activeEl) activeEl.addEventListener("click", function (e) {
+    var c = e.target.closest("[data-af], [data-af-clear]"); if (!c) return;
+    if (c.hasAttribute("data-af-clear")) { sizeFilters = []; availFilters = []; searchText = ""; if (searchEl) searchEl.value = ""; }
+    else {
+      var kind = c.getAttribute("data-af"), v = c.getAttribute("data-af-value");
+      if (kind === "size") sizeFilters.splice(sizeFilters.indexOf(v), 1);
+      else if (kind === "avail") availFilters.splice(availFilters.indexOf(v), 1);
+      else { searchText = ""; if (searchEl) searchEl.value = ""; }
+    }
+    resetPaging(); renderProducts();
+    var next = $("[data-af]", activeEl) || (searchEl || null);
+    if (next) next.focus();
+    announce("Filters updated. " + (countEl ? countEl.textContent : ""));
+  });
   if (pageSel) pageSel.addEventListener("change", function () {
     pageSize = Number(pageSel.value) || 25;
     try { localStorage.setItem(PAGE_KEY, String(pageSize)); } catch (e) { /* ignore */ }
@@ -422,11 +631,38 @@
     }
   }
 
+  function quickAdd(btn) {
+    var id = btn.getAttribute("data-quick"), size = btn.getAttribute("data-size") || "";
+    if (!addToBag(id, size)) return;
+    var label = $(".qa-label", btn.closest(".quick-add"));
+    btn.classList.add("added");
+    if (label) { label.textContent = (size ? "Size " + size + " added" : "Added") + " to your bag ✓"; label.classList.add("ok"); }
+    setTimeout(function () {
+      btn.classList.remove("added");
+      if (label) { label.textContent = size ? "Quick add · pick a size" : "Quick add"; label.classList.remove("ok"); }
+    }, 1600);
+  }
+  // Notify me opens WhatsApp in a new tab; the item is also kept in the wishlist.
+  document.addEventListener("click", function (e) {
+    var n = e.target.closest("[data-notify]");
+    if (n) toggleWish(n.getAttribute("data-notify"), true);
+    var w = e.target.closest("[data-wish]");
+    if (w) { e.preventDefault(); toggleWish(w.getAttribute("data-wish")); }
+  });
   if (grid) grid.addEventListener("click", function (e) {
+    if (e.target.closest("[data-wish], [data-notify]")) return;
+    var q = e.target.closest("[data-quick]");
+    if (q) { quickAdd(q); return; }
     var g = e.target.closest("[data-gallery]");
     if (g) { openGallery(g.getAttribute("data-gallery"), g); return; }
     var a = e.target.closest("[data-add]");
     if (a) handleAdd(a, a.closest(".card"));
+  });
+  // load the hover photo only when a mouse actually reaches the card
+  if (grid) grid.addEventListener("mouseover", function (e) {
+    var v = e.target.closest(".card-visual"); if (!v) return;
+    var alt = $(".card-alt[data-src]", v);
+    if (alt) { alt.src = alt.getAttribute("data-src"); alt.removeAttribute("data-src"); }
   });
 
   /* ---------- dialogs ---------- */
@@ -494,6 +730,10 @@
       (p.includes && p.includes.length ? '<p class="card-meta"><strong>Includes:</strong> ' + esc(p.includes.join(", ")) + "</p>" : "") +
       (p.note ? '<p class="card-note">' + esc(p.note) + "</p>" : "") +
       '<div class="card-controls">' + controlsHtml(p, "gallery") + "</div>" +
+      (canBuy(p) && p.soldSizes && p.soldSizes.length && whatsappNumber()
+        ? '<div class="notify-sizes"><p class="card-meta">Sold out in ' + esc(p.soldSizes.join(", ")) + ". Want it if it comes back?</p>" + p.soldSizes.map(function (sz) { return notifyHtml(p, sz, "link-notify"); }).join("") + "</div>"
+        : "") +
+      wishButton(p, "wish-inline") +
       (p.illustrated
         ? '<p class="small illus-note">These images are styled illustrations made from the original photo of this item. Small details may differ from the real piece. Props and styling pieces are not included. Current stock to be confirmed.</p>'
         : p.images.some(function (im) { return im.ai; })
@@ -674,6 +914,134 @@
     if (cart.open && !$("#summaryText")) renderCart();
   });
 
+  /* ---------- wishlist panel ---------- */
+  var wishDlg = makeDialog("wishlist", "wishTitle",
+    '<div class="sheet-head"><div><p class="eyebrow">Saved for later</p><h2 id="wishTitle">Your wishlist</h2></div>' +
+    '<button type="button" class="close" data-close aria-label="Close wishlist">×</button></div>' +
+    '<div class="sheet-body" id="wishBody"></div>');
+  function renderWishlist() {
+    var items = wishItems(), body = $("#wishBody");
+    if (!items.length) {
+      body.innerHTML = '<div class="cart-empty"><p>Nothing saved yet.</p><p class="small">Tap the heart on any piece to keep it here. For something that’s sold out, use <strong>Notify me</strong> and we’ll hear that you want it.</p>' +
+        '<div class="empty-actions"><a class="button" href="index.html#shop">Shop Swimwear</a><a class="button button-ghost" href="shop.html">Clothing &amp; Accessories</a></div></div>';
+      return;
+    }
+    body.innerHTML = '<p class="small wish-note">Saved on this device. <strong>Notify me</strong> sends us a WhatsApp message so we know you’d like the piece. There are no automatic alerts.</p>' +
+      '<ul class="cart-list">' + items.map(function (p) {
+        var stock = stockText(p);
+        return '<li class="cart-row wish-row" data-wish-row="' + esc(p.id) + '">' +
+          '<button type="button" class="wish-thumb" data-gallery="' + esc(p.id) + '" aria-label="View photos of ' + esc(p.name) + '"><img src="' + esc(p.images[0].src) + '" alt="" width="72" height="96"></button>' +
+          '<div class="cart-info"><h3>' + esc(p.name) + "</h3>" +
+            '<p class="small">' + esc(priceText(p)) + " · " + esc(sizeText(p)) + (stock ? " · " + esc(stock) : "") + "</p>" +
+            '<div class="card-controls">' + controlsHtml(p, "wish") + "</div>" +
+            '<button type="button" class="link-button" data-unwish="' + esc(p.id) + '">Remove<span class="visually-hidden"> ' + esc(p.name) + "</span></button>" +
+          "</div></li>";
+      }).join("") + "</ul>";
+  }
+  wishDlg.addEventListener("click", function (e) {
+    if (e.target.closest("[data-close]")) { wishDlg.close(); return; }
+    var g = e.target.closest("[data-gallery]");
+    if (g) { openGallery(g.getAttribute("data-gallery")); return; }
+    var r = e.target.closest("[data-unwish]");
+    if (r) { toggleWish(r.getAttribute("data-unwish"), false); renderWishlist(); $("[data-close]", wishDlg).focus(); return; }
+    var a = e.target.closest("[data-add]");
+    if (a) handleAdd(a, a.closest(".wish-row"));
+  });
+  wishDlg.addEventListener("close", onDialogClose);
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-open-wishlist]"); if (!b) return;
+    if (typeof setMenu === "function") setMenu(false);
+    renderWishlist(); openDialog(wishDlg); $("[data-close]", wishDlg).focus();
+  });
+  window.addEventListener("storage", function (e) {
+    if (e.key !== WISH_KEY) return;
+    loadWish(); updateWishUi();
+    if (wishDlg.open) renderWishlist();
+  });
+
+  /* ---------- phone / tablet menu: full-screen panel with category drop-downs ---------- */
+  var toggle = $(".menu-toggle"), mobileMenu = null;
+  function setMenu(open) {
+    if (!toggle || !mobileMenu) return;
+    if (open) {
+      var header = $(".site-header");
+      document.documentElement.style.setProperty("--menu-top", Math.max(0, header.getBoundingClientRect().bottom) + "px");
+    }
+    toggle.setAttribute("aria-expanded", String(open));
+    $(".menu-text", toggle).textContent = open ? "Close" : "Menu";
+    mobileMenu.hidden = !open;
+    document.documentElement.classList.toggle("menu-open", open);
+  }
+  function buildMobileMenu() {
+    if (!toggle) return;
+    var swimBase = PAGE === "swim" ? "" : "index.html";
+    var chev = '<span class="mm-chev" aria-hidden="true"></span>';
+    var sub = function (id, label, links) {
+      return '<li><button type="button" class="mm-row" aria-expanded="false" aria-controls="' + id + '">' + label + chev + "</button>" +
+        '<ul class="mm-sub" id="' + id + '" hidden>' + links.map(function (l) {
+          return l.divider ? '<li class="mm-divider" aria-hidden="true"></li>' : '<li><a href="' + esc(l.href) + '">' + esc(l.label) + "</a></li>";
+        }).join("") + "</ul></li>";
+    };
+    var swimLinks = [{ href: swimBase + "#shop", label: "All swimwear" }].concat(categoriesFor("swim").map(function (c) { return { href: swimBase + "#cat-" + c.id, label: c.label }; }));
+    var shopLinks = [{ href: "shop.html#all", label: "All clothing & accessories" }, { href: "shop.html#women", label: "Women" }, { href: "shop.html#men", label: "Men" }, { href: "shop.html#kids", label: "Kids" }, { divider: true }]
+      .concat(categoriesFor("shop").map(function (c) { return { href: "shop.html#cat-" + c.id, label: c.label }; }));
+    var wa = whatsappLink("Hi Bikini Bottoms Up! I have a question.");
+    var nav = document.createElement("nav");
+    nav.className = "mobile-menu";
+    nav.id = "mobile-menu";
+    nav.setAttribute("aria-label", "Menu");
+    nav.hidden = true;
+    nav.innerHTML =
+      '<ul class="mm-main">' +
+        sub("mm-swim", "Swimwear", swimLinks) +
+        sub("mm-shop", "Clothing &amp; Accessories", shopLinks) +
+        '<li><a class="mm-row" href="' + swimBase + '#story">About us' + chev + "</a></li>" +
+        '<li><a class="mm-row" href="' + swimBase + '#how">How to order' + chev + "</a></li>" +
+        '<li><button type="button" class="mm-row" data-open-wishlist>Wishlist <span class="chip-count" data-wish-count hidden>0</span>' + chev + "</button></li>" +
+      "</ul>" +
+      '<div class="mm-extra">' +
+        (wa ? '<a href="' + esc(wa) + '" target="_blank" rel="noopener">WhatsApp us</a>' : "") +
+        '<a href="https://www.instagram.com/bikinibottoms_up_/" target="_blank" rel="noopener">Instagram</a>' +
+        '<button class="theme-toggle mm-theme" type="button" data-theme-toggle aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button>' +
+        '<p class="small">We reply Monday to Saturday, 9 AM to 5 PM (Guyana time). Closed Sunday.</p>' +
+      "</div>";
+    // after the header, not inside it: the header's blur effect would trap a fixed panel inside its own box
+    $(".site-header").insertAdjacentElement("afterend", nav);
+    mobileMenu = nav;
+    toggle.addEventListener("click", function () { setMenu(toggle.getAttribute("aria-expanded") !== "true"); });
+    nav.addEventListener("click", function (e) {
+      var row = e.target.closest("button.mm-row[aria-controls]");
+      if (row) {
+        var open = row.getAttribute("aria-expanded") !== "true";
+        row.setAttribute("aria-expanded", String(open));
+        $("#" + row.getAttribute("aria-controls")).hidden = !open;
+        return;
+      }
+      if (e.target.closest("a")) setMenu(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") { setMenu(false); toggle.focus(); }
+    });
+    window.addEventListener("resize", function () { if (window.innerWidth > 1200 && toggle.getAttribute("aria-expanded") === "true") setMenu(false); });
+  }
+  buildMobileMenu();
+
+  /* ---------- category links (#cat-bikini, shop.html#cat-shoes) ---------- */
+  function applyHashCategory() {
+    var m = (location.hash || "").match(/^#cat-([\w-]+)$/);
+    if (!m || !categoriesFor(PAGE).some(function (c) { return c.id === m[1]; })) return false;
+    currentFilter = m[1];
+    if (PAGE === "shop") currentDept = "all";
+    return true;
+  }
+  window.addEventListener("hashchange", function () {
+    if (!applyHashCategory()) return;
+    resetPaging();
+    renderProducts();
+    var sec = $("#shop");
+    if (sec) sec.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  });
+
   /* ---------- light / dark theme (saved per visitor; follows the device until they choose) ---------- */
   var THEME_KEY = "bbu-theme";
   var themeMeta = $('meta[name="theme-color"]');
@@ -703,20 +1071,6 @@
     if (mq.addEventListener) mq.addEventListener("change", onSys); else if (mq.addListener) mq.addListener(onSys);
   }
   window.addEventListener("storage", function (e) { if (e.key === THEME_KEY) applyTheme(savedTheme() || systemTheme()); });
-
-  /* ---------- mobile menu ---------- */
-  var toggle = $(".menu-toggle"), nav = $("#site-nav");
-  if (toggle && nav) {
-    var setMenu = function (open) {
-      toggle.setAttribute("aria-expanded", String(open));
-      document.body.classList.toggle("menu-open", open);
-    };
-    toggle.addEventListener("click", function () { setMenu(toggle.getAttribute("aria-expanded") !== "true"); });
-    nav.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") { setMenu(false); toggle.focus(); }
-    });
-  }
 
   /* ---------- WhatsApp links (only when a verified number is set in config.js) ---------- */
   var waGeneral = whatsappLink("Hi Bikini Bottoms Up! I have a question.");
@@ -828,7 +1182,9 @@
       status.textContent = n ? plural(n, "piece") + " in store" : "Arriving soon";
     }
     renderProducts();
+    updateWishUi();
     if (cart.open && !$("#summaryText")) renderCart();
+    if (wishDlg.open) renderWishlist();
   }
   var sheetText = null;
   if (SHEET_URL) {
@@ -861,10 +1217,13 @@
 
   loadBag();
   saveBag(); // migrates any older bag to the shared key
+  loadWish();
+  var catOnLoad = applyHashCategory();
   renderProducts();
+  updateWishUi();
   if (status) { var n0 = productsFor("shop").length; status.textContent = n0 ? plural(n0, "piece") + " in store" : "Arriving soon"; }
   fetchSheet();
-  if (PAGE === "shop" && currentDept !== "all") {
+  if (catOnLoad || (PAGE === "shop" && currentDept !== "all")) {
     var sec0 = $("#shop");
     if (sec0) setTimeout(function () { sec0.scrollIntoView({ block: "start" }); }, 0);
   }
