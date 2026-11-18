@@ -155,6 +155,7 @@
         '<img src="' + esc(img.src) + '" alt="' + esc(img.alt) + '" loading="lazy" decoding="async" width="600" height="800">' +
         '<span class="card-tag' + (p.category === "top" || p.tag === "Top only" ? " card-tag-alert" : "") + '">' + esc(p.tag) + "</span>" +
         (n > 1 ? '<span class="card-count" aria-hidden="true">' + n + " photos</span>" : "") +
+        (img.ai ? '<span class="card-ai">AI view</span>' : "") +
       "</button>" +
       '<div class="card-body">' +
         (showBrand(p) ? '<p class="card-brand">' + esc(p.brand) + "</p>" : "") +
