@@ -30,7 +30,13 @@ The owner edits products in a Google Sheet, **Bikini Bottoms Up — Website Inve
 
 ## Browsing tools
 
-Both product grids have a search box, a **Size** filter, **Sort** (Featured, Newest arrivals, Price low to high and high to low), and **Show 25 / 50 / 100** with a **Load more** button. The size filter groups spellings of the same size ("Small" = "S", "XXL" = "2XL"), while each card still shows the size exactly as listed. Items that can't be ordered yet (no price, no size or sold out) always sort last. "Newest arrivals" follows the order products were added to `catalog.js`, so add new products at the end. Each visitor's Show amount is remembered (`bbu-page-size`).
+Both product grids have a search box and a filter bar: **Availability** (Available / Sold out, with counts), **Size** (pick several; spellings are grouped, so "Small" = "S" and "XXL" = "2XL"), **Sort** (Featured, Newest, Price low/high, A–Z, Z–A) and **Show 25 / 50 / 100** with **Load more**. Active filters appear as removable chips with **Clear all**. Items that can't be ordered yet (no price, no size or sold out) sort last, except in A–Z / Z–A. "Newest" follows the order products were added to `catalog.js`, so add new products at the end. Each visitor's Show amount is remembered (`bbu-page-size`).
+
+**Cards.** With a mouse, hovering a card swaps to a model-worn photo (a real photo first; a mannequin or studio view only when there is no real one) and shows **Quick add** size buttons; sold-out sizes are crossed out. Phones keep the normal size picker and Add to bag. Cards whose first photo is AI-generated carry an "AI view" tag.
+
+**Wishlist and Notify me.** The heart on each card (and in the photo viewer) saves the piece to a wishlist kept on the visitor's device (`bbu-wishlist-v1`), opened from the heart in the header. Sold-out pieces and sold-out sizes offer **Notify me**, which opens WhatsApp with a ready-made message naming the item and its ID. There is no automatic alert system: the owner replies by hand.
+
+**Category links.** `index.html#cat-bikini`, `shop.html#cat-shoes` etc. open a page with that category selected; the phone menu uses them.
 
 ## Light and dark mode
 

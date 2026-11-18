@@ -23,7 +23,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="wordmark" href="index.html" aria-label="Bikini Bottoms Up home">bikini bottoms <em>up.</em><small>Good vibes. Great swim.</small></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon" aria-hidden="true"></span><span class="menu-text">Menu</span></button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"><span class="menu-icon" aria-hidden="true"></span><span class="menu-text">Menu</span></button>
       <nav class="site-nav" id="site-nav" aria-label="Main">
         <a href="index.html#shop">Swimwear</a>
         <a href="shop.html" aria-current="page" data-dept-link="women">Clothing &amp; Accessories</a>
@@ -33,6 +33,7 @@
         <a href="index.html#how">How to order</a>
         <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button>
       </nav>
+      <button class="wish-button" type="button" data-open-wishlist aria-label="Wishlist, 0 saved"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 8 3.3 4.5 6.9 4.5c2.1 0 3.6 1.2 5.1 3 1.5-1.8 3-3 5.1-3 3.6 0 5.5 3.5 4.2 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg><span class="wish-count" data-wish-count hidden>0</span></button>
       <button class="bag-button" type="button" data-open-bag>
         <span class="bag-label">Bag</span>
         <span class="bag-count" data-bag-count>0</span>
@@ -56,17 +57,18 @@
       <div class="filters" role="group" aria-label="Filter clothing and accessories by category" data-filters></div>
       <div class="browse-bar" data-browse>
         <label class="field field-search"><span class="visually-hidden">Search</span><input type="search" placeholder="Search items, brands, colours" autocomplete="off" enterkeyhint="search" data-search></label>
-        <label class="field"><span>Size</span><select data-size-filter><option value="">All sizes</option></select></label>
-        <label class="field"><span>Sort</span><select data-sort>
-          <option value="featured">Featured</option>
-          <option value="newest">Newest arrivals</option>
-          <option value="price-asc">Price: low to high</option>
-          <option value="price-desc">Price: high to low</option>
-        </select></label>
-        <label class="field"><span>Show</span><select data-page-size>
-          <option value="25">25</option><option value="50">50</option><option value="100">100</option>
-        </select></label>
+        <div class="toolbar" role="group" aria-label="Filter and sort">
+          <div class="pop-wrap"><button type="button" class="pop-btn" aria-expanded="false" aria-controls="pop-avail" data-pop-btn="avail">Availability<span class="pop-badge" data-pop-badge="avail" hidden></span><span class="caret" aria-hidden="true"></span></button><div class="pop" id="pop-avail" data-pop="avail" hidden></div></div>
+          <div class="pop-wrap"><button type="button" class="pop-btn" aria-expanded="false" aria-controls="pop-size" data-pop-btn="size">Size<span class="pop-badge" data-pop-badge="size" hidden></span><span class="caret" aria-hidden="true"></span></button><div class="pop pop-size" id="pop-size" data-pop="size" hidden></div></div>
+          <div class="toolbar-end">
+            <div class="pop-wrap pop-right"><button type="button" class="pop-btn" aria-expanded="false" aria-controls="pop-sort" data-pop-btn="sort">Sort<span class="pop-current" data-sort-label>: Featured</span><span class="caret" aria-hidden="true"></span></button><div class="pop" id="pop-sort" data-pop="sort" hidden></div></div>
+            <label class="field field-inline"><span>Show</span><select data-page-size>
+              <option value="25">25</option><option value="50">50</option><option value="100">100</option>
+            </select></label>
+          </div>
+        </div>
       </div>
+      <div class="active-filters" data-active-filters hidden></div>
       <p class="result-count" aria-live="polite" data-result-count></p>
       <div class="product-grid" data-products></div>
       <div class="load-more" data-more hidden>
