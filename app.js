@@ -192,15 +192,14 @@
     return sizeField + '<button type="button" class="btn-add" data-add="' + esc(p.id) + '">Add to bag<span class="visually-hidden">: ' + esc(p.name) + (p.sizes.length === 1 ? ", size " + esc(p.sizes[0]) : "") + "</span></button>";
   }
 
-  // The photo shown on hover: a model-worn shot when the card leads with a flat lay,
-  // a real photo when the card leads with an AI view, otherwise simply the next photo.
+  // The photo shown on hover: when the card leads with the product on its own, the model-worn
+  // shot (a real photo first, a mannequin/studio view if there is none); otherwise the next photo.
   function hoverImage(p) {
     var rest = p.images.slice(1);
     if (!rest.length) return null;
     var first = p.images[0];
     var worn = function (im) { return /\b(model|worn|wearing|mannequin)\b/i.test(im.alt); };
     var pick = function (f) { return rest.filter(f)[0]; };
-    if (first.ai) return pick(function (im) { return !im.ai && worn(im); }) || pick(function (im) { return !im.ai; }) || rest[0];
     if (!worn(first)) return pick(function (im) { return worn(im) && !im.ai; }) || pick(worn) || rest[0];
     return rest[0];
   }

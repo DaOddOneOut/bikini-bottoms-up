@@ -55,9 +55,8 @@ window.BBU_CATALOG = {
   products: [
     /* ---------- Swimwear · Bikinis ---------- */
     { id: "floral", collection: "swim", category: "bikini", name: "Red Floral Tie-Side Bikini", tag: "Two-piece", price: 5000, sizes: ["L"], stock: null, description: null,
-      images: [{ src: "assets/bikinis/floral-studio-model.webp", alt: "Red Floral Tie-Side Bikini on a black display mannequin, studio front view (AI-generated visualization)", ai: true },
-        { src: "assets/bikinis/floral-studio-flatlay.webp", alt: "Red Floral Tie-Side Bikini laid flat on a linen backdrop (AI-generated visualization)", ai: true },
-        { src: "assets/bikinis/floral-1.webp", alt: "Flat lay of a red floral triangle bikini with red and white striped tie straps" },
+      images: [{ src: "assets/bikinis/floral-studio-flatlay.webp", alt: "Red Floral Tie-Side Bikini laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/bikinis/floral-studio-model.webp", alt: "Red Floral Tie-Side Bikini on a black display mannequin, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/floral-photo-2.webp", alt: "Red Floral Tie-Side Bikini, back view" }] },
     { id: "hibiscus", collection: "swim", category: "bikini", name: "Blush Hibiscus Bikini", tag: "Two-piece", price: 5000, sizes: ["L"], stock: null, description: null,
       images: [{ src: "assets/bikinis/hibiscus-1.webp", alt: "Flat lay of a blush triangle bikini with an orange hibiscus print and tie strings" },
@@ -100,8 +99,8 @@ window.BBU_CATALOG = {
         { src: "assets/bikinis/red-bikini-photo-2.webp", alt: "Classic Red Bikini, back view" },
         { src: "assets/bikinis/red-bikini-render.webp", alt: "Front view of the Classic Red Bikini on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "lemon", collection: "swim", category: "bikini", name: "Lemon Underwire Bikini", tag: "Two-piece", price: 5500, sizes: [], stock: 0, description: null, soldSizes: ["S"],
-      images: [{ src: "assets/bikinis/lemon-studio-model.webp", alt: "Lemon Underwire Bikini on a black display mannequin, studio front view (AI-generated visualization)", ai: true },
-        { src: "assets/bikinis/lemon-studio-flatlay.webp", alt: "Lemon Underwire Bikini laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+      images: [{ src: "assets/bikinis/lemon-studio-flatlay.webp", alt: "Lemon Underwire Bikini laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/bikinis/lemon-studio-model.webp", alt: "Lemon Underwire Bikini on a black display mannequin, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/lemon-1.webp", alt: "Flat lay of a lemon yellow underwire bikini" },
         { src: "assets/bikinis/lemon-photo-2.webp", alt: "Lemon Underwire Bikini, back view" },
         { src: "assets/bikinis/lemon-photo-3.webp", alt: "Lemon Underwire Bikini, close-up" }] },
@@ -145,10 +144,9 @@ window.BBU_CATALOG = {
         { src: "assets/one-pieces/aqua-render.webp", alt: "Front view of the Aqua & Black Ruffle One-Piece on a black display mannequin (AI-generated visualization)", ai: true }] },
     { id: "polka", collection: "swim", category: "one", name: "Polka-Dot Cutout One-Piece", tag: "One-piece", price: 5500, sizes: ["S"], stock: null, description: null,
       images: [
-        { src: "assets/one-pieces/polka-1.webp", alt: "Flat lay of a black and white polka-dot one-piece with a front cutout and criss-cross straps" },
+        { src: "assets/one-pieces/polka-4.webp", alt: "Flat lay of the black and white polka-dot cutout one-piece" },
         { src: "assets/one-pieces/polka-2.webp", alt: "Model wearing the polka-dot cutout one-piece" },
         { src: "assets/one-pieces/polka-3.webp", alt: "Back view of the polka-dot one-piece showing crossed straps" },
-        { src: "assets/one-pieces/polka-4.webp", alt: "Second flat lay of the polka-dot cutout one-piece" },
         { src: "assets/one-pieces/polka-photo-3.webp", alt: "Polka-Dot Cutout One-Piece worn by a model, close-up" }] },
     { id: "brasil", collection: "swim", category: "one", name: "Brasil Cutout One-Piece", tag: "One-piece", price: 5500, sizes: ["M"], stock: null, description: null,
       images: [
@@ -216,84 +214,84 @@ window.BBU_CATALOG = {
     /* ---------- Swimwear batch, Nov 18 2026 (real photos cropped from the owner's posts) ---------- */
     { id: "plum-flower-applique-bikini", collection: "swim", category: "bikini", name: "Plum Flower Appliqu\u00e9 Bikini", tag: "Two-piece", price: 5000, sizes: ["L"], stock: null, description: null,
       images: [
-        { src: "assets/bikinis/plum-flower-applique-bikini-studio-model.webp", alt: "Plum Flower Appliqué Bikini on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/plum-flower-applique-bikini-studio-flatlay.webp", alt: "Plum Flower Appliqué Bikini laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/bikinis/plum-flower-applique-bikini-studio-model.webp", alt: "Plum Flower Appliqué Bikini on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/plum-flower-applique-bikini-1.webp", alt: "Plum Flower Appliqu\u00e9 Bikini worn by a model, front view" },
         { src: "assets/bikinis/plum-flower-applique-bikini-2.webp", alt: "Plum Flower Appliqu\u00e9 Bikini worn by a model, back view" },
         { src: "assets/bikinis/plum-flower-applique-bikini-3.webp", alt: "Plum Flower Appliqu\u00e9 Bikini worn by a model, close-up" }] },
     { id: "polka-dot-high-waist-swim-bottoms", collection: "swim", category: "swim-bottoms", name: "Polka Dot High-Waist Swim Bottoms", tag: "Bottoms only", price: 2000, sizes: ["2XL"], stock: null, description: null, note: "Bottoms only \u2014 the top shown is for styling and is not included.",
       images: [
-        { src: "assets/swim-bottoms/polka-dot-high-waist-swim-bottoms-studio-model.webp", alt: "Polka Dot High-Waist Swim Bottoms on a model, studio front view styled with a top that is not included (AI-generated visualization)", ai: true },
         { src: "assets/swim-bottoms/polka-dot-high-waist-swim-bottoms-studio-flatlay.webp", alt: "Polka Dot High-Waist Swim Bottoms laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/swim-bottoms/polka-dot-high-waist-swim-bottoms-studio-model.webp", alt: "Polka Dot High-Waist Swim Bottoms on a model, studio front view styled with a top that is not included (AI-generated visualization)", ai: true },
         { src: "assets/swim-bottoms/polka-dot-high-waist-swim-bottoms-1.webp", alt: "Polka Dot High-Waist Swim Bottoms worn by a model, front view" },
         { src: "assets/swim-bottoms/polka-dot-high-waist-swim-bottoms-2.webp", alt: "Polka Dot High-Waist Swim Bottoms worn by a model, back view" }] },
     { id: "navy-open-back-one-piece", collection: "swim", category: "one", name: "Navy Open-Back One-Piece", tag: "One-piece", price: 5000, sizes: ["M"], stock: null, description: null,
       images: [
-        { src: "assets/one-pieces/navy-open-back-one-piece-studio-model.webp", alt: "Navy Open-Back One-Piece on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/one-pieces/navy-open-back-one-piece-studio-flatlay.webp", alt: "Navy Open-Back One-Piece laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/one-pieces/navy-open-back-one-piece-studio-model.webp", alt: "Navy Open-Back One-Piece on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/one-pieces/navy-open-back-one-piece-1.webp", alt: "Navy Open-Back One-Piece worn by a model, front view" },
         { src: "assets/one-pieces/navy-open-back-one-piece-2.webp", alt: "Navy Open-Back One-Piece worn by a model, back view" },
         { src: "assets/one-pieces/navy-open-back-one-piece-3.webp", alt: "Navy Open-Back One-Piece worn by a model, side view" }] },
     { id: "red-floral-cross-back-tankini-set", collection: "swim", category: "set", name: "Red Floral Cross-Back Tankini Set", tag: "Tankini set", price: 6000, sizes: ["XL"], stock: null, description: null,
       images: [
-        { src: "assets/tankini-sets/red-floral-cross-back-tankini-set-studio-model.webp", alt: "Red Floral Cross-Back Tankini Set on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/tankini-sets/red-floral-cross-back-tankini-set-studio-flatlay.webp", alt: "Red Floral Cross-Back Tankini Set laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/tankini-sets/red-floral-cross-back-tankini-set-studio-model.webp", alt: "Red Floral Cross-Back Tankini Set on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/tankini-sets/red-floral-cross-back-tankini-set-1.webp", alt: "Red Floral Cross-Back Tankini Set worn by a model, front view" },
         { src: "assets/tankini-sets/red-floral-cross-back-tankini-set-2.webp", alt: "Red Floral Cross-Back Tankini Set worn by a model, back view" },
         { src: "assets/tankini-sets/red-floral-cross-back-tankini-set-3.webp", alt: "Red Floral Cross-Back Tankini Set worn by a model, another angle" }] },
     { id: "black-square-neck-swim-dress", collection: "swim", category: "swim-dress", name: "Black Square-Neck Swim Dress", tag: "Swim dress", price: null, sizes: [], stock: null, description: null, note: "Photos show shorts under the dress. Message us to confirm whether they are included.",
       images: [
-        { src: "assets/swim-dresses/black-square-neck-swim-dress-studio-model.webp", alt: "Black Square-Neck Swim Dress on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/swim-dresses/black-square-neck-swim-dress-studio-flatlay.webp", alt: "Black Square-Neck Swim Dress laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/swim-dresses/black-square-neck-swim-dress-studio-model.webp", alt: "Black Square-Neck Swim Dress on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/swim-dresses/black-square-neck-swim-dress-1.webp", alt: "Black Square-Neck Swim Dress worn by a model, front view" },
         { src: "assets/swim-dresses/black-square-neck-swim-dress-2.webp", alt: "Black Square-Neck Swim Dress worn by a model, back view" },
         { src: "assets/swim-dresses/black-square-neck-swim-dress-3.webp", alt: "Black Square-Neck Swim Dress worn by a model, close-up" }] },
     { id: "orange-floral-string-bikini", collection: "swim", category: "bikini", name: "Orange Floral String Bikini", tag: "Two-piece", price: 5000, sizes: ["L"], stock: null, description: null,
       images: [
-        { src: "assets/bikinis/orange-floral-string-bikini-studio-model.webp", alt: "Orange Floral String Bikini on a black display mannequin, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/orange-floral-string-bikini-studio-flatlay.webp", alt: "Orange Floral String Bikini laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/bikinis/orange-floral-string-bikini-studio-model.webp", alt: "Orange Floral String Bikini on a black display mannequin, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/orange-floral-string-bikini-1.webp", alt: "Orange Floral String Bikini, front view" },
         { src: "assets/bikinis/orange-floral-string-bikini-2.webp", alt: "Orange Floral String Bikini, close-up" },
         { src: "assets/bikinis/orange-floral-string-bikini-3.webp", alt: "Orange Floral String Bikini, another angle" }] },
     { id: "dark-floral-tie-side-bikini", collection: "swim", category: "bikini", name: "Dark Floral Tie-Side Bikini", tag: "Two-piece", price: 5000, sizes: ["L"], stock: null, description: null,
       images: [
-        { src: "assets/bikinis/dark-floral-tie-side-bikini-studio-model.webp", alt: "Dark Floral Tie-Side Bikini on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/dark-floral-tie-side-bikini-studio-flatlay.webp", alt: "Dark Floral Tie-Side Bikini laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/bikinis/dark-floral-tie-side-bikini-studio-model.webp", alt: "Dark Floral Tie-Side Bikini on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/dark-floral-tie-side-bikini-1.webp", alt: "Dark Floral Tie-Side Bikini worn by a model, front view" },
         { src: "assets/bikinis/dark-floral-tie-side-bikini-2.webp", alt: "Dark Floral Tie-Side Bikini worn by a model, back view" },
         { src: "assets/bikinis/dark-floral-tie-side-bikini-3.webp", alt: "Dark Floral Tie-Side Bikini worn by a model, another angle" }] },
     { id: "black-crossover-tankini-and-shorts-set", collection: "swim", category: "set", name: "Black Crossover Tankini and Shorts Set", tag: "Tankini set", price: 6000, sizes: ["3XL"], stock: null, description: null, includes: ["Tankini top", "Swim shorts"],
       images: [
-        { src: "assets/tankini-sets/black-crossover-tankini-and-shorts-set-studio-model.webp", alt: "Black Crossover Tankini and Shorts Set on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/tankini-sets/black-crossover-tankini-and-shorts-set-studio-flatlay.webp", alt: "Black Crossover Tankini and Shorts Set laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/tankini-sets/black-crossover-tankini-and-shorts-set-studio-model.webp", alt: "Black Crossover Tankini and Shorts Set on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/tankini-sets/black-crossover-tankini-and-shorts-set-1.webp", alt: "Black Crossover Tankini and Shorts Set worn by a model, front view" },
         { src: "assets/tankini-sets/black-crossover-tankini-and-shorts-set-2.webp", alt: "Black Crossover Tankini and Shorts Set worn by a model, back view" },
         { src: "assets/tankini-sets/black-crossover-tankini-and-shorts-set-3.webp", alt: "Black Crossover Tankini and Shorts Set worn by a model, close-up" }] },
     { id: "chocolate-underwire-bikini", collection: "swim", category: "bikini", name: "Chocolate Underwire Bikini", tag: "Two-piece", price: 5000, sizes: ["M"], stock: null, description: null,
       images: [
-        { src: "assets/bikinis/chocolate-underwire-bikini-studio-model.webp", alt: "Chocolate Underwire Bikini on a black display mannequin, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/chocolate-underwire-bikini-studio-flatlay.webp", alt: "Chocolate Underwire Bikini laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/bikinis/chocolate-underwire-bikini-studio-model.webp", alt: "Chocolate Underwire Bikini on a black display mannequin, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/chocolate-underwire-bikini-1.webp", alt: "Chocolate Underwire Bikini, front view" },
         { src: "assets/bikinis/chocolate-underwire-bikini-2.webp", alt: "Chocolate Underwire Bikini, back view" },
         { src: "assets/bikinis/chocolate-underwire-bikini-3.webp", alt: "Chocolate Underwire Bikini, close-up" }] },
     { id: "pale-blue-tie-front-bikini", collection: "swim", category: "bikini", name: "Pale Blue Tie-Front Bikini", tag: "Two-piece", price: 5500, sizes: ["XS"], stock: null, description: null,
       images: [
-        { src: "assets/bikinis/pale-blue-tie-front-bikini-studio-model.webp", alt: "Pale Blue Tie-Front Bikini on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/pale-blue-tie-front-bikini-studio-flatlay.webp", alt: "Pale Blue Tie-Front Bikini laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/bikinis/pale-blue-tie-front-bikini-studio-model.webp", alt: "Pale Blue Tie-Front Bikini on a model, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/pale-blue-tie-front-bikini-1.webp", alt: "Pale Blue Tie-Front Bikini, front view" },
         { src: "assets/bikinis/pale-blue-tie-front-bikini-2.webp", alt: "Pale Blue Tie-Front Bikini, back view" },
         { src: "assets/bikinis/pale-blue-tie-front-bikini-3.webp", alt: "Pale Blue Tie-Front Bikini, close-up" }] },
     { id: "striped-high-waist-swim-bottoms", collection: "swim", category: "swim-bottoms", name: "Striped High-Waist Swim Bottoms", tag: "Bottoms only", price: 1000, sizes: ["M"], stock: null, description: null, note: "Bottoms only \u2014 the top shown is for styling and is not included.",
       images: [
-        { src: "assets/swim-bottoms/striped-high-waist-swim-bottoms-studio-model.webp", alt: "Striped High-Waist Swim Bottoms on a model, studio front view styled with a top that is not included (AI-generated visualization)", ai: true },
         { src: "assets/swim-bottoms/striped-high-waist-swim-bottoms-studio-flatlay.webp", alt: "Striped High-Waist Swim Bottoms laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/swim-bottoms/striped-high-waist-swim-bottoms-studio-model.webp", alt: "Striped High-Waist Swim Bottoms on a model, studio front view styled with a top that is not included (AI-generated visualization)", ai: true },
         { src: "assets/swim-bottoms/striped-high-waist-swim-bottoms-1.webp", alt: "Striped High-Waist Swim Bottoms worn by a model, front view" },
         { src: "assets/swim-bottoms/striped-high-waist-swim-bottoms-2.webp", alt: "Striped High-Waist Swim Bottoms worn by a model, back view" },
         { src: "assets/swim-bottoms/striped-high-waist-swim-bottoms-3.webp", alt: "Striped High-Waist Swim Bottoms worn by a model, side view" }] },
     { id: "green-underwire-bikini", collection: "swim", category: "bikini", name: "Green Underwire Bikini", tag: "Two-piece", price: 5000, sizes: ["S", "M"], stock: null, description: null,
       images: [
-        { src: "assets/bikinis/green-underwire-bikini-studio-model.webp", alt: "Green Underwire Bikini on a black display mannequin, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/green-underwire-bikini-studio-flatlay.webp", alt: "Green Underwire Bikini laid flat on a linen backdrop (AI-generated visualization)", ai: true },
+        { src: "assets/bikinis/green-underwire-bikini-studio-model.webp", alt: "Green Underwire Bikini on a black display mannequin, studio front view (AI-generated visualization)", ai: true },
         { src: "assets/bikinis/green-underwire-bikini-1.webp", alt: "Green Underwire Bikini, front view" },
         { src: "assets/bikinis/green-underwire-bikini-2.webp", alt: "Green Underwire Bikini, back view" },
         { src: "assets/bikinis/green-underwire-bikini-3.webp", alt: "Green Underwire Bikini, close-up" }] },
@@ -1654,6 +1652,105 @@ window.BBU_CATALOG = {
       illustrated: true,
       images: [
         { src: "assets/shop/20261116-wa0063-product.webp", alt: "Illustration of the America\u2019s Black Prophet Graphic Tee" },
-        { src: "assets/shop/20261116-wa0063-modeled.webp", alt: "Illustration of the America\u2019s Black Prophet Graphic Tee worn by a model" }] }
+        { src: "assets/shop/20261116-wa0063-modeled.webp", alt: "Illustration of the America\u2019s Black Prophet Graphic Tee worn by a model" }] },
+    { id: "20261118-WA0018", collection: "shop", category: "dresses-sets", name: "Black Wrap-Front Jumpsuit", tag: "Jumpsuit", price: 8000, sizes: ["20W"], stock: null, brand: "R&M Richards", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0018-product.webp", alt: "Illustration of the Black Wrap-Front Jumpsuit" },
+        { src: "assets/shop/20261118-wa0018-modeled.webp", alt: "Illustration of the Black Wrap-Front Jumpsuit worn by a model" }] },
+    { id: "20261118-WA0019", collection: "shop", category: "tops", name: "Striped Button-Up Shirt", tag: "Shirt", price: 3000, sizes: ["L"], stock: null, brand: "Primark", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0019-product.webp", alt: "Illustration of the Striped Button-Up Shirt" },
+        { src: "assets/shop/20261118-wa0019-modeled.webp", alt: "Illustration of the Striped Button-Up Shirt worn by a model" }] },
+    { id: "20261118-WA0021", collection: "shop", category: "dresses-sets", name: "Floral Puff-Sleeve Dress", tag: "Dress", price: 6000, sizes: ["S"], stock: null, brand: "CeCe", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0021-product.webp", alt: "Illustration of the Floral Puff-Sleeve Dress" },
+        { src: "assets/shop/20261118-wa0021-modeled.webp", alt: "Illustration of the Floral Puff-Sleeve Dress worn by a model" }] },
+    { id: "20261118-WA0024", collection: "shop", category: "dresses-sets", name: "Teal Cold-Shoulder Gown", tag: "Dress", price: 8000, sizes: ["22W"], stock: null, brand: "R&M Richards", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0024-product.webp", alt: "Illustration of the Teal Cold-Shoulder Gown" },
+        { src: "assets/shop/20261118-wa0024-modeled.webp", alt: "Illustration of the Teal Cold-Shoulder Gown worn by a model" }] },
+    { id: "20261118-WA0027", collection: "shop", category: "tops", name: "Cream Floral Flutter-Sleeve Top", tag: "Top", price: 5000, sizes: ["M"], stock: null, brand: "Old Navy", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0027-product.webp", alt: "Illustration of the Cream Floral Flutter-Sleeve Top" },
+        { src: "assets/shop/20261118-wa0027-modeled.webp", alt: "Illustration of the Cream Floral Flutter-Sleeve Top worn by a model" }] },
+    { id: "20261118-WA0028", collection: "shop", category: "dresses-sets", name: "Paisley Long-Sleeve Dress", tag: "Dress", price: 6000, sizes: ["S"], stock: null, brand: "Gabby Skye", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0028-product.webp", alt: "Illustration of the Paisley Long-Sleeve Dress" },
+        { src: "assets/shop/20261118-wa0028-modeled.webp", alt: "Illustration of the Paisley Long-Sleeve Dress worn by a model" }] },
+    { id: "20261118-WA0029", collection: "shop", category: "dresses-sets", name: "Leopard Print Fitted Dress", tag: "Dress", price: 3800, sizes: ["S"], stock: null, brand: "Hailey & June", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0029-product.webp", alt: "Illustration of the Leopard Print Fitted Dress" },
+        { src: "assets/shop/20261118-wa0029-modeled.webp", alt: "Illustration of the Leopard Print Fitted Dress worn by a model" }] },
+    { id: "20261118-WA0036", collection: "shop", category: "dresses-sets", name: "Yellow Off-Shoulder Maxi Dress", tag: "Dress", price: 4000, sizes: ["0XL"], stock: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0036-product.webp", alt: "Illustration of the Yellow Off-Shoulder Maxi Dress" },
+        { src: "assets/shop/20261118-wa0036-modeled.webp", alt: "Illustration of the Yellow Off-Shoulder Maxi Dress worn by a model" }] },
+    { id: "20261118-WA0039", collection: "shop", category: "dresses-sets", name: "Blue Lace-Up Back Maxi Dress", tag: "Dress", price: 7000, sizes: ["M"], stock: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0039-product.webp", alt: "Illustration of the Blue Lace-Up Back Maxi Dress" },
+        { src: "assets/shop/20261118-wa0039-modeled.webp", alt: "Illustration of the Blue Lace-Up Back Maxi Dress worn by a model" }] },
+    { id: "20261118-WA0045", collection: "shop", category: "dresses-sets", name: "Orange Floral Wrap Dress", tag: "Dress", price: 4000, sizes: ["M"], stock: null, brand: "H&M", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0045-product.webp", alt: "Illustration of the Orange Floral Wrap Dress" },
+        { src: "assets/shop/20261118-wa0045-modeled.webp", alt: "Illustration of the Orange Floral Wrap Dress worn by a model" }] },
+    { id: "20261118-WA0011", collection: "shop", category: "tops", name: "Sage Floral Lace-Neck Top", tag: "Top", price: 3000, sizes: ["XL"], stock: null, brand: "Alfred Dunner", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0011-product.webp", alt: "Illustration of the Sage Floral Lace-Neck Top" },
+        { src: "assets/shop/20261118-wa0011-modeled.webp", alt: "Illustration of the Sage Floral Lace-Neck Top worn by a model" }] },
+    { id: "20261118-WA0013", collection: "shop", category: "dresses-sets", name: "White Eyelet Trim Dress", tag: "Dress", price: 4000, sizes: ["2XL"], stock: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0013-product.webp", alt: "Illustration of the White Eyelet Trim Dress" },
+        { src: "assets/shop/20261118-wa0013-modeled.webp", alt: "Illustration of the White Eyelet Trim Dress worn by a model" }] },
+    { id: "20261118-WA0023", collection: "shop", category: "bottoms", name: "Brown Floral Tiered Mini Skirt", tag: "Skirt", price: 3000, sizes: ["XL"], stock: null, brand: "Sincerely Jules", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0023-product.webp", alt: "Illustration of the Brown Floral Tiered Mini Skirt" },
+        { src: "assets/shop/20261118-wa0023-modeled.webp", alt: "Illustration of the Brown Floral Tiered Mini Skirt worn by a model" }] },
+    { id: "20261118-WA0025", collection: "shop", category: "dresses-sets", name: "Hot Pink Wrap Dress", tag: "Dress", price: 5000, sizes: ["S"], stock: null, brand: "Vicky Tiel", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0025-modeled.webp", alt: "Illustration of the Hot Pink Wrap Dress worn by a model" }] },
+    { id: "20261118-WA0026", collection: "shop", category: "dresses-sets", name: "Burgundy Lace Cape Pants Set", tag: "Matching set", price: 8000, sizes: ["16"], stock: null, brand: "R&M Richards", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0026-product.webp", alt: "Illustration of the Burgundy Lace Cape Pants Set" },
+        { src: "assets/shop/20261118-wa0026-modeled.webp", alt: "Illustration of the Burgundy Lace Cape Pants Set worn by a model" }] },
+    { id: "20261118-WA0030", collection: "shop", category: "tops", name: "Blue Green Scallop Print Top", tag: "Top", price: 3000, sizes: ["M"], stock: null, brand: "Max Studio", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0030-product.webp", alt: "Illustration of the Blue Green Scallop Print Top" },
+        { src: "assets/shop/20261118-wa0030-modeled.webp", alt: "Illustration of the Blue Green Scallop Print Top worn by a model" }] },
+    { id: "20261118-WA0038", collection: "shop", category: "tops", name: "Navy Gold-Trim V-Neck Top", tag: "Top", price: 2500, sizes: ["M"], stock: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0038-product.webp", alt: "Illustration of the Navy Gold-Trim V-Neck Top" },
+        { src: "assets/shop/20261118-wa0038-modeled.webp", alt: "Illustration of the Navy Gold-Trim V-Neck Top worn by a model" }] },
+    { id: "20261118-WA0040", collection: "shop", category: "tops", name: "Ivory Botanical Button-Up Shirt", tag: "Shirt", price: 2300, sizes: ["0XL"], stock: null, department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0040-product.webp", alt: "Illustration of the Ivory Botanical Button-Up Shirt" },
+        { src: "assets/shop/20261118-wa0040-modeled.webp", alt: "Illustration of the Ivory Botanical Button-Up Shirt worn by a model" }] },
+    { id: "20261118-WA0042", collection: "shop", category: "tops", name: "Blue Vertical Stripe Button-Up", tag: "Shirt", price: 6000, sizes: ["L"], stock: null, brand: "Fashion Nova", department: "Women",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0042-product.webp", alt: "Illustration of the Blue Vertical Stripe Button-Up" },
+        { src: "assets/shop/20261118-wa0042-modeled.webp", alt: "Illustration of the Blue Vertical Stripe Button-Up worn by a model" }] },
+    { id: "20261118-WA0044", collection: "shop", category: "tops", name: "Red Gingham Button-Up Shirt", tag: "Men's \u00b7 Shirt", price: 6500, sizes: ["2XL"], stock: null, brand: "Tommy Hilfiger", department: "Men",
+      illustrated: true,
+      images: [
+        { src: "assets/shop/20261118-wa0044-product.webp", alt: "Illustration of the Red Gingham Button-Up Shirt" },
+        { src: "assets/shop/20261118-wa0044-modeled.webp", alt: "Illustration of the Red Gingham Button-Up Shirt worn by a model" }] }
   ]
 };
