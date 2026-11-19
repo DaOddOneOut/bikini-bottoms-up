@@ -7,7 +7,7 @@ A mobile-friendly boutique storefront for Bikini Bottoms Up. The owner prefers t
 | Page | What it shows |
 | --- | --- |
 | `index.html` | **Swimwear** — bikinis, one-pieces, swim tops, tankini sets. Also has the "Beyond the Beach" promo, About the brand and How to order. |
-| `shop.html` | **Clothing & Accessories** ("Beyond the Beach"): 267 pieces, shopped by department (**Women 174 · Men 85 · Kids 8**) and category (Tops, Bottoms, Dresses & Sets, Sleepwear & Underwear, Shoes & Footwear, Bags; Accessories appears when stocked). `shop.html#men` and `shop.html#kids` open those departments directly. Items with no department set count as Women's. |
+| `shop.html` | **Clothing & Accessories** ("Beyond the Beach"): 287 pieces, shopped by department (**Women 193 · Men 86 · Kids 8**) and category (Tops, Bottoms, Dresses & Sets, Sleepwear & Underwear, Shoes & Footwear, Bags; Accessories appears when stocked). `shop.html#men` and `shop.html#kids` open those departments directly. Items with no department set count as Women's. |
 
 Both pages share the header, footer, product gallery and **one shopping bag** (saved in the browser, so it follows customers between pages and tabs).
 
@@ -73,7 +73,7 @@ The clothing and bag images in `assets/shop/` are **AI-generated illustrations**
 
 Men's and kids' basics (batches 13 and 17–22, IDs like `20261110-WA0077`) are AI illustrations too. Kids' items use `department: "Youth"` and show "Youth size". Sold-out items use `stock: 0`, and `soldSizes` lists sizes already sold. Batch 21 arrived twice as identical files and was imported once.
 
-Swimwear galleries (`index.html`) show the real product photos first. 24 of the 41 styles also end with one **AI-generated front view** (`*-render.webp`, marked `ai: true` in `catalog.js`), shown with an "AI visualization" badge. The renders for olive-cross, lemon and polka were left out because they drop real details (front criss-cross straps, front tie bow, crossed straps over the cutout). No back views were generated; none should be invented.
+Swimwear galleries (`index.html`) lead with the product on its own (a flat lay); hovering a card on a computer shows the outfit being worn. The 14 listings with studio images lead with the studio flat lay, then the studio model view, then the real photos. 24 of the 41 styles also end with one **AI-generated front view** (`*-render.webp`, marked `ai: true` in `catalog.js`), shown with an "AI visualization" badge. The renders for olive-cross, lemon and polka were left out because they drop real details (front criss-cross straps, front tie bow, crossed straps over the cutout). No back views were generated; none should be invented.
 
 - **WA0091** — price set to 5,000 as written on the listing photo (the import file said 4,500).
 - **WA0097**: the flat-lay is a **back** view (open back, black panel, bow) and is labelled that way, shown before the model view.
@@ -106,7 +106,7 @@ Then set `checkoutMode` and wire the checkout button to the backend.
 - Verified business WhatsApp number.
 - Delivery and pickup areas and fees, plus return/exchange terms.
 - MMG merchant account details (see above).
-- Clothing & Accessories: go through `CLOTHING_REVIEW.csv` — currency (none of the listings state it), stock and condition, the 6 clothing items with no price and 8 with no size, all 10 footwear items (real photos; no price, size or brand supplied yet — the size numbers printed inside some slides are not treated as the available sizes), the 9 bags (currency, stock, condition, dimensions and material; BAG-29701 merges two listing photos of what looks like the same black four-piece set), unusual sizes kept exactly as written (0XL, LX), brand spellings, and whether each AI illustration matches the real item.
+- Clothing & Accessories: go through `CLOTHING_REVIEW.csv` — currency (none of the listings state it), stock and condition, the 20 womenswear/clothing pieces added Nov 19 (AI illustrations from listing photos; the Hot Pink Wrap Dress uses only its on-model image because the product illustration showed the wrong length), the 6 clothing items with no price and 8 with no size, all 10 footwear items (real photos; no price, size or brand supplied yet — the size numbers printed inside some slides are not treated as the available sizes), the 9 bags (currency, stock, condition, dimensions and material; BAG-29701 merges two listing photos of what looks like the same black four-piece set), unusual sizes kept exactly as written (0XL, LX), brand spellings, and whether each AI illustration matches the real item.
 
 ## Notes
 
